@@ -1,0 +1,49 @@
+/* storySection.css */
+
+/* 스토리 섹션 컴포넌트 스타일 */
+.storyWrap {
+  padding-top: 11rem;
+}
+
+.inner-titleWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.title2 {
+  font-size: 3.2rem;
+  line-height: 4.4rem;
+  font-weight: 700;
+  letter-spacing: -0.04rem;
+}
+
+.link {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #333;
+  text-decoration: none;
+}
+
+.swiper-story-img img {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-story-txt1 {
+  margin-top: 2.4rem;
+  font-size: 2.2rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -0.04rem;
+}
+
+.swiper-story-txt2 {
+  margin-top: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+  letter-spacing: -0.04rem;
+  color: #666;
+}
