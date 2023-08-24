@@ -40,24 +40,6 @@ const Sub3 = () => {
           </div>
         </li>
         <li>
-          <div className="tit">일할 땐,<br />일하고 쉴 땐 쉬어요.</div>
-          <div className="item-box">
-            <div className="img-item">
-              <img src="images/10.png" alt />
-            </div>
-            <div className="txt-item">
-              <dl>
-                <dt>시차출근제</dt>
-                <dd>개인의 라이츠 스타일에 맞게 유연하게 업무시간으로<br />일과 삶의 밸런스를 조절할 수 있어요.</dd>
-                <dt>자기계발 휴가</dt>
-                <dd>자유롭게 사용할 수 있는 연 3일의 자기계발 휴가제공<br />(단, 하반기 입사자는 미적용)</dd>
-                <dt>경조 휴가</dt>
-                <dd>기쁜 일은 축하하고, 슬픈 일은<br />위로가 될 수 있도록 경조휴가 지원</dd>
-              </dl>
-            </div>
-          </div>
-        </li>
-        <li>
           <div className="tit">나와 소중한 가족까지<br />생각해요.</div>
           <div className="item-box">
             <div className="img-item">
