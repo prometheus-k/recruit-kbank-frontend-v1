@@ -81,12 +81,18 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;}
 
     /* story */
 .storyWrap {margin-top: 20rem;}
+.main-story .swiper-wrapper {display: flex;align-items: flex-start;justify-content: space-between;flex-wrap: nowrap;}
+.main-story .swiper-wrapper .swiper-slide {width:calc(100%/2 - 1.5rem)}
+.main-story .swiper-wrapper .swiper-slide + .swiper-slide {margin-left: 3rem;}
 .main-story .swiper-story-txt1 {padding:3rem 0 2rem; font-size: 2.6rem;line-height: 4rem;letter-spacing: -0.02rem;font-weight: 700;}
 .main-story .swiper-story-txt2 {font-size: 1.6rem;line-height: 1.9rem;letter-spacing: -0.07rem;font-weight: 500;}
 .main-story .swiper-story-img {position:relative;padding-top: 75.3%;border-radius: 1.6rem;overflow: hidden;display: flex;align-items: center;justify-content: center;background: #eee;}
 
     /* work balance */
 .workbalanceWrap {margin-top: 20rem;}
+.workbalanceWrap .swiper-wrapper {display: flex;align-items: flex-start;justify-content: space-between;flex-wrap: nowrap;}
+.workbalanceWrap .swiper-wrapper .swiper-slide {width:calc(100%/3 - 1.8rem)}
+.workbalanceWrap .swiper-slide + .swiper-slide {margin-left: 2.5rem;}
 .main-workbalance .swiper-workbalance-txt1 {padding:3rem 0 2rem; font-size: 2.6rem;line-height: 3.6rem;letter-spacing: -0.02rem;font-weight: 700;}
 .main-workbalance .swiper-workbalance-txt2 {font-size: 1.6rem;line-height: 2.8rem;letter-spacing: -0.07rem;font-weight: 500;}
 .main-workbalance .swiper-workbalance-img {position:relative;height: 0;padding-top: 93.07%; border-radius: 1.6rem;overflow: hidden;display: flex;align-items: center;justify-content: center;background: #eee;}
@@ -189,6 +195,13 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;}
 .faq-list .tit:before {content: 'Q.'; position: absolute;top:0;left:0;font-size: 2.6rem;line-height: 3.1rem;font-weight: 700;}
 .faq-list .txt {padding: 2.4rem 0 0 5rem;font-size: 1.8rem;line-height: 3rem;word-break: keep-all;font-weight: 500;}
 
+@media screen and (max-width:800px){
+    .main-story .swiper-wrapper .swiper-slide,
+    .workbalanceWrap .swiper-wrapper .swiper-slide {width:95%}
+    .main-story .swiper-wrapper .swiper-slide + .swiper-slide,
+    .workbalanceWrap .swiper-wrapper .swiper-slide + .swiper-slide {margin-left: 1rem;}
+}
+
 /* ----------------------tablet---------------------- */
 @media screen and (max-width:1145px){
     /* layout */
@@ -237,7 +250,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;}
     .footerWrap .policy {font-size: 1.4rem;line-height: 1.9rem;}
 
     /* common */
-    body.crop {overflow:hidden ;}
+    .crop {overflow:hidden ;}
 
     .pc {display: none;}
     .m {display: block;}

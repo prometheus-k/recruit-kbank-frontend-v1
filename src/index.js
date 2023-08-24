@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './assets/css/Common.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { StyleProvider } from './components2/StyleContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <StyleProvider>
+      <App />
+    </StyleProvider>
   </React.StrictMode>
 );
 
