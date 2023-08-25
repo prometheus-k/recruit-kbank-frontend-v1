@@ -1,18 +1,77 @@
-import React, { useEffect } from 'react';
+import React, { useRef,useEffect } from 'react';
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
+import _ from 'lodash';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Main = () => {
+  //const scrollSpySections = useRef(null);
+
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
 
+    const elements = document.querySelectorAll('section.scroll-spy');
+    elements.forEach(element => {
+      // 애니메이션 생성
+      gsap.to(element, {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        scrollTrigger: {
+          trigger: element,
+          toggleActions: "resume pause reset pause",
+          markers: true,
+          start: 'top center', // 시작 지점 설정
+          end: 'bottom center', // 종료 지점 설정
+          scrub: true, // 스크롤 시 애니메이션 효과
+        },
+      });
+
+      gsap.from(element, {
+        opacity: 1,
+        y: 100,
+        duration: 1,
+        scrollTrigger: {
+          trigger: element,
+          toggleActions: "resume pause reset pause",
+          markers: true,
+          start: 'top center', // 시작 지점 설정
+          end: 'bottom center', // 종료 지점 설정
+          scrub: true, // 스크롤 시 애니메이션 효과
+        },
+      });
+    });
+    
+    
+
+    // const sections = scrollSpySections.current.querySelectorAll('.scroll-spy');
+    // sections.array.forEach(element => {
+      
+    // });
+
+    const handleScroll = _.throttle(() => {
+      // 스크롤 이벤트를 처리하는 로직을 여기에 작성
+      console.log(window.scrollY);
+      //스크롤 작동시 특정 위치에서 이벤트를 싱행
+    }, 300); // 300ms 간격으로 스크롤 이벤트를 처리
+  
+    window.addEventListener('scroll', handleScroll);
     // 컴포넌트가 언마운트될 때 클린업 함수 설정
     return () => {
       console.log('Component unmounted');
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
   return (
 <div>
+<section className='scroll-spy'>
   <div className="default_ani">
     <div className="inner">
       <div className="titleWrap">
@@ -165,6 +224,17 @@ const Main = () => {
       </div>
     </div>
   </div>
+<div className="inner">
+  <div className="snsWrap">
+    <p className="txt">케이뱅크의<br className="m" /> 다양한 소식을 확인해보세요.</p>
+    <ul>
+      <li><a href="#"><img src="images/ic_instargram.png" alt="instargram" /></a></li>
+      <li><a href="#"><img src="images/ic_facebook.png" alt="facebook" /></a></li>
+      <li><a href="#"><img src="images/ic_youtube.png" alt="youtube" /></a></li>
+    </ul>
+  </div>
+</div>
+</section>
 </div>
 
   );
