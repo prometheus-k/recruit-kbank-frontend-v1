@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 
-const Title = ({ titleClassName, children }) => {
+const Typography = ({ titleClassName, children }) => {
     useEffect(() => {
         console.log('Component mounted');
 
@@ -11,10 +12,11 @@ const Title = ({ titleClassName, children }) => {
     }, []);
 
     return (
-        <div className="titleWrap">
-            <p className={titleClassName}>{children}</p>
+        <div>
+            <span className={titleClassName}>{children}</span>
         </div>
     );
 };
 
-export default Title;
+
+export default Typography;

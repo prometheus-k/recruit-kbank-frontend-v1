@@ -14,7 +14,9 @@ const Sub3 = () => {
   }, []);
   return (
     <div>
-      <Title titleClassName="title1">케이뱅크의 베넷핏</Title>
+      <div className="inner">
+        <Title titleClassName="title1">케이뱅크의 베넷핏</Title>
+      </div>
       <section>
         <div className="inner">
           <div className="benefitWrap">

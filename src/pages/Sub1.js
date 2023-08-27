@@ -13,8 +13,9 @@ const Sub1 = () => {
   }, []);
   return (
     <div>
-
-      <Title titleClassName="title1">케이뱅크와 함께<br />더 나은 금융을 만들어갈<br />동료를 기다립니다.</Title>
+      <div className="inner">
+        <Title titleClassName="title1">케이뱅크와 함께<br />더 나은 금융을 만들어갈<br />동료를 기다립니다.</Title>
+      </div>
       <div className="inner">
         <div className="formWrap">
           <div className="form-group">
