@@ -13,9 +13,9 @@ const List = ({ listClasLIsName, children }) => {
 
     return (
         <div className="boardWrap">
-          <ul className={listClasLIsName}>
-            {children}
-          </ul>
+            <ul className={listClasLIsName}>
+                {children}
+            </ul>
         </div>
     );
 };
@@ -24,7 +24,8 @@ const List = ({ listClasLIsName, children }) => {
 List.propTypes = {
     listClasLIsName: PropTypes.string, // 버튼에 추가될 클래스명};
     children: PropTypes.node, // Card 컴포넌트 내용(children)을 받을 수 있도록 추가]
-}
+};
+
 List.defaultProps = {
     listClasLIsName: 'recruit-list', // 기본 클래스명 없음
 };

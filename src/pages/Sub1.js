@@ -2,31 +2,75 @@ import React, { useEffect, useState } from 'react';
 import Title from '../components2/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 import List from '../components2/List';
-import ListItems from '../components2/ListItems';
+import ListItem from '../components2/ListItem';
 import ListItemText from '../components2/ListItemText';
 import TextBox from '../components2/TextBox';
 import Button from '../components2/Button';
 import Box from '../components2/Box';
+import Select from '../components2/Select'
+import SearchField from '../components2/SearchField';
+
+const jobGroupOptionsData = [
+  { value: '', label: '전체' },
+  { value: 'Tech', label: 'Tech' },
+  { value: 'UX팀', label: 'UX' },
+  { value: 'Risk', label: 'Risk' }
+];
+
+const careerOptionsData = [
+  { value: '', label: '전체' },
+  { value: '경력', label: '경력' },
+  { value: '인턴', label: '인턴' },
+  { value: '신규', label: '신규' }
+];
+
+const initialListdata = [
+  // 초기 카드 목록
+  // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
+  { tag: true, tit: '여신상품 리스크관리 담당자', sub1: 'Tech', sub2: '경력', dday: '오늘마감', ddayclassName: 'day' },
+  { tag: true, tit: 'HR 어시스턴트', sub1: 'Management', sub2: '인턴', dday: '오늘마감', ddayclassName: 'day' },
+  { tag: true, tit: 'UX Researcher', sub1: 'UX팀', sub2: '경력', dday: '오늘마감', ddayclassName: 'day' },
+  { tag: true, tit: '프로덕트 디자이너', sub1: 'UX팀', sub2: '경력', dday: 'D-14', ddayclassName: 'day' },
+  { tag: false, tit: '플랫폼 디자이너', sub1: 'UX팀', sub2: '경력', dday: '상시채용', ddayclassName: 'day' },
+  { tag: false, tit: 'GUI 그래픽 디자이너', sub1: 'UX팀', sub2: '경력', dday: '상시채용', ddayclassName: 'day' },
+  { tag: false, tit: '여신 및 사후 감리 담당자', sub1: 'Risk', sub2: '경력', dday: '상시채용', ddayclassName: 'day' },
+  { tag: false, tit: '수신상품 기획/운영 담당자 채용', sub1: 'Risk', sub2: '경력', dday: '상시채용', ddayclassName: 'day' },
+  { tag: false, tit: '여신 및 사후 감리 담당자', sub1: 'Risk', sub2: '경력', dday: '지원마감', ddayclassName: 'day end' },
+  { tag: false, tit: '데이터플랫폼 엔지니어', sub1: 'Risk', sub2: '경력', dday: '지원마감', ddayclassName: 'day end' },
+  // ... 더 많은 카드들
+];
 
 const Sub1 = () => {
-  const listdata = [
-    // 초기 카드 목록
-    // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
-    { tag: true ,tit:'여신상품 리스크관리 담당자',sub1:'Tech', sub2:'경력',dday:'오늘마감'},
-    { tag: true ,tit:'HR 어시스턴트',sub1:'Management', sub2:'인턴',dday:'오늘마감'},
-    { tag: true ,tit:'UX Researcher',sub1:'UX팀', sub2:'경력',dday:'오늘마감'},
-    { tag: true ,tit:'프로덕트 디자이너',sub1:'UX팀', sub2:'경력',dday:'D-14'},
-    { tag: false ,tit:'플랫폼 디자이너',sub1:'UX팀', sub2:'경력',dday:'상시채용'},
-    { tag: false ,tit:'GUI 그래픽 디자이너',sub1:'UX팀', sub2:'경력',dday:'상시채용'},
-    { tag: false ,tit:'여신 및 사후 감리 담당자',sub1:'Risk', sub2:'경력',dday:'상시채용'},
-    { tag: false ,tit:'수신상품 기획/운영 담당자 채용',sub1:'Risk', sub2:'경력',dday:'상시채용'},
-    { tag: false ,tit:'여신 및 사후 감리 담당자',sub1:'Risk', sub2:'경력',dday:'지원마감' ,ddayclassName:'day end'},
-    { tag: false ,tit:'데이터플랫폼 엔지니어',sub1:'Risk', sub2:'경력',dday:'지원마감' ,ddayclassName:'day end'},
-    // ... 더 많은 카드들
-  ];
+  const [lists, setLists] = useState(initialListdata);
+  const [searchTerm, setSearchTerm] = useState(""); // 검색어 상태 추가
+  const [selectedJobGroup, setSelectedJobGroup] = useState("");
+  const [selectedCareer, setSelectedCareer] = useState("");
 
   const handleMoreButtonClick = () => {
+    // 더보기 버튼 클릭 시 새로운 카드를 추가하는 함수
+    // 실제 데이터를 추가하는 로직을 구현해야 합니다.
+    const newList = { tag: false, tit: '데이터플랫폼 엔지니어', sub1: 'Risk', sub2: '경력', dday: '지원마감', ddayclassName: 'day end' };
+    setLists([...lists, newList]);
   };
+
+  const handleSearchInputChange = (event) => {
+    setSearchTerm(event.target.value); // 검색어 업데이트
+  };
+
+  const handleJobGroupSelect = (event) => {
+    setSelectedJobGroup(event.target.value);
+  };
+
+  const handleCareerSelect = (event) => {
+    setSelectedCareer(event.target.value);
+  };
+
+  // 검색어와 일치하는 카드들 필터링
+  const filteredLists = lists.filter((list) =>
+    list.tit.toLowerCase().includes(searchTerm.toLowerCase()) &&
+    (selectedJobGroup === "" || list.sub1 === selectedJobGroup) &&
+    (selectedCareer === "" || list.sub2 === selectedCareer)
+  );
 
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
@@ -46,63 +90,38 @@ const Sub1 = () => {
       <div className="inner">
         <div className="formWrap">
           <div className="form-group">
-            <div className="searchwrap">
-              <button className="btn-search-input" type="button">
-                <span className="hide-txt">검색</span>
-                <i className="ico-search-input" aria-hidden="true" />
-              </button>
-              <input className="ui-text" type="text" placeholder="검색" title="검색" />
-            </div>
+            <SearchField title="검색" onChange={handleSearchInputChange} />
           </div>
           <div className="form-group">
-            <div className="selectWrap">
-              <div className="btn-select">
-                <select name id>
-                  <option value>전체직군 (3)</option>
-                  <option value>직군1</option>
-                  <option value>직군2</option>
-                  <option value>직군3</option>
-                </select>
-              </div>
-            </div>
+            <Select options={jobGroupOptionsData} onChange={handleJobGroupSelect} />
           </div>
           <div className="form-group">
-            <div className="selectWrap">
-              <div className="btn-select">
-                <select name id>
-                  <option value>경력</option>
-                  <option value>경력1</option>
-                  <option value>경력2</option>
-                  <option value>경력3</option>
-                </select>
-              </div>
-            </div>
+            <Select options={careerOptionsData} onChange={handleCareerSelect} />
           </div>
         </div>
       </div>
 
       <div className="inner">
         <List>
-          <ListItems listItemHref="/link1">
-          {listdata.map((list, index) => (
-            <ListItemText>              
-              <Box boxclassName="recruit-tit">
-                <TextBox titleClassName="tag">NEW</TextBox> 
-                <TextBox titleClassName="tit">여신상품 리스크관리 담당자</TextBox> 
-              </Box>
-              <Box boxclassName="recruit-cate">
-                  <TextBox>Tech</TextBox> 
-                  <TextBox>경력</TextBox> 
-                </Box>                            
-            </ListItemText>
-            <ListItemText>
-              <TextBox titleClassName="day">오늘마감</TextBox> 
-            </ListItemText>          
-          ))};
-          </ListItems>
+          {filteredLists.map((list, index) => (
+            <ListItem listItemHref="/link1" key={index}>
+              <ListItemText>
+                <Box boxclassName="recruit-tit">
+                  {list.tag ? <TextBox titleClassName="tag">NEW</TextBox> : null}
+                  <TextBox titleClassName="tit">{list.tit}</TextBox>
+                </Box>
+                <Box boxclassName="recruit-cate">
+                  <TextBox>{list.sub1}</TextBox>
+                  <TextBox>{list.sub2}</TextBox>
+                </Box>
+              </ListItemText>
+              <ListItemText>
+                <TextBox titleClassName={list.ddayclassName}>{list.dday}</TextBox>
+              </ListItemText>
+            </ListItem>
+          ))}
         </List>
-        <Button buttonText="더보기" onClick={handleMoreButtonClick}/>
-
+        <Button buttonText="더보기" onClick={handleMoreButtonClick} />
       </div>
     </div>
 

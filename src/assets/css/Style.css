@@ -152,6 +152,18 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;}
 .list-dot li:before {content: '';display: block;position: absolute;top:1rem;left:0;width:0.4rem;height:0.4rem;background: #141414;border-radius: 50%;}
 .list-dot li + li {margin-top: 1.2rem;}
 
+.list-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.list-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
     /* 케이뱅크 사람들의 이야기 */
 .kbank-manWrap {margin-top: 6rem;}
 .column-list {column-count: 2; column-gap: 3rem;margin-bottom: -9rem;}
