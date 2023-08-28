@@ -1,21 +1,48 @@
 import React, { useEffect, useState } from 'react';
-import Title from '../components2/Title'
+import Title from '../components2/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
+import List from '../components2/List';
+import ListItems from '../components2/ListItems';
+import ListItemText from '../components2/ListItemText';
+import TextBox from '../components2/TextBox';
+import Button from '../components2/Button';
+import Box from '../components2/Box';
 
 const Sub1 = () => {
+  const listdata = [
+    // 초기 카드 목록
+    // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
+    { tag: true ,tit:'여신상품 리스크관리 담당자',sub1:'Tech', sub2:'경력',dday:'오늘마감'},
+    { tag: true ,tit:'HR 어시스턴트',sub1:'Management', sub2:'인턴',dday:'오늘마감'},
+    { tag: true ,tit:'UX Researcher',sub1:'UX팀', sub2:'경력',dday:'오늘마감'},
+    { tag: true ,tit:'프로덕트 디자이너',sub1:'UX팀', sub2:'경력',dday:'D-14'},
+    { tag: false ,tit:'플랫폼 디자이너',sub1:'UX팀', sub2:'경력',dday:'상시채용'},
+    { tag: false ,tit:'GUI 그래픽 디자이너',sub1:'UX팀', sub2:'경력',dday:'상시채용'},
+    { tag: false ,tit:'여신 및 사후 감리 담당자',sub1:'Risk', sub2:'경력',dday:'상시채용'},
+    { tag: false ,tit:'수신상품 기획/운영 담당자 채용',sub1:'Risk', sub2:'경력',dday:'상시채용'},
+    { tag: false ,tit:'여신 및 사후 감리 담당자',sub1:'Risk', sub2:'경력',dday:'지원마감' ,ddayclassName:'day end'},
+    { tag: false ,tit:'데이터플랫폼 엔지니어',sub1:'Risk', sub2:'경력',dday:'지원마감' ,ddayclassName:'day end'},
+    // ... 더 많은 카드들
+  ];
+
+  const handleMoreButtonClick = () => {
+  };
+
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
     // 컴포넌트가 언마운트될 때 클린업 함수 설정
     return () => {
       console.log('Component unmounted');
+
     };
   }, []);
   return (
-    <div>
+    <div className="content">
       <div className="inner">
         <Title titleClassName="title1">케이뱅크와 함께<br />더 나은 금융을 만들어갈<br />동료를 기다립니다.</Title>
       </div>
+
       <div className="inner">
         <div className="formWrap">
           <div className="form-group">
@@ -53,186 +80,29 @@ const Sub1 = () => {
           </div>
         </div>
       </div>
+
       <div className="inner">
-        <div className="boardWrap">
-          <ul className="recruit-list">
-            <li>
-              <a href="sub1_view.html">
-                <div className="col-box">
-                  <div className="recruit-tit">
-                    <span className="tag">NEW</span>
-                    <span className="tit">여신상품 리스크관리 담당자</span>
-                  </div>
-                  <div className="recruit-cate">
-                    <span>Tech</span>
-                    <span>경력</span>
-                  </div>
-                </div>
-                <div className="col-box">
-                  <span className="day">오늘마감</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="sub1_view.html">
-                <div className="col-box">
-                  <div className="recruit-tit">
-                    <span className="tag">NEW</span>
-                    <span className="tit">HR 어시스턴트</span>
-                  </div>
-                  <div className="recruit-cate">
-                    <span>Management</span>
-                    <span>인턴</span>
-                  </div>
-                </div>
-                <div className="col-box">
-                  <span className="day">오늘마감</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="sub1_view.html">
-                <div className="col-box">
-                  <div className="recruit-tit">
-                    <span className="tag">NEW</span>
-                    <span className="tit">UX Researcher</span>
-                  </div>
-                  <div className="recruit-cate">
-                    <span>UX팀</span>
-                    <span>경력</span>
-                  </div>
-                </div>
-                <div className="col-box">
-                  <span className="day">D-14</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="sub1_view.html">
-                <div className="col-box">
-                  <div className="recruit-tit">
-                    <span className="tag">NEW</span>
-                    <span className="tit">프로덕트 디자이너</span>
-                  </div>
-                  <div className="recruit-cate">
-                    <span>UX팀</span>
-                    <span>경력</span>
-                  </div>
-                </div>
-                <div className="col-box">
-                  <span className="day">D-14</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="sub1_view.html">
-                <div className="col-box">
-                  <div className="recruit-tit">
-                    {/* <span class="tag">NEW</span> */}
-                    <span className="tit">플랫폼 디자이너</span>
-                  </div>
-                  <div className="recruit-cate">
-                    <span>UX팀</span>
-                    <span>경력</span>
-                  </div>
-                </div>
-                <div className="col-box">
-                  <span className="day">상시채용</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="sub1_view.html">
-                <div className="col-box">
-                  <div className="recruit-tit">
-                    {/* <span class="tag">NEW</span> */}
-                    <span className="tit">GUI 그래픽 디자이너</span>
-                  </div>
-                  <div className="recruit-cate">
-                    <span>UX팀</span>
-                    <span>경력</span>
-                  </div>
-                </div>
-                <div className="col-box">
-                  <span className="day">상시채용</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="sub1_view.html">
-                <div className="col-box">
-                  <div className="recruit-tit">
-                    {/* <span class="tag">NEW</span> */}
-                    <span className="tit">여신 및 사후 감리 담당자</span>
-                  </div>
-                  <div className="recruit-cate">
-                    <span>Risk</span>
-                    <span>경력</span>
-                  </div>
-                </div>
-                <div className="col-box">
-                  <span className="day">상시채용</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="sub1_view.html">
-                <div className="col-box">
-                  <div className="recruit-tit">
-                    {/* <span class="tag">NEW</span> */}
-                    <span className="tit">수신상품 기획/운영 담당자 채용</span>
-                  </div>
-                  <div className="recruit-cate">
-                    <span>Risk</span>
-                    <span>경력</span>
-                  </div>
-                </div>
-                <div className="col-box">
-                  <span className="day end">지원마감</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="sub1_view.html">
-                <div className="col-box">
-                  <div className="recruit-tit">
-                    {/* <span class="tag">NEW</span> */}
-                    <span className="tit">여신 및 사후 감리 담당자</span>
-                  </div>
-                  <div className="recruit-cate">
-                    <span>Risk</span>
-                    <span>경력</span>
-                  </div>
-                </div>
-                <div className="col-box">
-                  <span className="day end">지원마감</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="sub1_view.html">
-                <div className="col-box">
-                  <div className="recruit-tit">
-                    {/* <span class="tag">NEW</span> */}
-                    <span className="tit">데이터플랫폼 엔지니어</span>
-                  </div>
-                  <div className="recruit-cate">
-                    <span>Risk</span>
-                    <span>경력</span>
-                  </div>
-                </div>
-                <div className="col-box">
-                  <span className="day end">지원마감</span>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="btnWrap">
-          <button className="btn-more">
-            <span className="txt">더보기</span>
-          </button>
-        </div>
+        <List>
+          <ListItems listItemHref="/link1">
+          {listdata.map((list, index) => (
+            <ListItemText>              
+              <Box boxclassName="recruit-tit">
+                <TextBox titleClassName="tag">NEW</TextBox> 
+                <TextBox titleClassName="tit">여신상품 리스크관리 담당자</TextBox> 
+              </Box>
+              <Box boxclassName="recruit-cate">
+                  <TextBox>Tech</TextBox> 
+                  <TextBox>경력</TextBox> 
+                </Box>                            
+            </ListItemText>
+            <ListItemText>
+              <TextBox titleClassName="day">오늘마감</TextBox> 
+            </ListItemText>          
+          ))};
+          </ListItems>
+        </List>
+        <Button buttonText="더보기" onClick={handleMoreButtonClick}/>
+
       </div>
     </div>
 

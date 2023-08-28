@@ -18,14 +18,13 @@ const App = () => {
       <BrowserRouter>
         <Link to="/#content" className="skipnav">본문 바로가기</Link>
         <Header />
-        <div id="container" className="content">
+        <div id="container">
           <Routes>
             <Route path="/" exact element={<Main />}></Route>
             <Route path="/sub1" exact element={<Sub1 />}></Route>
             <Route path="/sub2" exact element={<Sub2 />}></Route>
             <Route path="/sub3" exact element={<Sub3 />}></Route>
-            <Route path="/sub4" exact element={<Sub4 />}></Route>
-            <Route path="/sub5" exact element={<Sub5 />}></Route>
+            <Route path="/sub4" exact element={<Sub4 />}></Route>            
           </Routes>
         </div>
         <Footer />

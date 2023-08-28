@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 
-const Title = ({ titleClassName, children }) => {
+const TitleText = ({ titleClassName, children }) => {
     useEffect(() => {
         console.log('Component mounted');
 
@@ -17,4 +17,4 @@ const Title = ({ titleClassName, children }) => {
     );
 };
 
-export default Title;
+export default TitleText;

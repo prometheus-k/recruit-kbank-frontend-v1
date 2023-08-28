@@ -75,7 +75,7 @@ const Main = () => {
     };
   }, []);
   return (
-    <div>
+    <div className="content">
       <section className=''>
         <div className="default_ani">
           <div className="inner">

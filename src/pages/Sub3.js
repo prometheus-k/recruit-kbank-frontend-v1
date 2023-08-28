@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Title from '../components2/Title'
+import Title from '../components2/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 
 const Sub3 = () => {
@@ -13,7 +13,7 @@ const Sub3 = () => {
     };
   }, []);
   return (
-    <div>
+    <div className="content">
       <div className="inner">
         <Title titleClassName="title1">케이뱅크의 베넷핏</Title>
       </div>

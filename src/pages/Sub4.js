@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Title from '../components2/Title'
+import Title from '../components2/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 import { Link } from 'react-router-dom';
 const Sub4 = () => {
@@ -18,8 +18,7 @@ const Sub4 = () => {
     };
   }, []);
   return (
-
-    <div>
+    <div className="content">
       <div className="inner">
         <Title titleClassName="title1">자주 묻는 질문</Title>
       </div>

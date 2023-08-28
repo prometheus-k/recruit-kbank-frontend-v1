@@ -12,7 +12,7 @@ const Sub5 = () => {
     };
   }, []);
   return (
-    <div></div>
+    <div className="content"></div>
 
   );
 }
