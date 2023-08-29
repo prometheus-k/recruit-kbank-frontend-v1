@@ -2,7 +2,7 @@ import React, { useEffect, useState  } from 'react';
 import Title from '../components2/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 import Button from '../components2/Button'
-import Card from '../components2/Card';
+import CardAction from '../components2/CardAction';
 import CardMedia from '../components2/CardMedia';
 import CardContent from '../components2/CardContent';
 import Typography from '../components2/Typography';
@@ -52,13 +52,13 @@ const Sub2 = () => {
           <ul className="column-list">
             {cards.map((card, index) => (
                 <li className="col-box" key={index}>
-                    <Card>
+                    <CardAction>
                         <CardMedia cardImgClassName={card.type} imageSrc={card.imageSrc}></CardMedia>
                         <CardContent>
                             <Typography titleClassName="tit">{card.title}</Typography>
                             <Typography titleClassName="txt">{card.sub}</Typography>
                         </CardContent>
-                    </Card>
+                    </CardAction>
                 </li>
             ))}           
           </ul>

@@ -23,7 +23,7 @@ CardMedia.propTypes = {
     imageSrc: PropTypes.string
 }
 CardMedia.defaultProps = {
-    cardImgClassName: 'type1', // 기본 클래스명 없음
+    cardImgClassName: '', // 기본 클래스명 없음
     imageSrc: 'images/1.png'
 };
 

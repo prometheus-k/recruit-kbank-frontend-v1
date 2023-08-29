@@ -200,7 +200,10 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;}
 .tab-list-col .tab-item + .tab-item {padding-left: 1rem;}
 .tab-list-col .tab-item.active .tab-link {background-color: #0f0060;}
 .tab-list-col .tab-item.active .tab-link .txt {color: #fff;}
-.tab-content {padding-top: 8rem;}
+.tab-content {
+    padding-top: 8rem;
+}
+
 
 .faq-list > li + li {padding-top: 8rem;}
 .faq-list .tit {padding-left: 5rem;position: relative;font-size: 2.6rem;line-height: 3.1rem;font-weight: 700;}
