@@ -9,6 +9,7 @@ import Button from '../components2/Button';
 import Box from '../components2/Box';
 import Select from '../components2/Select'
 import SearchField from '../components2/SearchField';
+import Sub1_view from './Sub1view';
 
 const jobGroupOptionsData = [
   { value: '', label: '전체' },
@@ -84,7 +85,7 @@ const Sub1 = () => {
   return (
     <div className="content">
       <div className="inner">
-        <Title titleClassName="title1">케이뱅크와 함께<br />더 나은 금융을 만들어갈<br />동료를 기다립니다.</Title>
+        <Title titleClassName="title1" titleText="케이뱅크와 함께<br />더 나은 금융을 만들어갈<br />동료를 기다립니다." />
       </div>
 
       <div className="inner">
@@ -104,7 +105,7 @@ const Sub1 = () => {
       <div className="inner">
         <List>
           {filteredLists.map((list, index) => (
-            <ListItem listItemHref="/link1" key={index}>
+            <ListItem listItemTo="/Sub1view" key={index}>
               <ListItemText>
                 <Box boxclassName="recruit-tit">
                   {list.tag ? <TextBox titleClassName="tag">NEW</TextBox> : null}
@@ -121,7 +122,9 @@ const Sub1 = () => {
             </ListItem>
           ))}
         </List>
-        <Button buttonText="더보기" onClick={handleMoreButtonClick} />
+        <div className="btnWrap">
+          <Button buttonText="더보기" onClick={handleMoreButtonClick} />
+        </div>
       </div>
     </div>
 

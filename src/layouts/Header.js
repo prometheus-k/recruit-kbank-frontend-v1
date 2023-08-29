@@ -43,7 +43,7 @@ const Header = () => {
               <li><Link to="/sub2" onClick={handleMenuItemClick}>케이뱅크 이야기</Link></li>
               <li><Link to="/sub3" onClick={handleMenuItemClick}>베네핏</Link></li>
               <li><Link to="/sub4" onClick={handleMenuItemClick}>자주묻는 질문</Link></li>
-              <li><Link to="https://kbank.recruiter.co.kr/app/applicant/myPage/login" >나의 지원현황</Link></li>
+              <li><Link to="https://kbank.recruiter.co.kr/app/applicant/myPage/login" rel="preconnect" >나의 지원현황</Link></li>
             </ul>
           </nav>
         </div>

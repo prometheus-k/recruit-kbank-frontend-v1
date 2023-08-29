@@ -20,7 +20,7 @@ const Sub4 = () => {
   return (
     <div className="content">
       <div className="inner">
-        <Title titleClassName="title1">자주 묻는 질문</Title>
+        <Title titleClassName="title1" titleText="자주 묻는 질문" />
       </div>
       <section>
         <div className="inner">

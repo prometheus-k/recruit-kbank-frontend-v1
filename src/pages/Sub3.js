@@ -89,7 +89,7 @@ const Sub3 = () => {
   return (
     <div className="content">
       <div className="inner">
-        <Title titleClassName="title1">케이뱅크의 베넷핏</Title>
+        <Title titleClassName="title1" titleText="케이뱅크의 베넷핏" />
       </div>
       <section>
         <div className="inner">
@@ -97,31 +97,31 @@ const Sub3 = () => {
             <ul className="row-list">
               <li>
                 <Box boxclassName="tit">일할 땐,<br />일하고 쉴 땐 쉬어요.</Box>
-                <Card cardClassName="item-box">                                 
+                <Card cardClassName="item-box">
                   <CardMedia imageSrc="images/10.png" />
                   <CardList features={cardList1} ></CardList>
-                  </Card>
+                </Card>
               </li>
               <li>
                 <Box boxclassName="tit">나와 소중한 가족까지<br />생각해요.</Box>
-                <Card cardClassName="item-box">                                 
+                <Card cardClassName="item-box">
                   <CardMedia imageSrc="images/10.png" />
                   <CardList features={cardList2} ></CardList>
-                </Card>                
+                </Card>
               </li>
               <li>
                 <Box boxclassName="tit">소통하며<br />함께 성장해요.</Box>
-                <Card cardClassName="item-box">                                 
+                <Card cardClassName="item-box">
                   <CardMedia imageSrc="images/13.png" />
                   <CardList features={cardList3} ></CardList>
-                </Card>                
+                </Card>
               </li>
               <li>
-              <Box boxclassName="tit">개인의 성장을<br />지원해요.</Box>
-                <Card cardClassName="item-box">                                 
+                <Box boxclassName="tit">개인의 성장을<br />지원해요.</Box>
+                <Card cardClassName="item-box">
                   <CardMedia imageSrc="images/13.png" />
                   <CardList features={cardList4} ></CardList>
-                </Card>                 
+                </Card>
               </li>
             </ul>
           </div>
