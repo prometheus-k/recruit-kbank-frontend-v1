@@ -28,6 +28,7 @@ TitleText.propTypes = {
 };
 
 TitleText.defaultProps = {
+    wrapClassName: '',
     titleClassName: '', // 기본 클래스명 없음
 };
 

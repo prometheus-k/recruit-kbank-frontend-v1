@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import Box from '../components2/Box';
+import ErrorBoundary from './ErrorBoundary';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -24,44 +25,14 @@ const Main = () => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
 
-    const elements = document.querySelectorAll('section.scroll-spy');
-    elements.forEach(element => {
-      // 애니메이션 생성
-      gsap.to(element, {
-        opacity: 0,
-        y: 100,
-        duration: 1,
-        scrollTrigger: {
-          trigger: element,
-          toggleActions: "resume pause reset pause",
-          markers: true,
-          start: 'top center', // 시작 지점 설정
-          end: 'bottom center', // 종료 지점 설정
-          scrub: true, // 스크롤 시 애니메이션 효과
-        },
-      });
 
-      gsap.from(element, {
-        opacity: 1,
-        y: 100,
-        duration: 1,
-        scrollTrigger: {
-          trigger: element,
-          toggleActions: "resume pause reset pause",
-          markers: true,
-          start: 'top center', // 시작 지점 설정
-          end: 'bottom center', // 종료 지점 설정
-          scrub: true, // 스크롤 시 애니메이션 효과
-        },
-      });
-    });
 
     // ScrollTrigger를 사용하여 '.inner' 요소에 'active' 클래스 추가
     gsap.utils.toArray('.scroll-item').forEach((element) => {
       gsap.to(element, {
-        scrollTrigger: {          
+        scrollTrigger: {
           trigger: element,
-          start: 'top 70%', // 원하는 스크롤 위치에 맞게 조정
+          start: 'top 60%', // 원하는 스크롤 위치에 맞게 조정
           onEnter: () => {
             const parent = element.closest('.inner');
             if (parent) {
@@ -92,7 +63,7 @@ const Main = () => {
       //     },
       //   }
       // );
-      
+
     });
 
     // const sections = scrollSpySections.current.querySelectorAll('.inner');
@@ -114,7 +85,8 @@ const Main = () => {
     };
   }, []);
   return (
-    <div className="content">
+    <ErrorBoundary>
+      <div className="content">
         <div className="default_ani">
           <div className="inner">
             <div className="titleWrap">
@@ -159,107 +131,107 @@ const Main = () => {
 
         <div className="inner">
           <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
-          <div className="storyWrap">
-            <div className="inner-titleWrap">
-              <h2 className="title2">케이뱅크<br className="m" /> 사람들 이야기</h2>
-              <Link to="#" className="link">사람들의 이야기 자세히 보기 →</Link>
+            <div className="storyWrap">
+              <div className="inner-titleWrap">
+                <h2 className="title2">케이뱅크<br className="m" /> 사람들 이야기</h2>
+                <Link to="#" className="link">사람들의 이야기 자세히 보기 →</Link>
+              </div>
+              <Swiper pagination={true} modules={[Pagination]}
+                className="swiper-container swiper-container swiper-wrapper mySwiper main-story"
+              >
+                <SwiperSlide className="swiper-slide">
+                  <Link to="/">
+                    <div className="swiper-story-img"><img src="images/1.png" alt="" /></div>
+                    <div className="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
+                    <div className="swiper-story-txt2">준법지원팀 / 이강병</div>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
+                  <Link to="/">
+                    <div className="swiper-story-img"><img src="images/10.png" alt="" /></div>
+                    <div className="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
+                    <div className="swiper-story-txt2">준법지원팀 / 이강병</div>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
+                  <Link to="/">
+                    <div className="swiper-story-img"><img src="images/1.png" alt="" /></div>
+                    <div className="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
+                    <div className="swiper-story-txt2">준법지원팀 / 이강병</div>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
+                  <Link to="/">
+                    <div className="swiper-story-img"><img src="images/10.png" alt="" /></div>
+                    <div className="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
+                    <div className="swiper-story-txt2">준법지원팀 / 이강병</div>
+                  </Link>
+                </SwiperSlide>
+              </Swiper>
             </div>
-            <Swiper pagination={true} modules={[Pagination]}
-              className="swiper-container swiper-container swiper-wrapper mySwiper main-story"
-            >
-              <SwiperSlide className="swiper-slide">
-                <Link to="/">
-                  <div className="swiper-story-img"><img src="images/1.png" alt="" /></div>
-                  <div className="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                  <div className="swiper-story-txt2">준법지원팀 / 이강병</div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <Link to="/">
-                  <div className="swiper-story-img"><img src="images/10.png" alt="" /></div>
-                  <div className="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                  <div className="swiper-story-txt2">준법지원팀 / 이강병</div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <Link to="/">
-                  <div className="swiper-story-img"><img src="images/1.png" alt="" /></div>
-                  <div className="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                  <div className="swiper-story-txt2">준법지원팀 / 이강병</div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <Link to="/">
-                  <div className="swiper-story-img"><img src="images/10.png" alt="" /></div>
-                  <div className="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                  <div className="swiper-story-txt2">준법지원팀 / 이강병</div>
-                </Link>
-              </SwiperSlide>
-            </Swiper>
-          </div>
           </Box>
         </div>
 
 
         <div className="inner">
-        <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
-          <div className="workbalanceWrap">
-            <div className="inner-titleWrap">
-              <h2 className="title2">케이뱅크는<br />일과 삶의 효율을 추구해요</h2>
-              <Link to="#" className="link">베네핏 자세히 보기 →</Link>
+          <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
+            <div className="workbalanceWrap">
+              <div className="inner-titleWrap">
+                <h2 className="title2">케이뱅크는<br />일과 삶의 효율을 추구해요</h2>
+                <Link to="#" className="link">베네핏 자세히 보기 →</Link>
+              </div>
+              <Swiper pagination={true} modules={[Pagination]}
+                className="swiper-container swiper-container swiper-wrapper mySwiper main-workbalance"
+              >
+                <SwiperSlide className="swiper-slide">
+                  <Link to="/">
+                    <div className="swiper-workbalance-img"><img src="images/10.png" alt="" /></div>
+                    <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
+                    <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
+                  <Link to="/">
+                    <div className="swiper-workbalance-img"><img src="images/11.png" alt="" /></div>
+                    <div className="swiper-workbalance-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
+                    <div className="swiper-workbalance-txt2">준법지원팀 / 이강병</div>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
+                  <Link to="/">
+                    <div className="swiper-workbalance-img"><img src="images/13.png" alt="" /></div>
+                    <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
+                    <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
+                  <Link to="/">
+                    <div className="swiper-workbalance-img"><img src="images/11.png" alt="" /></div>
+                    <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
+                    <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
+                  <Link to="/">
+                    <div className="swiper-workbalance-img"><img src="images/13.png" alt="" /></div>
+                    <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
+                    <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
+                  <Link to="/">
+                    <div className="swiper-workbalance-img"><img src="images/10.png" alt="" /></div>
+                    <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
+                    <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
+                  </Link>
+                </SwiperSlide>
+              </Swiper>
             </div>
-            <Swiper pagination={true} modules={[Pagination]}
-              className="swiper-container swiper-container swiper-wrapper mySwiper main-workbalance"
-            >
-              <SwiperSlide className="swiper-slide">
-                <Link to="/">
-                  <div className="swiper-workbalance-img"><img src="images/10.png" alt="" /></div>
-                  <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
-                  <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <Link to="/">
-                  <div className="swiper-workbalance-img"><img src="images/11.png" alt="" /></div>
-                  <div className="swiper-workbalance-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                  <div className="swiper-workbalance-txt2">준법지원팀 / 이강병</div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <Link to="/">
-                  <div className="swiper-workbalance-img"><img src="images/13.png" alt="" /></div>
-                  <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
-                  <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <Link to="/">
-                  <div className="swiper-workbalance-img"><img src="images/11.png" alt="" /></div>
-                  <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
-                  <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <Link to="/">
-                  <div className="swiper-workbalance-img"><img src="images/13.png" alt="" /></div>
-                  <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
-                  <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <Link to="/">
-                  <div className="swiper-workbalance-img"><img src="images/10.png" alt="" /></div>
-                  <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
-                  <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                </Link>
-              </SwiperSlide>
-            </Swiper>
-          </div>
           </Box>
         </div>
-      
+
         <div className="inner">
-         <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
+          <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
             <div className="recruit-linkWrap">
               <img src="images/9.png" alt="" />
               <div className="txtWrap">
@@ -281,7 +253,8 @@ const Main = () => {
           </div>
         </div>
 
-    </div>
+      </div>
+    </ErrorBoundary>
   );
 }
 

@@ -8,6 +8,8 @@ import Sub2 from './pages/Sub2'
 import Sub3 from './pages/Sub3'
 import Sub4 from './pages/Sub4'
 import Sub1view from './pages/Sub1view'
+import ErrorPage from './pages/ErrorPage'; // 추가
+
 import { useStyleContext } from './components2/StyleContext';
 
 
@@ -27,6 +29,7 @@ const App = () => {
             <Route path="/sub4" exact element={<Sub4 />}></Route>
             <Route path="/sub4" exact element={<Sub4 />}></Route>
             <Route path="/Sub1view" exact element={<Sub1view />}></Route>
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>
         <Footer />
