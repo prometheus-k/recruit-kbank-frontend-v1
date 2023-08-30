@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 import Title from '../components2/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 import List from '../components2/List';
@@ -9,7 +11,6 @@ import Button from '../components2/Button';
 import Box from '../components2/Box';
 import Select from '../components2/Select'
 import SearchField from '../components2/SearchField';
-import Sub1_view from './Sub1view';
 
 const jobGroupOptionsData = [
   { value: '', label: '전체' },
@@ -43,9 +44,14 @@ const initialListdata = [
 
 const Sub1 = () => {
   const [lists, setLists] = useState(initialListdata);
-  const [searchTerm, setSearchTerm] = useState(""); // 검색어 상태 추가
   const [selectedJobGroup, setSelectedJobGroup] = useState("");
   const [selectedCareer, setSelectedCareer] = useState("");
+  
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  
+  const initialSearchTerm = queryParams.get('search') || ''; // URL 쿼리 파라미터에서 검색어 가져오기
+  const [searchTerm, setSearchTerm] = useState(initialSearchTerm); // 검색어 상태 추가
 
   const handleMoreButtonClick = () => {
     // 더보기 버튼 클릭 시 새로운 카드를 추가하는 함수
@@ -55,7 +61,8 @@ const Sub1 = () => {
   };
 
   const handleSearchInputChange = (event) => {
-    setSearchTerm(event.target.value); // 검색어 업데이트
+    const newSearchTerm = event.target.value;
+    setSearchTerm(newSearchTerm); // 검색어 업데이트
   };
 
   const handleJobGroupSelect = (event) => {
@@ -91,7 +98,7 @@ const Sub1 = () => {
       <div className="inner">
         <div className="formWrap">
           <div className="form-group">
-            <SearchField title="검색" onChange={handleSearchInputChange} />
+            <SearchField title="검색" onChange={handleSearchInputChange} value={searchTerm}/>
           </div>
           <div className="form-group">
             <Select options={jobGroupOptionsData} onChange={handleJobGroupSelect} />
@@ -105,13 +112,13 @@ const Sub1 = () => {
       <div className="inner">
         <List>
           {filteredLists.map((list, index) => (
-            <ListItem listItemTo="/Sub1view" key={index}>
+            <ListItem listItemTo={`/Sub1view?search=${encodeURIComponent(searchTerm)}`} key={index}>
               <ListItemText>
-                <Box boxclassName="recruit-tit">
+                <Box boxClassName="recruit-tit">
                   {list.tag ? <TextBox titleClassName="tag">NEW</TextBox> : null}
                   <TextBox titleClassName="tit">{list.tit}</TextBox>
                 </Box>
-                <Box boxclassName="recruit-cate">
+                <Box boxClassName="recruit-cate">
                   <TextBox>{list.sub1}</TextBox>
                   <TextBox>{list.sub2}</TextBox>
                 </Box>

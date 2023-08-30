@@ -96,28 +96,28 @@ const Sub3 = () => {
           <div className="benefitWrap">
             <ul className="row-list">
               <li>
-                <Box boxclassName="tit">일할 땐,<br />일하고 쉴 땐 쉬어요.</Box>
+                <Box boxClassName="tit">일할 땐,<br />일하고 쉴 땐 쉬어요.</Box>
                 <Card cardClassName="item-box">
                   <CardMedia imageSrc="images/10.png" />
                   <CardList features={cardList1} ></CardList>
                 </Card>
               </li>
               <li>
-                <Box boxclassName="tit">나와 소중한 가족까지<br />생각해요.</Box>
+                <Box boxClassName="tit">나와 소중한 가족까지<br />생각해요.</Box>
                 <Card cardClassName="item-box">
                   <CardMedia imageSrc="images/10.png" />
                   <CardList features={cardList2} ></CardList>
                 </Card>
               </li>
               <li>
-                <Box boxclassName="tit">소통하며<br />함께 성장해요.</Box>
+                <Box boxClassName="tit">소통하며<br />함께 성장해요.</Box>
                 <Card cardClassName="item-box">
                   <CardMedia imageSrc="images/13.png" />
                   <CardList features={cardList3} ></CardList>
                 </Card>
               </li>
               <li>
-                <Box boxclassName="tit">개인의 성장을<br />지원해요.</Box>
+                <Box boxClassName="tit">개인의 성장을<br />지원해요.</Box>
                 <Card cardClassName="item-box">
                   <CardMedia imageSrc="images/13.png" />
                   <CardList features={cardList4} ></CardList>

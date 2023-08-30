@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 
-const Box = ({ boxclassName, children }) => {
+const Box = ({ boxClassName, children }) => {
     useEffect(() => {
         console.log('Component mounted');
 
@@ -11,10 +12,19 @@ const Box = ({ boxclassName, children }) => {
     }, []);
 
     return (
-        <div className={boxclassName}> 
+        <div className={boxClassName}> 
             {children}           
         </div>
     );
 };
+
+Box.propTypes = {
+    boxClassName: PropTypes.string,
+};
+
+Box.defaultProps = {
+    boxClassName: 'btn-more', // 기본 클래스명 없음
+};
+
 
 export default Box;

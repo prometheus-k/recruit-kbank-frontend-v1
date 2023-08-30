@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const SearchField = ({ buttonClassName, inputClassName, placeholder, title, onChange }) => {
+const SearchField = ({ buttonClassName, inputClassName, placeholder, title, onChange,value  }) => {
     useEffect(() => {
         console.log('Component mounted');
 
@@ -16,7 +16,7 @@ const SearchField = ({ buttonClassName, inputClassName, placeholder, title, onCh
                 <span className="hide-txt">{title}</span>
                 <i className="ico-search-input" aria-hidden="true" />
             </button>
-            <input className={inputClassName} type="text" placeholder={placeholder} title={title} onChange={onChange} />
+            <input className={inputClassName} type="text" placeholder={placeholder} title={title} onChange={onChange} value={value} />
         </div>
     );
 };
@@ -27,14 +27,15 @@ SearchField.propTypes = {
     placeholder: PropTypes.string,
     title: PropTypes.string,
     onChange: PropTypes.func.isRequired, // 이벤트 핸들러 추가
-
+    value: PropTypes.string,
 };
 
 SearchField.defaultProps = {
     buttonClassName: 'btn-search-input',
     inputClassName: 'ui-text',
     placeholder: '검색',
-    title: '검색'
+    title: '검색',
+    value: ''
 };
 
 export default SearchField;

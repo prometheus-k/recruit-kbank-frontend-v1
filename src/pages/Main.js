@@ -8,6 +8,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
+import Box from '../components2/Box';
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -16,7 +18,7 @@ import 'swiper/css/pagination';
 gsap.registerPlugin(ScrollTrigger);
 
 const Main = () => {
-  //const scrollSpySections = useRef(null);
+  const scrollItems = useRef([]);
 
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
@@ -54,11 +56,47 @@ const Main = () => {
       });
     });
 
+    // ScrollTrigger를 사용하여 '.inner' 요소에 'active' 클래스 추가
+    gsap.utils.toArray('.scroll-item').forEach((element) => {
+      gsap.to(element, {
+        scrollTrigger: {          
+          trigger: element,
+          start: 'top 70%', // 원하는 스크롤 위치에 맞게 조정
+          onEnter: () => {
+            const parent = element.closest('.inner');
+            if (parent) {
+              parent.classList.remove('unactive');
+              parent.classList.add('active');
+            }
+          },
+          onLeaveBack: () => {
+            const parent = element.closest('.inner');
+            if (parent) {
+              parent.classList.add('unactive');
+              parent.classList.remove('active');
+            }
+          },
+        },
+      });
 
+      // gsap.fromTo(
+      //   element,
+      //   { opacity: 0, y: 40 },
+      //   {
+      //     opacity: 2,
+      //     y: 0,
+      //     scrollTrigger: {
+      //       trigger: element,         
+      //       end: 'bottom 40%',
+      //       scrub: true,
+      //     },
+      //   }
+      // );
+      
+    });
 
-    // const sections = scrollSpySections.current.querySelectorAll('.scroll-spy');
-    // sections.array.forEach(element => {
-
+    // const sections = scrollSpySections.current.querySelectorAll('.inner');
+    //   sections.array.forEach(element => {
     // });
 
     const handleScroll = _.throttle(() => {
@@ -72,11 +110,11 @@ const Main = () => {
     return () => {
       console.log('Component unmounted');
       window.removeEventListener('scroll', handleScroll);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
   return (
     <div className="content">
-      <section className=''>
         <div className="default_ani">
           <div className="inner">
             <div className="titleWrap">
@@ -118,10 +156,9 @@ const Main = () => {
             </div>
           </div>
         </div>
-      </section>
 
-      <section className=''>
         <div className="inner">
+          <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
           <div className="storyWrap">
             <div className="inner-titleWrap">
               <h2 className="title2">케이뱅크<br className="m" /> 사람들 이야기</h2>
@@ -160,11 +197,12 @@ const Main = () => {
               </SwiperSlide>
             </Swiper>
           </div>
+          </Box>
         </div>
-      </section>
 
-      <section className=''>
+
         <div className="inner">
+        <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
           <div className="workbalanceWrap">
             <div className="inner-titleWrap">
               <h2 className="title2">케이뱅크는<br />일과 삶의 효율을 추구해요</h2>
@@ -217,20 +255,21 @@ const Main = () => {
               </SwiperSlide>
             </Swiper>
           </div>
+          </Box>
         </div>
-      </section>
-      <section className=''>
+      
         <div className="inner">
-          <div className="recruit-linkWrap">
-            <img src="images/9.png" alt="" />
-            <div className="txtWrap">
-              <p className="txt">지금 새로운 금융의 여정에<br className="m" /> 합류해 보세요.</p>
-              <Link to="#" className="btn">채용공고 바로가기 →</Link>
+         <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
+            <div className="recruit-linkWrap">
+              <img src="images/9.png" alt="" />
+              <div className="txtWrap">
+                <p className="txt">지금 새로운 금융의 여정에<br className="m" /> 합류해 보세요.</p>
+                <Link to="#" className="btn">채용공고 바로가기 →</Link>
+              </div>
             </div>
-          </div>
+          </Box>
         </div>
-      </section>
-      <section className=''>
+
         <div className="inner">
           <div className="snsWrap">
             <p className="txt">케이뱅크의<br className="m" /> 다양한 소식을 확인해보세요.</p>
@@ -241,7 +280,7 @@ const Main = () => {
             </ul>
           </div>
         </div>
-      </section>
+
     </div>
   );
 }
