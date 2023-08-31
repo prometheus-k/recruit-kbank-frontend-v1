@@ -281,9 +281,9 @@ const Main = () => {
           <div className="snsWrap">
             <p className="txt">케이뱅크의<br className="m" /> 다양한 소식을 확인해보세요.</p>
             <ul>
-              <li><Link to="#"><img src="images/ic_instargram.png" alt="instargram" /></Link></li>
-              <li><Link to="#"><img src="images/ic_facebook.png" alt="facebook" /></Link></li>
-              <li><Link to="#"><img src="images/ic_youtube.png" alt="youtube" /></Link></li>
+              <li><Link to="https://www.instagram.com/kbank_official/"><img src="images/ic_instargram.png" alt="instargram" /></Link></li>
+              <li><Link to="https://ko-kr.facebook.com/kbanknow"><img src="images/ic_facebook.png" alt="facebook" /></Link></li>
+              <li><Link to="https://www.youtube.com/@kbanknow"><img src="images/ic_youtube.png" alt="youtube" /></Link></li>
             </ul>
           </div>
         </div>
