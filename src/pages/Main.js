@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 // Import Swiper React components
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import Box from '../components2/Box';
 import ErrorBoundary from './ErrorBoundary';
 
@@ -136,7 +136,7 @@ const Main = () => {
                 <h2 className="title2">케이뱅크<br className="m" /> 사람들 이야기</h2>
                 <Link to="#" className="link">사람들의 이야기 자세히 보기 →</Link>
               </div>
-              <Swiper pagination={true} modules={[Pagination]}
+              <Swiper pagination={{clickable:true}} modules={[Navigation,Pagination]}
                 className="swiper-container swiper-container swiper-wrapper mySwiper main-story"
               >
                 <SwiperSlide className="swiper-slide">
@@ -236,7 +236,7 @@ const Main = () => {
               <img src="images/9.png" alt="" />
               <div className="txtWrap">
                 <p className="txt">지금 새로운 금융의 여정에<br className="m" /> 합류해 보세요.</p>
-                <Link to="#" className="btn">채용공고 바로가기 →</Link>
+                <Link to="/sub1" className="btn">채용공고 바로가기 →</Link>
               </div>
             </div>
           </Box>

@@ -42,21 +42,26 @@ const Sub2 = () => {
     setCards([...cards, newCard]);
   };
 
-  // ScrollTrigger를 사용하여 '.inner' 요소에 'active' 클래스 추가
+
+  useEffect(() => {
+    // 컴포넌트가 처음 렌더링될 때 실행되는 코드
+    console.log('Component mounted');
+// ScrollTrigger를 사용하여 '.inner' 요소에 'active' 클래스 추가
   gsap.utils.toArray('.scroll-item').forEach((element) => {
     gsap.to(element, {
       scrollTrigger: {
         trigger: element,
         start: 'top 80%', // 원하는 스크롤 위치에 맞게 조정
+        end:'bottom 50%',
         onEnter: () => {
-          const parent = element.closest('.test');
+          const parent = element.closest('.kbank-man-item');
           if (parent) {
             parent.classList.remove('unactive');
             parent.classList.add('active');
           }
         },
         onLeaveBack: () => {
-          const parent = element.closest('.test');
+          const parent = element.closest('.kbank-man-item');
           if (parent) {
             parent.classList.add('unactive');
             parent.classList.remove('active');
@@ -65,11 +70,6 @@ const Sub2 = () => {
       },
     });
   });
-
-  useEffect(() => {
-    // 컴포넌트가 처음 렌더링될 때 실행되는 코드
-    console.log('Component mounted');
-
     // 컴포넌트가 언마운트될 때 클린업 함수 설정
     return () => {
       console.log('Component unmounted');
@@ -87,8 +87,7 @@ const Sub2 = () => {
           <ul className="column-list">
             {cards.map((card, index) => (
               <li className="col-box" key={index}>
-                <div class="test" key={index}>
-                  <CardAction>
+                  <CardAction cardActionClassName="kbank-man-item">
                     <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
                       <CardMedia cardImgClassName={card.type} imageSrc={card.imageSrc}></CardMedia>
                       <CardContent>
@@ -96,8 +95,7 @@ const Sub2 = () => {
                         <Typography titleClassName="txt">{card.sub}</Typography>
                       </CardContent>
                     </Box>
-                  </CardAction>
-                </div>
+                  </CardAction>                
               </li>
             ))}
           </ul>

@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Title from '../components2/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 import Box from '../components2/Box';
 import CardMedia from '../components2/CardMedia';
 import Card from '../components2/Card';
 import CardList from '../components2/CardList'; // FeaturesList 컴포넌트의 경로를 맞게 수정해주세요.
+import TextField from '../components2/TextField';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const cardList1 = [
   {
@@ -76,14 +79,66 @@ const cardList4 = [
   // 다른 특성들도 추가
 ];
 
+const cardLists = [
+  {
+    title: '일할 땐,<br>일하고 쉴 땐 쉬어요.',
+    imageIndex: 10,
+    list: cardList1,
+  },
+  {
+    title: '나와 소중한 가족까지<br>생각해요.',
+    imageIndex: 10,
+    list: cardList2,
+  },
+  {
+    title: '소통하며<br>함께 성장해요.',
+    imageIndex: 13,
+    list: cardList3,
+  },
+  {
+    title: '개인의 성장을<br>지원해요.',
+    imageIndex: 13,
+    list: cardList4,
+  },
+  // ... (다른 cardList들 추가)
+];
+
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Sub3 = () => {
+  const scrollItems = useRef([]);
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
-
+// ScrollTrigger를 사용하여 '.inner' 요소에 'active' 클래스 추가
+gsap.utils.toArray('.scroll-item').forEach((element) => {
+  gsap.to(element, {
+    scrollTrigger: {
+      trigger: element,
+      start: 'top 80%', // 원하는 스크롤 위치에 맞게 조정
+      end:'bottom 50%',
+      onEnter: () => {
+        const parent = element.closest('.animation-item');
+        if (parent) {
+          parent.classList.remove('unactive');
+          parent.classList.add('active');
+        }
+      },
+      onLeaveBack: () => {
+        const parent = element.closest('.animation-item');
+        if (parent) {
+          parent.classList.add('unactive');
+          parent.classList.remove('active');
+        }
+      },
+    },
+  });
+});
     // 컴포넌트가 언마운트될 때 클린업 함수 설정
     return () => {
       console.log('Component unmounted');
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
   return (
@@ -95,34 +150,19 @@ const Sub3 = () => {
         <div className="inner">
           <div className="benefitWrap">
             <ul className="row-list">
-              <li>
-                <Box boxClassName="tit">일할 땐,<br />일하고 쉴 땐 쉬어요.</Box>
-                <Card cardClassName="item-box">
-                  <CardMedia imageSrc="images/10.png" />
-                  <CardList features={cardList1} ></CardList>
-                </Card>
+            {cardLists.map((cardList, index) => (
+              <li key={index}>
+              <Box boxClassName="animation-item">
+                <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
+                  <TextField textClassName="tit" text={cardList.title} />                  
+                  <Card cardClassName="item-box">
+                    <CardMedia imageSrc={`images/${cardList.imageIndex}.png`} />
+                    <CardList features={cardList.list} ></CardList>
+                  </Card>
+                </Box>
+              </Box>
               </li>
-              <li>
-                <Box boxClassName="tit">나와 소중한 가족까지<br />생각해요.</Box>
-                <Card cardClassName="item-box">
-                  <CardMedia imageSrc="images/10.png" />
-                  <CardList features={cardList2} ></CardList>
-                </Card>
-              </li>
-              <li>
-                <Box boxClassName="tit">소통하며<br />함께 성장해요.</Box>
-                <Card cardClassName="item-box">
-                  <CardMedia imageSrc="images/13.png" />
-                  <CardList features={cardList3} ></CardList>
-                </Card>
-              </li>
-              <li>
-                <Box boxClassName="tit">개인의 성장을<br />지원해요.</Box>
-                <Card cardClassName="item-box">
-                  <CardMedia imageSrc="images/13.png" />
-                  <CardList features={cardList4} ></CardList>
-                </Card>
-              </li>
+              ))}             
             </ul>
           </div>
         </div>
