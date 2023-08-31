@@ -26,11 +26,13 @@ const initialCards = [
 
 gsap.registerPlugin(ScrollTrigger);
 
+
 const Sub2 = () => {
   const scrollItems = useRef([]);
   const [cards, setCards] = useState(initialCards);
-
+  const [activeTab, setActiveTab] = useState(0);
   const handleMoreButtonClick = () => {
+    setActiveTab(0);
     // 더보기 버튼 클릭 시 새로운 카드를 추가하는 함수
     // 실제 데이터를 추가하는 로직을 구현해야 합니다.
     const newCard = {
@@ -86,8 +88,8 @@ const Sub2 = () => {
         <div className="kbank-manWrap">
           <ul className="column-list">
             {cards.map((card, index) => (
-              <li className="col-box" key={index}>
-                  <CardAction cardActionClassName="kbank-man-item">
+              <li className="col-box" key={index}>                
+                  <CardAction cardActionClassName={`kbank-man-item ${activeTab === 0 ? 'active' : ''}`}>
                     <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
                       <CardMedia cardImgClassName={card.type} imageSrc={card.imageSrc}></CardMedia>
                       <CardContent>
