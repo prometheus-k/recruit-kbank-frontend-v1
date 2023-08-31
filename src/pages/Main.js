@@ -138,7 +138,21 @@ const Main = () => {
                 <h2 className="title2">케이뱅크<br className="m" /> 사람들 이야기</h2>
                 <Link to="#" className="link">사람들의 이야기 자세히 보기 →</Link>
               </div>
-              <Swiper pagination={{clickable:true}} modules={[Navigation,Pagination]}
+              <Swiper 
+                pagination={{clickable:true}} 
+                modules={[Navigation,Pagination]}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    slidesPerGroup: 1,
+                  },
+                  801: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                    slidesPerGroup: 2,
+                  }
+                }}
                 className="swiper-container swiper-container-horizontal swiper-wrapper mySwiper main-story"
               >
                 <SwiperSlide className="swiper-slide">
@@ -182,7 +196,26 @@ const Main = () => {
                 <h2 className="title2">케이뱅크는<br />일과 삶의 효율을 추구해요</h2>
                 <Link to="#" className="link">베네핏 자세히 보기 →</Link>
               </div>
-              <Swiper pagination={true} modules={[Pagination]}
+              <Swiper 
+                pagination={true} 
+                modules={[Pagination]}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    slidesPerGroup: 1,
+                  },
+                  801: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                    slidesPerGroup: 2,
+                  },
+                  1000: {
+                    slidesPerView: 3,
+                    spaceBetween: 25,
+                    slidesPerGroup: 2,
+                  },
+                }}
                 className="swiper-container swiper-container swiper-wrapper mySwiper main-workbalance"
               >
                 <SwiperSlide className="swiper-slide">
