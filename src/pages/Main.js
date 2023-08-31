@@ -16,6 +16,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import './Main.css'
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Main = () => {
@@ -137,7 +139,7 @@ const Main = () => {
                 <Link to="#" className="link">사람들의 이야기 자세히 보기 →</Link>
               </div>
               <Swiper pagination={{clickable:true}} modules={[Navigation,Pagination]}
-                className="swiper-container swiper-container swiper-wrapper mySwiper main-story"
+                className="swiper-container swiper-container-horizontal swiper-wrapper mySwiper main-story"
               >
                 <SwiperSlide className="swiper-slide">
                   <Link to="/">
