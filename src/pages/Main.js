@@ -153,7 +153,7 @@ const Main = () => {
                     slidesPerGroup: 2,
                   }
                 }}
-                className="swiper-container swiper-container-horizontal swiper-wrapper mySwiper main-story"
+                className="swiper-container swiper-container-horizontal mySwiper main-story"
               >
                 <SwiperSlide className="swiper-slide">
                   <Link to="/">
@@ -216,7 +216,7 @@ const Main = () => {
                     slidesPerGroup: 2,
                   },
                 }}
-                className="swiper-container swiper-container swiper-wrapper mySwiper main-workbalance"
+                className="swiper-container swiper-container-horizontal mySwiper main-workbalance"
               >
                 <SwiperSlide className="swiper-slide">
                   <Link to="/">
