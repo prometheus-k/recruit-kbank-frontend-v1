@@ -7,9 +7,8 @@
 .content .inner.w100 {max-width:100%}
 
 /* header */
-header {display: flex;justify-content: center;width:100%;margin: 0 auto;position:fixed;top: 0; left: 0; z-index: 1; background-color: #fff;}
-header.on {box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);}
-#container{padding-top: 7rem;}
+header {display: flex;justify-content: center;width:100%;margin: 0 auto;position: fixed;top:0;left:0;z-index: 1;background-color: #fff;}
+header.on {box-shadow:0 2px 6px 0 rgba(0, 0, 0, 0.05);}
 .headerWrap {position: relative; width:100%;max-width:119.4rem;height: 7rem; display: flex;justify-content: space-between;align-items: center;padding: 0 2.4rem;z-index: 1;}
 .headerWrap > h1 a {display: block; max-width: 17.4rem;}
 .headerWrap > h1 a img {width:100%;}
@@ -18,6 +17,8 @@ header.on {box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);}
 .headerWrap nav .gnb li a.on,
 .headerWrap nav .gnb.main li a {color: #141414;}
 .headerWrap nav .gnb li + li {padding-left: 5.6rem;}
+
+#container {padding-top: 7rem;}
 
 .m_menu {display: none;}
 
@@ -49,10 +50,10 @@ header.on {box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);}
 .btnWrap.appli {display: flex;width:100%;max-width: 78rem;margin: 10rem auto 0;}
 [class*="btn-appli-"] {flex:1;align-items: center;justify-content: center;height:8rem;background: #f8f8f8;border-radius: 1.6rem;} 
 [class*="btn-appli-"] .txt {font-size: 2rem;line-height: 2.4rem;font-weight: 700;}
-.btn-appli-submit {background: #0f0060;}
+.btn-appli-submit {background: #17008c;} /* FETASK-1078 수정 2023-09-01 */
 .btn-appli-submit .txt {color:#fff}
 .btn-appli-edit {background: #e6ebf5;margin-left: 2rem;}
-.btn-appli-edit .txt {color:#0f0060}
+.btn-appli-edit .txt {color:#17008c} /* FETASK-1078 수정 2023-09-01 */
 
 .btnWrap.list {width:100%;max-width: 78rem;margin: 6rem auto 0;text-align: left;}
 .btn-list .txt {font-size: 2rem;line-height: 2.4rem;font-weight: 500;}
@@ -61,7 +62,6 @@ header.on {box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);}
 /* scroll animation */
 .scroll-item {transform:translateY(4rem);opacity: 0;}
 .active > .scroll-item {animation:fadu-up .6s ease forwards;}
-.unactive > .scroll-item {animation:fadu-down .6s ease forwards;}
 
 .default_ani {transform:translateY(4rem);opacity: 0;animation:fadu-up .6s ease forwards; animation-delay: 0.5s;}
 
@@ -74,7 +74,8 @@ header.on {box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);}
         transform:translateY(0);
         opacity: 1;
     }
-} 
+}
+
 
 @keyframes fadu-down {
     0% {
@@ -152,7 +153,7 @@ header.on {box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);}
 .recruit-list .col-box .day.end {color: #9b9b9b;}
 .recruit-list .recruit-tit {display: flex;align-items: center;}
 .recruit-list .recruit-tit .tit {font-size: 3.2rem;line-height: 3.8rem;font-weight: 700;letter-spacing: -0.1rem;}
-.recruit-list .recruit-tit .tag {width:5.8rem;height: 0;overflow: hidden;padding-top: 3.3rem;overflow: hidden; margin-right: 1.2rem;background: url(../images/img_new_label.png) center center no-repeat;background-size: contain;}
+.recruit-list .recruit-tit .tag {width:5.8rem;height: 0;overflow: hidden;padding-top: 3.3rem;overflow: hidden; margin-right: 1.2rem;background: #e6ebf5 url(../images/img_new_label.png) center center no-repeat;background-size: contain;border-radius: 1rem;} /* FETASK-1078 수정 2023-09-01 */
 .recruit-list .recruit-cate {padding-top: 1.2rem;}
 .recruit-list .recruit-cate span {font-size: 1.8rem;color: #9b9b9b;font-weight: 500;}
 .recruit-list .recruit-cate span + span::before {content: '/'; display: inline;padding: 0 0.5rem 0 0.2rem;}
@@ -167,17 +168,18 @@ header.on {box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);}
 .list-dot li:before {content: '';display: block;position: absolute;top:1rem;left:0;width:0.4rem;height:0.4rem;background: #141414;border-radius: 50%;}
 .list-dot li + li {margin-top: 1.2rem;}
 
+
 .list-item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.list-item.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .list-item.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
 
     /* 케이뱅크 사람들의 이야기 */
 .kbank-manWrap {margin-top: 6rem;}
@@ -213,12 +215,9 @@ header.on {box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);}
 .tab-list-col .tab-link {display:flex;align-items: center; padding:0 2rem;height:5.4rem;background-color: #eee;border-radius: 4rem;}
 .tab-list-col .tab-link .txt {font-size: 2rem;line-height: 2.4rem;color: #a6a6b3;font-weight: 700;}
 .tab-list-col .tab-item + .tab-item {padding-left: 1rem;}
-.tab-list-col .tab-item.active .tab-link {background-color: #0f0060;}
+.tab-list-col .tab-item.active .tab-link {background-color: #17008c;} /* FETASK-1078 수정 2023-09-01 */
 .tab-list-col .tab-item.active .tab-link .txt {color: #fff;}
-.tab-content {
-    padding-top: 8rem;
-}
-
+.tab-content {padding-top: 8rem;}
 
 .faq-list > li + li {padding-top: 8rem;}
 .faq-list .tit {padding-left: 5rem;position: relative;font-size: 2.6rem;line-height: 3.1rem;font-weight: 700;}
@@ -345,7 +344,7 @@ header.on {box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);}
     .boardWrap {margin-top: 3rem;}
     .recruit-list > li:last-child > a {padding-bottom: 0;}
     .recruit-list > li > a {padding: 2rem 0; align-items: center;}
-    .recruit-list .recruit-tit .tag {margin: 0 0 1.2rem; width:4.4rem;padding-top: 2.5rem;background: url(../images/img_new_label_mw.png) center center no-repeat;background-size: contain;}
+    .recruit-list .recruit-tit .tag {margin: 0 0 1.2rem; width:4.4rem;padding-top: 2.5rem;background: #e6ebf5 url(../images/img_new_label_mw.png) center center no-repeat;background-size: contain;border-radius: 0.8rem;} /* FETASK-1078 수정 2023-09-01 */
     .recruit-list .recruit-tit {flex-direction: column;justify-content: flex-start;align-items: flex-start;}
     .recruit-list .recruit-tit .tit {font-size: 2rem;line-height: 2.4rem;}
     .recruit-list .recruit-cate {padding-top: 0.8rem;}
