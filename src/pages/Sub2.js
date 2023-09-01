@@ -30,7 +30,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Sub2 = () => {
   const scrollItems = useRef([]);
   const [cards, setCards] = useState(initialCards);
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(1);
   const handleMoreButtonClick = () => {
     setActiveTab(0);
     // 더보기 버튼 클릭 시 새로운 카드를 추가하는 함수
@@ -48,30 +48,29 @@ const Sub2 = () => {
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
-// ScrollTrigger를 사용하여 '.inner' 요소에 'active' 클래스 추가
-  gsap.utils.toArray('.scroll-item').forEach((element) => {
-    gsap.to(element, {
-      scrollTrigger: {
-        trigger: element,
-        start: 'top 80%', // 원하는 스크롤 위치에 맞게 조정
-        end:'bottom 50%',
-        onEnter: () => {
-          const parent = element.closest('.kbank-man-item');
-          if (parent) {
-            parent.classList.remove('unactive');
-            parent.classList.add('active');
-          }
+    // ScrollTrigger를 사용하여 '.inner' 요소에 'active' 클래스 추가
+    gsap.utils.toArray('.scroll-item').forEach((element) => {
+      gsap.to(element, {
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 80%', // 원하는 스크롤 위치에 맞게 조정
+          onEnter: () => {
+            const parent = element.closest('.kbank-man-item');
+            if (parent) {
+              parent.classList.remove('unactive');
+              parent.classList.add('active');
+            }
+          },
+          onLeaveBack: () => {
+            const parent = element.closest('.kbank-man-item');
+            if (parent) {
+              parent.classList.add('unactive');
+              parent.classList.remove('active');
+            }
+          },
         },
-        onLeaveBack: () => {
-          const parent = element.closest('.kbank-man-item');
-          if (parent) {
-            parent.classList.add('unactive');
-            parent.classList.remove('active');
-          }
-        },
-      },
+      });
     });
-  });
     // 컴포넌트가 언마운트될 때 클린업 함수 설정
     return () => {
       console.log('Component unmounted');
@@ -88,16 +87,16 @@ const Sub2 = () => {
         <div className="kbank-manWrap">
           <ul className="column-list">
             {cards.map((card, index) => (
-              <li className="col-box" key={index}>                
-                  <CardAction cardActionClassName={`kbank-man-item ${activeTab === 0 ? 'active' : ''}`}>
-                    <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
-                      <CardMedia cardImgClassName={card.type} imageSrc={card.imageSrc}></CardMedia>
-                      <CardContent>
-                        <Typography titleClassName="tit">{card.title}</Typography>
-                        <Typography titleClassName="txt">{card.sub}</Typography>
-                      </CardContent>
-                    </Box>
-                  </CardAction>                
+              <li className="col-box" key={index}>
+                <CardAction cardActionClassName={`kbank-man-item ${activeTab === 0 ? 'active' : ''}`}>
+                  <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
+                    <CardMedia cardImgClassName={card.type} imageSrc={card.imageSrc}></CardMedia>
+                    <CardContent>
+                      <Typography titleClassName="tit">{card.title}</Typography>
+                      <Typography titleClassName="txt">{card.sub}</Typography>
+                    </CardContent>
+                  </Box>
+                </CardAction>
               </li>
             ))}
           </ul>

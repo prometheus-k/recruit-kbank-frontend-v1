@@ -23,8 +23,8 @@ import './Main.css'
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Image = React.lazy(() => import ('../components2/Image'));
-const CardMedia = React.lazy(() => import ('../components2/CardMedia'));
+const Image = React.lazy(() => import('../components2/Image'));
+const CardMedia = React.lazy(() => import('../components2/CardMedia'));
 
 const override = {
   display: "block",
@@ -102,7 +102,7 @@ const Main = () => {
     };
   }, []);
   return (
-    <ErrorBoundary>    
+    <ErrorBoundary>
       <div className="content">
         <div className="default_ani">
           <div className="inner">
@@ -112,7 +112,7 @@ const Main = () => {
           </div>
           <div className="inner w100">
             <Box boxClassName="imgWRap">
-              <Suspense fallback={<Loading color={color} loading={loading}/>}>
+              <Suspense fallback={<Loading color={color} loading={loading} />}>
                 <Image src="images/hero_img-2.png" alt="" className="pc-img"></Image>
                 <Image src="images/hero_img_mw.png" alt="" className="m-img"></Image>
               </Suspense>
@@ -155,9 +155,9 @@ const Main = () => {
                 <h2 className="title2">케이뱅크<br className="m" /> 사람들 이야기</h2>
                 <Link to="#" className="link">사람들의 이야기 자세히 보기 →</Link>
               </div>
-              <Swiper 
-                pagination={{clickable:true}} 
-                modules={[Navigation,Pagination]}
+              <Swiper
+                pagination={{ clickable: true }}
+                modules={[Navigation, Pagination]}
                 breakpoints={{
                   768: {
                     slidesPerView: 1,
@@ -174,7 +174,7 @@ const Main = () => {
               >
                 <SwiperSlide className="swiper-slide">
                   <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading}/>}>
+                    <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
                     </Suspense>
                     <Box boxClassName="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
@@ -183,30 +183,30 @@ const Main = () => {
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading}/>}>
+                    <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/2.png"></CardMedia>
                     </Suspense>
                     <Box boxClassName="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
                     <Box boxClassName="swiper-story-txt2">준법지원팀 / 이강병</Box>
-                  </CardAction>                
+                  </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading}/>}>
+                    <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/10.png"></CardMedia>
                     </Suspense>
                     <Box boxClassName="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
                     <Box boxClassName="swiper-story-txt2">준법지원팀 / 이강병</Box>
-                  </CardAction>     
+                  </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading}/>}>
+                    <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
                     </Suspense>
                     <Box boxClassName="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
                     <Box boxClassName="swiper-story-txt2">준법지원팀 / 이강병</Box>
-                  </CardAction>     
+                  </CardAction>
                 </SwiperSlide>
               </Swiper>
             </div>
@@ -221,8 +221,8 @@ const Main = () => {
                 <h2 className="title2">케이뱅크는<br />일과 삶의 효율을 추구해요</h2>
                 <Link to="#" className="link">베네핏 자세히 보기 →</Link>
               </div>
-              <Swiper 
-                pagination={true} 
+              <Swiper
+                pagination={true}
                 modules={[Pagination]}
                 breakpoints={{
                   768: {
@@ -245,7 +245,7 @@ const Main = () => {
               >
                 <SwiperSlide className="swiper-slide">
                   <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading}/>}>
+                    <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/10.png"></CardMedia>
                     </Suspense>
                     <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
@@ -254,7 +254,7 @@ const Main = () => {
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading}/>}>
+                    <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/11.png"></CardMedia>
                     </Suspense>
                     <Box boxClassName="swiper-workbalance-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
@@ -263,7 +263,7 @@ const Main = () => {
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading}/>}>
+                    <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/13.png"></CardMedia>
                     </Suspense>
                     <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
@@ -271,17 +271,17 @@ const Main = () => {
                   </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
-                <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading}/>}>
+                  <CardAction>
+                    <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/11.png"></CardMedia>
                     </Suspense>
                     <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
                     <Box boxClassName="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</Box>
-                  </CardAction>                  
+                  </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading}/>}>
+                    <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/13.png"></CardMedia>
                     </Suspense>
                     <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
@@ -290,7 +290,7 @@ const Main = () => {
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
                   <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading}/>}>
+                    <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/10.png"></CardMedia>
                     </Suspense>
                     <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
