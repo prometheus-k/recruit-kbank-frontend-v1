@@ -7,7 +7,9 @@
 .content .inner.w100 {max-width:100%}
 
 /* header */
-header {display: flex;justify-content: center;width:100%;margin: 0 auto;}
+header {display: flex;justify-content: center;width:100%;margin: 0 auto;position:fixed;top: 0; left: 0; z-index: 1; background-color: #fff;}
+header.on {box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);}
+#container{padding-top: 7rem;}
 .headerWrap {position: relative; width:100%;max-width:119.4rem;height: 7rem; display: flex;justify-content: space-between;align-items: center;padding: 0 2.4rem;z-index: 1;}
 .headerWrap > h1 a {display: block; max-width: 17.4rem;}
 .headerWrap > h1 a img {width:100%;}

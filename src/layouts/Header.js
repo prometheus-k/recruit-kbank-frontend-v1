@@ -4,13 +4,27 @@ import { useStyleContext } from '../components2/StyleContext';
 // import './header.css'; // Footer 컴포넌트의 CSS 파일을 import
 
 const Header = () => {
+  const [isHeaderOn, setIsHeaderOn] = useState(false);
+
+
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
+    const handleScroll = () => {
+      const bodyOffsetTop = document.body.getBoundingClientRect().top;
+      if (window.scrollY > bodyOffsetTop) {
+        setIsHeaderOn(true);
+      } else {
+        setIsHeaderOn(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
 
     // 컴포넌트가 언마운트될 때 클린업 함수 설정
     return () => {
       console.log('Component unmounted');
+      window.removeEventListener('scroll', handleScroll);
+
     };
   }, []);
 
@@ -28,7 +42,7 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className={isHeaderOn ? 'on' : ''}>
       <div className="headerWrap">
         <h1>
           <Link to="/" ><img src="images/logo.png" alt="케이뱅크" /></Link>

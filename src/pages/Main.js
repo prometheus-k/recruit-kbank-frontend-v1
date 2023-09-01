@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 import _ from 'lodash';
@@ -9,6 +9,9 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import Box from '../components2/Box';
+import CardAction from '../components2/CardAction';
+
+
 import ErrorBoundary from './ErrorBoundary';
 
 // Import Swiper styles
@@ -19,6 +22,9 @@ import 'swiper/css/pagination';
 import './Main.css'
 
 gsap.registerPlugin(ScrollTrigger);
+
+const Image = React.lazy(() => import ('../components2/Image'));
+const CardMedia = React.lazy(() => import ('../components2/CardMedia'));
 
 const Main = () => {
   const scrollItems = useRef([]);
@@ -96,10 +102,12 @@ const Main = () => {
             </div>
           </div>
           <div className="inner w100">
-            <div className="imgWRap">
-              <img src="images/hero_img-2.png" alt="" className="pc-img" />
-              <img src="images/hero_img_mw.png" alt="" className="m-img" />
-            </div>
+            <Box boxClassName="imgWRap">
+            <Suspense fallback={<div>Loading...</div>}>
+              <Image src="images/hero_img-2.png" alt="" className="pc-img"></Image>
+              <Image src="images/hero_img_mw.png" alt="" className="m-img"></Image>
+              </Suspense>
+            </Box>
           </div>
           <div className="inner m">
             <div className="textWrap">
@@ -156,32 +164,40 @@ const Main = () => {
                 className="swiper-container swiper-container-horizontal mySwiper main-story"
               >
                 <SwiperSlide className="swiper-slide">
-                  <Link to="/">
-                    <div className="swiper-story-img"><img src="images/1.png" alt="" /></div>
-                    <div className="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                    <div className="swiper-story-txt2">준법지원팀 / 이강병</div>
-                  </Link>
+                  <CardAction>
+                    <Suspense fallback={<div>Loading...</div>}>
+                      <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
+                    </Suspense>
+                    <Box boxClassName="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
+                    <Box boxClassName="swiper-story-txt2">준법지원팀 / 이강병</Box>
+                  </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
-                  <Link to="/">
-                    <div className="swiper-story-img"><img src="images/10.png" alt="" /></div>
-                    <div className="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                    <div className="swiper-story-txt2">준법지원팀 / 이강병</div>
-                  </Link>
+                  <CardAction>
+                    <Suspense fallback={<div>Loading...</div>}>
+                      <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/2.png"></CardMedia>
+                    </Suspense>
+                    <Box boxClassName="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
+                    <Box boxClassName="swiper-story-txt2">준법지원팀 / 이강병</Box>
+                  </CardAction>                
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
-                  <Link to="/">
-                    <div className="swiper-story-img"><img src="images/1.png" alt="" /></div>
-                    <div className="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                    <div className="swiper-story-txt2">준법지원팀 / 이강병</div>
-                  </Link>
+                  <CardAction>
+                    <Suspense fallback={<div>Loading...</div>}>
+                      <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/10.png"></CardMedia>
+                    </Suspense>
+                    <Box boxClassName="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
+                    <Box boxClassName="swiper-story-txt2">준법지원팀 / 이강병</Box>
+                  </CardAction>     
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
-                  <Link to="/">
-                    <div className="swiper-story-img"><img src="images/10.png" alt="" /></div>
-                    <div className="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                    <div className="swiper-story-txt2">준법지원팀 / 이강병</div>
-                  </Link>
+                  <CardAction>
+                    <Suspense fallback={<div>Loading...</div>}>
+                      <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
+                    </Suspense>
+                    <Box boxClassName="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
+                    <Box boxClassName="swiper-story-txt2">준법지원팀 / 이강병</Box>
+                  </CardAction>     
                 </SwiperSlide>
               </Swiper>
             </div>
@@ -219,46 +235,58 @@ const Main = () => {
                 className="swiper-container swiper-container-horizontal mySwiper main-workbalance"
               >
                 <SwiperSlide className="swiper-slide">
-                  <Link to="/">
-                    <div className="swiper-workbalance-img"><img src="images/10.png" alt="" /></div>
-                    <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
-                    <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                  </Link>
+                  <CardAction>
+                    <Suspense fallback={<div>Loading...</div>}>
+                      <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/10.png"></CardMedia>
+                    </Suspense>
+                    <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
+                    <Box boxClassName="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</Box>
+                  </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
-                  <Link to="/">
-                    <div className="swiper-workbalance-img"><img src="images/11.png" alt="" /></div>
-                    <div className="swiper-workbalance-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                    <div className="swiper-workbalance-txt2">준법지원팀 / 이강병</div>
-                  </Link>
+                  <CardAction>
+                    <Suspense fallback={<div>Loading...</div>}>
+                      <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/11.png"></CardMedia>
+                    </Suspense>
+                    <Box boxClassName="swiper-workbalance-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
+                    <Box boxClassName="swiper-workbalance-txt2">준법지원팀 / 이강병</Box>
+                  </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
-                  <Link to="/">
-                    <div className="swiper-workbalance-img"><img src="images/13.png" alt="" /></div>
-                    <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
-                    <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                  </Link>
+                  <CardAction>
+                    <Suspense fallback={<div>Loading...</div>}>
+                      <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/13.png"></CardMedia>
+                    </Suspense>
+                    <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
+                    <Box boxClassName="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</Box>
+                  </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
-                  <Link to="/">
-                    <div className="swiper-workbalance-img"><img src="images/11.png" alt="" /></div>
-                    <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
-                    <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                  </Link>
+                <CardAction>
+                    <Suspense fallback={<div>Loading...</div>}>
+                      <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/11.png"></CardMedia>
+                    </Suspense>
+                    <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
+                    <Box boxClassName="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</Box>
+                  </CardAction>                  
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
-                  <Link to="/">
-                    <div className="swiper-workbalance-img"><img src="images/13.png" alt="" /></div>
-                    <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
-                    <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                  </Link>
+                  <CardAction>
+                    <Suspense fallback={<div>Loading...</div>}>
+                      <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/13.png"></CardMedia>
+                    </Suspense>
+                    <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
+                    <Box boxClassName="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</Box>
+                  </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
-                  <Link to="/">
-                    <div className="swiper-workbalance-img"><img src="images/10.png" alt="" /></div>
-                    <div className="swiper-workbalance-txt1">유연한 자율 출퇴근</div>
-                    <div className="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                  </Link>
+                  <CardAction>
+                    <Suspense fallback={<div>Loading...</div>}>
+                      <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/10.png"></CardMedia>
+                    </Suspense>
+                    <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
+                    <Box boxClassName="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</Box>
+                  </CardAction>
                 </SwiperSlide>
               </Swiper>
             </div>
