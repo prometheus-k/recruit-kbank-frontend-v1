@@ -32,17 +32,17 @@ const Sub4 = () => {
                     <ul className="tab-list-col" role="tablist">
                       <li className={`tab-item ${activeTab === 0 ? 'active' : ''}`}>
                         <Link className="tab-link" to="#none" role="button" onClick={() => handleTabClick(0)}>
-                          <span className="txt">전형안내</span>
+                          <span className="txt">지원관련</span>
                         </Link>
                       </li>
                       <li className={`tab-item ${activeTab === 1 ? 'active' : ''}`}>
                         <Link className="tab-link" to="#none" role="button" onClick={() => handleTabClick(1)}>
-                          <span className="txt">입사지원</span>
+                          <span className="txt">전형관련</span>
                         </Link>
                       </li>
                       <li className={`tab-item ${activeTab === 2 ? 'active' : ''}`}>
                         <Link className="tab-link" to="#none" role="button" onClick={() => handleTabClick(2)}>
-                          <span className="txt">2023 인턴채용</span>
+                          <span className="txt">기타</span>
                         </Link>
                       </li>
                     </ul>
@@ -50,6 +50,30 @@ const Sub4 = () => {
                 </div>
                 <div className="article-component">
                   <div className="tab-content ui-tab-content" style={{ display: activeTab === 0 ? 'block' : 'none' }}>
+                    <ul className="faq-list">
+                      <li>
+                        <div className="tit">누구나 지원이 가능한가요?</div>
+                        <div className="txt">케이뱅크에서는 나이나 성별같은 제한과 차별을 하고 있지 않으며, 누구나 지원가능합니다.</div>
+                      </li>
+                      <li>
+                        <div className="tit">입사지원서 제출 후 수정 및 삭제가 가능한가요?</div>
+                        <div className="txt">1:1 문의하기를 통해 변경 신청을 해주시면 수정 및 삭제를 도와드리고 있습니다.<br />단 지원서 접수기간이 마감된 이후에는 핸드폰 번호/이메일 주소만 수정이 가능합니다.</div>
+                      </li>
+                      <li>
+                        <div className="tit">Recruit 메일로 입사지원서나 포트폴리오를 제출해도 반영이 되나요?</div>
+                        <div className="txt">지원자 간 형평성을 위해, 메일로 접수된 입사지원서나 포트폴리오는 전형 결과에 반영해드리지 않습니다.<br />케이뱅크 인재영입 홈페이지 또는 외부 채용사이트(리멤버,원티드)를 통해서 지원을 부탁드립니다.</div>
+                      </li>
+                      <li>
+                        <div className="tit">불합격 후 재지원 가능 시점은 언제인가요?</div>
+                        <div className="txt">재지원 시점에 대한 별도 제한은 없으며, 불이익 또한 없습니다.</div>
+                      </li>
+                      <li>
+                        <div className="tit">여러 직무에 중복지원이 가능한가요?</div>
+                        <div className="txt">중복지원 가능하며, 중복지원 시 면접전형은 더 적합한 한 개의 분야로 진행이 됩니다.<br />단, 특정 공고에서는 직무 간 중복지원이 불가할 수 있으니 공고 내용을 참고해주시기 바랍니다.</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="tab-content ui-tab-content" style={{ display: activeTab === 1 ? 'block' : 'none' }}>
                     <ul className="faq-list">
                       <li>
                         <div className="tit">평판 조회는 어떻게 되나요?</div>
@@ -82,34 +106,6 @@ const Sub4 = () => {
                         <div className="txt">채용공고의 내용이 이해가 되지 않거나, 다른 문의사항이 있으면 케이뱅크 채용 페이지 내의 Q&amp;A 에 남겨주세요. <br />담당자가 확인 후 답변드리고 있습니다. <br /><br />
                           다만 지원자들간의 공정성을 위해서 게시된 공고 이외의 정보는<br /> 공유되기 어려울 수도 있습니다.
                         </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="tab-content ui-tab-content" style={{ display: activeTab === 1 ? 'block' : 'none' }}>
-                    <ul className="faq-list">
-                      <li>
-                        <div className="tit">누구나 지원이 가능한가요?</div>
-                        <div className="txt">케이뱅크에서는 채용 전형에서 나이나 성별같은 제한과 차별을 하고 있지 않으며 새로운 기술을 통해 금융의 본질에 집중하고 싶은 분이라면 언제나 환영합니다.</div>
-                      </li>
-                      <li>
-                        <div className="tit">누구나 지원이 가능한가요?</div>
-                        <div className="txt">케이뱅크에서는 채용 전형에서 나이나 성별같은 제한과 차별을 하고 있지 않으며 새로운 기술을 통해 금융의 본질에 집중하고 싶은 분이라면 언제나 환영합니다.</div>
-                      </li>
-                      <li>
-                        <div className="tit">누구나 지원이 가능한가요?</div>
-                        <div className="txt">케이뱅크에서는 채용 전형에서 나이나 성별같은 제한과 차별을 하고 있지 않으며 새로운 기술을 통해 금융의 본질에 집중하고 싶은 분이라면 언제나 환영합니다.</div>
-                      </li>
-                      <li>
-                        <div className="tit">누구나 지원이 가능한가요?</div>
-                        <div className="txt">케이뱅크에서는 채용 전형에서 나이나 성별같은 제한과 차별을 하고 있지 않으며 새로운 기술을 통해 금융의 본질에 집중하고 싶은 분이라면 언제나 환영합니다.</div>
-                      </li>
-                      <li>
-                        <div className="tit">누구나 지원이 가능한가요?</div>
-                        <div className="txt">케이뱅크에서는 채용 전형에서 나이나 성별같은 제한과 차별을 하고 있지 않으며 새로운 기술을 통해 금융의 본질에 집중하고 싶은 분이라면 언제나 환영합니다.</div>
-                      </li>
-                      <li>
-                        <div className="tit">누구나 지원이 가능한가요?</div>
-                        <div className="txt">케이뱅크에서는 채용 전형에서 나이나 성별같은 제한과 차별을 하고 있지 않으며 새로운 기술을 통해 금융의 본질에 집중하고 싶은 분이라면 언제나 환영합니다.</div>
                       </li>
                     </ul>
                   </div>
