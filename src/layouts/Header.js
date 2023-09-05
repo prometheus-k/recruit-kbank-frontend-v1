@@ -54,7 +54,7 @@ const Header = () => {
           <nav className={`${isMenuOpen ? 'on' : ''}`}>
             <ul className="gnb main">
               <li><Link to="/sub1" onClick={handleMenuItemClick}>인재영입</Link></li>
-              <li><Link to="https://kbank-recruit.tistory.com/category/Team" onClick={handleMenuItemClick}>케이뱅크 이야기</Link></li>
+              <li><Link to="/sub2" onClick={handleMenuItemClick}>케이뱅크 이야기</Link></li>
               <li><Link to="https://kbank-recruit.tistory.com/category/Tech" onClick={handleMenuItemClick}>Tech 블로그</Link></li>
               <li><Link to="/sub3" onClick={handleMenuItemClick}>베네핏</Link></li>
               <li><Link to="/sub4" onClick={handleMenuItemClick}>자주묻는 질문</Link></li>

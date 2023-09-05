@@ -11,7 +11,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const cardList1 = [
   {
-    title: '유연근무제',
+    title: '시차출근제',
     description: '개인의 라이츠 스타일에 맞게 유연하게 업무시간으로<br />일과 삶의 밸런스를 조절할 수 있어요.',
   },
   {
@@ -19,122 +19,46 @@ const cardList1 = [
     description: '자유롭게 사용할 수 있는 연 3일의 자기계발 휴가제공<br />(단, 하반기 입사자는 미적용)',
   },
   {
-    title: '사내동호회 지원',
-    description: '',
-  },
-  {
-    title: '간식데이',
-    description: '',
-  },
-  {
     title: '경조 휴가',
     description: '기쁜 일은 축하하고, 슬픈 일은<br />위로가 될 수 있도록 경조휴가 지원',
-  },
-  {
-    title: '임직원 휴양소',
-    description: '',
-  },
-  {
-    title: '오프데이',
-    description: '',
-  },
-  {
-    title: '케미데이',
-    description: '',
-  },
-  {
-    title: '로봇커피',
-    description: '',
-  },
-  {
-    title: '무인편의점',
-    description: '',
-  },
-  {
-    title: '안마의자',
-    description: '',
   },
   // 다른 특성들도 추가
 ];
 const cardList2 = [
   {
-    title: '단체보험',
-    description: '',
-  },
-  {
-    title: '건강검진 지원	심리상담 서비스',
-    description: '',
-  },
-  {
     title: '부모님 의료비 지원',
     description: '개인의 라이프 스타일에 맞게 유연하게 업무시간으로<br /> 일과 삶의 밸런스를 조절할 수 있어요.',
   },
   {
-    title: '명절 선물',
-    description: '',
+    title: '건강검진 &amp; 검진휴가 지원',
+    description: '개인의 라이프 스타일에 맞게 유연하게 업무시간으로<br /> 일과 삶의 밸런스를 조절할 수 있어요.',
   },
   {
-    title: '육아휴직 2년',
-    description: '',
+    title: '자녀 교육비 지원',
+    description: '개인의 라이프 스타일에 맞게 유연하게 업무시간으로<br /> 일과 삶의 밸런스를 조절할 수 있어요.',
   },
   {
-    title: '자녀 초등학교 입학선물',
-    description: '',
-  },
-  {
-    title: '자녀 학자금',
-    description: '',
-  },
-  {
-    title: '독감주사 지원',
-    description: '',
-  },
-  {
-    title: '맞춤형 영양제 지원',
-    description: '',
+    title: '육아휴직 2년 제공',
+    description: '법정 육아휴직 1년과<br />케이뱅크 자체 휴직 1년을 더한 통 2년의 육아휴직 제공',
   },
   // 다른 특성들도 추가
 ];
 const cardList3 = [
   {
-    title: '복지포인트 지급',
-    description: '',
+    title: 'Compass Meeting',
+    description: '개인의 라이프 스타일에 맞게 유연하게 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.',
   },
   {
-    title: '자기계발휴가',
-    description: '',
+    title: '부모님 의료지 지원',
+    description: '개인의 라이프 스타일에 맞게 유연하게 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.',
   },
   {
-    title: '통신비 지원',
-    description: '',
+    title: '건강검진 &amp; 검진휴가 지원',
+    description: '개인의 라이프 스타일에 맞게 유연하게 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.',
   },
   {
-    title: '자격증 취득비 지원',
-    description: '',
-  },
-  {
-    title: '추천채용 리워드',
-    description: '',
-  },
-  {
-    title: '외부 교육 및 세미나 지원',
-    description: '',
-  },
-  {
-    title: '도서 구입비 지원',
-    description: '',
-  },
-  {
-    title: '피어 보너스',
-    description: '',
-  },
-  {
-    title: '웰컴키트',
-    description: '',
-  },
-  {
-    title: '기술블로그 지원',
-    description: '',
+    title: '육아휴직 2년 제공',
+    description: '법정 육아휴직 1년과<br />케이뱅크 자체 휴직 1년을 더한 통 2년의 육아휴직 제공',
   },
   // 다른 특성들도 추가
 ];
@@ -167,13 +91,17 @@ const cardLists = [
     list: cardList2,
   },
   {
-    title: '개인의 성장을<br>지원해요.',
+    title: '소통하며<br>함께 성장해요.',
     imageIndex: 13,
     list: cardList3,
   },
+  {
+    title: '개인의 성장을<br>지원해요.',
+    imageIndex: 13,
+    list: cardList4,
+  },
   // ... (다른 cardList들 추가)
 ];
-
 
 gsap.registerPlugin(ScrollTrigger);
 
