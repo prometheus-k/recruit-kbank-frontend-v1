@@ -11,13 +11,13 @@ import Sub1view from './pages/Sub1view'
 import ErrorPage from './pages/ErrorPage'; // 추가
 
 import { useStyleContext } from './components2/StyleContext';
-
+import RouteChangeTracker from "./utils/RouteChangeTracker";
 
 const App = () => {
   const { isCropMode } = useStyleContext();
+  RouteChangeTracker();
   return (
-    <div id="wrap" className={isCropMode ? 'crop' : ''}>
-      <BrowserRouter>
+    <div id="wrap" className={isCropMode ? 'crop' : ''}>      
         <Link to="/#content" className="skipnav">본문 바로가기</Link>
         <Header />
         <div id="container">
@@ -32,8 +32,7 @@ const App = () => {
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>
-        <Footer />
-      </BrowserRouter>
+        <Footer />      
     </div>
   );
 }

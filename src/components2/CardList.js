@@ -2,13 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CardItem from './CardItem'; // FeatureItem 컴포넌트의 경로를 맞게 수정해주세요.
 
-const CardList = ({ features }) => {
+const CardList = ({ className, features }) => {
   return (
-    <div>
+    <div className={className}>
+      <dl>
       {features.map((feature, index) => (
-        <CardItem key={index} title={feature.title} description={feature.description} />
+        <React.Fragment>
+          <dt dangerouslySetInnerHTML={{ __html: feature.title }} />
+          <dd dangerouslySetInnerHTML={{ __html: feature.description }} />
+        </React.Fragment>
       ))}
-    </div>
+      </dl>
+  </div>
   );
 };
 
@@ -19,6 +24,13 @@ CardList.propTypes = {
       description: PropTypes.string.isRequired,
     })
   ).isRequired,
+  className: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
+
+CardList.defaultProps = {
+  className: 'txt-item', // 기본 클래스명 없음
 };
 
 export default CardList;

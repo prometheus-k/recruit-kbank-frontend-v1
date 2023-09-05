@@ -32,12 +32,12 @@ const Sub4 = () => {
                     <ul className="tab-list-col" role="tablist">
                       <li className={`tab-item ${activeTab === 0 ? 'active' : ''}`}>
                         <Link className="tab-link" to="#none" role="button" onClick={() => handleTabClick(0)}>
-                          <span className="txt">지원관련</span>
+                          <span className="txt">지원 관련</span>
                         </Link>
                       </li>
                       <li className={`tab-item ${activeTab === 1 ? 'active' : ''}`}>
                         <Link className="tab-link" to="#none" role="button" onClick={() => handleTabClick(1)}>
-                          <span className="txt">전형관련</span>
+                          <span className="txt">전형 관련</span>
                         </Link>
                       </li>
                       <li className={`tab-item ${activeTab === 2 ? 'active' : ''}`}>
@@ -57,11 +57,11 @@ const Sub4 = () => {
                       </li>
                       <li>
                         <div className="tit">입사지원서 제출 후 수정 및 삭제가 가능한가요?</div>
-                        <div className="txt">1:1 문의하기를 통해 변경 신청을 해주시면 수정 및 삭제를 도와드리고 있습니다.<br />단 지원서 접수기간이 마감된 이후에는 핸드폰 번호/이메일 주소만 수정이 가능합니다.</div>
+                        <div className="txt">1:1 문의하기를 통해 변경 신청을 해주시면 수정 및 삭제를 도와드리고 있습니다.<br />단 지원서 접수기간이 마감된 이후에는 핸드폰 번호/ 이메일 주소만 수정이 가능합니다.</div>
                       </li>
                       <li>
                         <div className="tit">Recruit 메일로 입사지원서나 포트폴리오를 제출해도 반영이 되나요?</div>
-                        <div className="txt">지원자 간 형평성을 위해, 메일로 접수된 입사지원서나 포트폴리오는 전형 결과에 반영해드리지 않습니다.<br />케이뱅크 인재영입 홈페이지 또는 외부 채용사이트(리멤버,원티드)를 통해서 지원을 부탁드립니다.</div>
+                        <div className="txt">지원자 간 형평성을 위해, 메일로 접수된 입사지원서나 포트폴리오는 전형 결과에 반영해드리지 않습니다.<br />케이뱅크 인재영입 홈페이지 또는 외부 채용사이트(리멤버, 원티드)를 통해서 지원을 부탁드립니다.</div>
                       </li>
                       <li>
                         <div className="tit">불합격 후 재지원 가능 시점은 언제인가요?</div>
@@ -76,35 +76,42 @@ const Sub4 = () => {
                   <div className="tab-content ui-tab-content" style={{ display: activeTab === 1 ? 'block' : 'none' }}>
                     <ul className="faq-list">
                       <li>
-                        <div className="tit">평판 조회는 어떻게 되나요?</div>
-                        <div className="txt">2차면접 후 필요한 후보자에 한하여 평판조회 진행됩니다. 평판조회 전 동의서 및 추천인 명단을 작성하시게 되며,<br />지원자 본인이 추천한 인물 및 추천하지 않은 인물에 대해 평판조회를 할 수 있습니다.</div>
+                        <div className="tit">채용 절차는 어떻게 진행되나요?</div>
+                        <div className="txt">기본적으로 서류전형 {'>'} 온라인 인성검사 및 코딩테스트(Tech 직군) {'>'} 면접전형 으로 진행됩니다.	<br />단, 직무에 따라 채용 절차가 상이하니 지원하실 직무의 채용공고 확인을 부탁드립니다.</div>
                       </li>
                       <li>
-                        <div className="tit">채용 프로세스가 궁금해요</div>
-                        <div className="txt">경력직 기준 채용 프로세스는 아래와 같습니다. <br />
-                          ▶ 지원서 접수 → 서류 전형 → 인성검사 및 코딩테스트 → 면접전형 → 처우협의 및 평판조회 → 최종합격 * Tech직군의 경우, <br />온라인 코딩테스트가 진행되며 실무면접 시 해당 내용에 대한 질의응답이 진행됩니다. <br /><br />
-                          * 면접 전형은 1차 실무진 면접과 2차 임원면접으로 진행됩니다. <br />
-                          * 뽑고자 하는 초지션의 특징에 따라 세부 전형 절차가 변경될 수 있으니, 꼭 지원을 희망하는 직무의 모집공고를 확인해주세요.<br /><br />
-                          ※ 입사 전 싱용정보조회 및 KYE(Know Your Employee) 수행 안내임원면접 합격자 대상으로 신용정보조회와 KYE 를 수행하고 있습니다. <br />신용정보조회를 통해 케이뱅크 대출상품 이용이 어려운 등금인 경우, KYE 수행 결과 자금세탁행위의 위험이 높은 것으로 판단될 경우 <br />이후 전형 진행이 어렵습니다.
+                        <div className="tit">코딩테스트는 어떻게 진행되나요?</div>
+                        <div className="txt">코딩테스트는 온라인으로 진행되며, 기간 내 원하시는 때 응시하는 방식입니다.<br />
+                        지원하신 분야에서 주로 사용되는 언어로 출제되며, 1차면접 시 작성하신 코드에 대한 리뷰도 진행됩니다.<br />
+                        단, 인턴의 경우 진행방식이 상이할 수 있으니 채용공고 확인을 부탁드립니다.
                         </div>
                       </li>
                       <li>
-                        <div className="tit">전형 결과는 언제 알 수 있을까요?</div>
-                        <div className="txt">단계별 젼형 결과는 합격/불합격에 관계없이 안내드리고 있으며 최대 한 달의 기간이 소요될 수 있습니다. <br />
-                          결과를 기다리고 계신 모든 분들의 시간을 아끼고자 최선을 다하고 있지만 여러분의 역량을 놓침없이 보고자 신중하게 검토하고 있으니 넓은 마음으로 이해 부탁드립니다.<br /><br />
-                          혹시 한 달이 지나도 결과안내를 받지 못하셨나요?<br />
-                          케이뱅크 채용 페이지 내의 Q&amp;A 혹은 recruit@kbanknow.com 으로 문의 남겨주시면 빠르게 안내 드리겠습니다.
+                        <div className="tit">면접은 어떤 방식으로 진행되나요?</div>
+                        <div className="txt">케이뱅크는 1차면접, 2차면접 모두 비대면으로 진행하고 있으며 화상면접 Tool은 Teams를 사용합니다.<br />
+                        단, 직무에 따라 대면 면접이 진행될 수 있으며 채용담당자가 개별적으로 안내드리고 있습니다.<br />                        
                         </div>
                       </li>
                       <li>
-                        <div className="tit">코딩테스트는 어떤 전형인가요?</div>
-                        <div className="txt">개발/빅데이터 등 Tech 직군을 지원하신 경우 온라인 코딩테스트가 진행됩니다. <br />약 3~4일 정도의 응시기간을 드리며, 기간 내 원하시는 때 응시하여 주세요. 시험에서는 지원하신 분야에서 주로 사용되는 언어가 출제되며, 실무진 면접시 작성하긴 코등네 대한 리뷰도 진행됩니다.
+                        <div className="tit">면접 복장 가이드라인이 있을까요?</div>
+                        <div className="txt">복장은 자율 복장이니 편안한 복장을 입고 참석해주시면 됩니다.<br />면접위원 분들도 캐주얼 복장으로 참석하실 예정입니다.
                         </div>
                       </li>
                       <li>
-                        <div className="tit">보다 상세한 공고 내용이 궁금합니다.</div>
-                        <div className="txt">채용공고의 내용이 이해가 되지 않거나, 다른 문의사항이 있으면 케이뱅크 채용 페이지 내의 Q&amp;A 에 남겨주세요. <br />담당자가 확인 후 답변드리고 있습니다. <br /><br />
-                          다만 지원자들간의 공정성을 위해서 게시된 공고 이외의 정보는<br /> 공유되기 어려울 수도 있습니다.
+                        <div className="tit">각 전형별 결과는 언제 확인할 수 있나요?</div>
+                        <div className="txt">전형별 결과 발표까지 약 1~2주 정도 소요되며, 직무에 따라 최대 한달 정도의 기간이 소요될 수 있습니다.<br />
+                        혹시 한달이 지났는데, 결과 안내를 받지 못한 경우 1:1 문의하기 또는 채용 메일(recruit@kbanknow.com) 을 통해 문의주시면 빠르게 도움드리겠습니다.
+                        </div>
+                      </li>
+                      <li>
+                        <div className="tit">각 전형별 불합격 사유에 대한 피드백을 받을 수 있나요?</div>
+                        <div className="txt">불합격 사유에 대해서 별도의 피드백을 드리고 있지는 않습니다.<br />
+                        </div>
+                      </li>
+                      <li>
+                        <div className="tit">레퍼런스 체크는 어떻게 진행되나요?</div>
+                        <div className="txt">2차면접 합격자 중 필요한 후보자에 한하여 진행하며, 진행 전 지원자의 동의를 받고 진행하고 있습니다.<br />
+                        이후 절차는 채용담당자가 개별적으로 안내드리고 있습니다.
                         </div>
                       </li>
                     </ul>
@@ -112,29 +119,13 @@ const Sub4 = () => {
                   <div className="tab-content ui-tab-content" style={{ display: activeTab === 2 ? 'block' : 'none' }}>
                     <ul className="faq-list">
                       <li>
-                        <div className="tit">중복지원이 가능한가요?</div>
-                        <div className="txt">진행 중인 채용공고 간 중복지원이 가능합니다.<br />단 서류전형 합격 시, 면접전형은 한 개 분야로만 진행이 가능하다는 점 참고해주세요.</div>
+                        <div className="tit">전형 안내메일을 받지 못했는데 어떻게 해야 하나요?</div>
+                        <div className="txt">프로모션함이나 스팸메일함 확인 부탁드리며, 확인되지 않을 경우 1:1 문의하기 또는 채용 메일(recruit@kbanknow.com) 로 연락을 부탁드립니다.</div>
                       </li>
                       <li>
-                        <div className="tit">중복지원이 가능한가요?</div>
-                        <div className="txt">진행 중인 채용공고 간 중복지원이 가능합니다.<br />단 서류전형 합격 시, 면접전형은 한 개 분야로만 진행이 가능하다는 점 참고해주세요.</div>
-                      </li>
-                      <li>
-                        <div className="tit">중복지원이 가능한가요?</div>
-                        <div className="txt">진행 중인 채용공고 간 중복지원이 가능합니다.<br />단 서류전형 합격 시, 면접전형은 한 개 분야로만 진행이 가능하다는 점 참고해주세요.</div>
-                      </li>
-                      <li>
-                        <div className="tit">중복지원이 가능한가요?</div>
-                        <div className="txt">진행 중인 채용공고 간 중복지원이 가능합니다.<br />단 서류전형 합격 시, 면접전형은 한 개 분야로만 진행이 가능하다는 점 참고해주세요.</div>
-                      </li>
-                      <li>
-                        <div className="tit">중복지원이 가능한가요?</div>
-                        <div className="txt">진행 중인 채용공고 간 중복지원이 가능합니다.<br />단 서류전형 합격 시, 면접전형은 한 개 분야로만 진행이 가능하다는 점 참고해주세요.</div>
-                      </li>
-                      <li>
-                        <div className="tit">중복지원이 가능한가요?</div>
-                        <div className="txt">진행 중인 채용공고 간 중복지원이 가능합니다.<br />단 서류전형 합격 시, 면접전형은 한 개 분야로만 진행이 가능하다는 점 참고해주세요.</div>
-                      </li>
+                        <div className="tit">지원서 작성 시 오류가 발생하는 경우 어떻게 해야 하나요?</div>
+                        <div className="txt">1:1 문의하기 또는 채용 메일(recruit@kbanknow.com) 로 문의주시면 도움드리도록 하겠습니다.</div>
+                      </li>                      
                     </ul>
                   </div>
                 </div>
