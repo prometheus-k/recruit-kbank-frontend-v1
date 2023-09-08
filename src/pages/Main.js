@@ -49,7 +49,7 @@ const Main = () => {
       gsap.to(element, {
         scrollTrigger: {
           trigger: element,
-          start: 'top 60%', // 원하는 스크롤 위치에 맞게 조정
+          start: 'top 80%', // 원하는 스크롤 위치에 맞게 조정
           onEnter: () => {
             const parent = element.closest('.inner');
             if (parent) {
