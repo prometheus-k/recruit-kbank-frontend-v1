@@ -58,7 +58,7 @@ const Header = () => {
               <li><Link to="https://kbank-recruit.tistory.com/category/Tech" onClick={handleMenuItemClick}>Tech 블로그</Link></li>
               <li><Link to="/sub3" onClick={handleMenuItemClick}>베네핏</Link></li>
               <li><Link to="/sub4" onClick={handleMenuItemClick}>자주묻는 질문</Link></li>
-              <li><Link to="https://kbank.recruiter.co.kr/app/applicant/myPage/login" rel="preconnect" >나의 지원현황</Link></li>
+              <li><Link to="/sub5" onClick={handleMenuItemClick}>나의 지원현황</Link></li>              
             </ul>
           </nav>
         </div>

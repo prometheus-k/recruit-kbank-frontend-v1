@@ -383,6 +383,13 @@ header.on {box-shadow:0 2px 6px 0 rgba(0, 0, 0, 0.05);}
 
 }
 
+/* 나의 지원현황 */
+.applyWrap {display: flex; align-items: center;justify-content: center; flex-direction: column; height:calc(100vh-35rem);}
+.applyWrap .tit{font-size: 1.8rem;font-weight: 500;color: #141414;}
+.applyWrap .btnWrap{margin-top: 2.4rem;}
+.btn-apply {display: flex;align-items: center;justify-content: center;margin: 0 auto; width: 19rem;padding: 2.4rem 0;background: #17008c;border-radius: 1.6rem; }
+.btn-apply .txt{font-size: 1.6rem;line-height: 2.1rem;font-weight: 700;color: #fff;}
+
 @media screen and (max-width:1000px){
     .main-story .swiper-story-img,
     .main-workbalance .swiper-workbalance-img {padding-top:75.3%}
