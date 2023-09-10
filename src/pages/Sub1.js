@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import Title from '../components2/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
@@ -46,10 +46,10 @@ const Sub1 = () => {
   const [lists, setLists] = useState(initialListdata);
   const [selectedJobGroup, setSelectedJobGroup] = useState("");
   const [selectedCareer, setSelectedCareer] = useState("");
-  
+
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  
+
   const initialSearchTerm = queryParams.get('search') || ''; // URL 쿼리 파라미터에서 검색어 가져오기
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm); // 검색어 상태 추가
 
@@ -98,7 +98,7 @@ const Sub1 = () => {
       <div className="inner">
         <div className="formWrap">
           <div className="form-group">
-            <SearchField title="검색" onChange={handleSearchInputChange} value={searchTerm}/>
+            <SearchField title="검색" onChange={handleSearchInputChange} value={searchTerm} />
           </div>
           <div className="form-group">
             <Select options={jobGroupOptionsData} onChange={handleJobGroupSelect} />

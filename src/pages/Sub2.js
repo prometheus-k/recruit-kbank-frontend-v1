@@ -7,7 +7,6 @@ import CardMedia from '../components2/CardMedia';
 import CardContent from '../components2/CardContent';
 import Typography from '../components2/Typography';
 import Box from '../components2/Box';
-
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -36,7 +35,7 @@ const Sub2 = () => {
     // 더보기 버튼 클릭 시 새로운 카드를 추가하는 함수
     // 실제 데이터를 추가하는 로직을 구현해야 합니다.
     const newCard = {
-      title: '새로운 카드 제목',
+      title: '국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.',
       sub: '새로운 서브 내용',
       imageSrc: 'images/5.png',
       type: 'type2',
@@ -62,11 +61,11 @@ const Sub2 = () => {
             }
           },
           onLeaveBack: () => {
-            const parent = element.closest('.kbank-man-item');
-            if (parent) {
-              parent.classList.add('unactive');
-              parent.classList.remove('active');
-            }
+            // const parent = element.closest('.kbank-man-item');
+            // if (parent) {
+            //   parent.classList.add('unactive');
+            //   parent.classList.remove('active');
+            // }
           },
         },
       });
@@ -88,7 +87,7 @@ const Sub2 = () => {
           <ul className="column-list">
             {cards.map((card, index) => (
               <li className="col-box" key={index}>
-                <CardAction cardActionClassName={`kbank-man-item ${activeTab === 0 ? 'active' : ''}`}>
+                <CardAction linkUrl='/Sub2view' cardActionClassName={`kbank-man-item ${activeTab === 0 ? 'active' : ''}`}>
                   <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
                     <CardMedia cardImgClassName={card.type} imageSrc={card.imageSrc}></CardMedia>
                     <CardContent>

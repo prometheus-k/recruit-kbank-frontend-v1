@@ -58,11 +58,11 @@ const Main = () => {
             }
           },
           onLeaveBack: () => {
-            const parent = element.closest('.inner');
-            if (parent) {
-              parent.classList.add('unactive');
-              parent.classList.remove('active');
-            }
+            // const parent = element.closest('.inner');
+            // if (parent) {
+            //   parent.classList.add('unactive');
+            //   parent.classList.remove('active');
+            // }
           },
         },
       });
@@ -104,6 +104,8 @@ const Main = () => {
   return (
     <ErrorBoundary>
       <div className="content">
+
+        {/* 메인 로고 */}
         <div className="default_ani">
           <div className="inner">
             <div className="titleWrap">
@@ -148,6 +150,7 @@ const Main = () => {
           </div>
         </div>
 
+        {/* 사람들 이야기 */}
         <div className="inner">
           <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
             <div className="storyWrap">
@@ -213,7 +216,11 @@ const Main = () => {
           </Box>
         </div>
 
+        {/* 케미코드  */}
+        <div className="inner">
+        </div>
 
+        {/* 베네핏 */}
         <div className="inner">
           <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
             <div className="workbalanceWrap">
@@ -302,6 +309,7 @@ const Main = () => {
           </Box>
         </div>
 
+        {/* 공고바로가기 */}
         <div className="inner">
           <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
             <div className="recruit-linkWrap">

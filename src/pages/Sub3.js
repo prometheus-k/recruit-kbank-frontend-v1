@@ -110,30 +110,30 @@ const Sub3 = () => {
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
-// ScrollTrigger를 사용하여 '.inner' 요소에 'active' 클래스 추가
-gsap.utils.toArray('.scroll-item').forEach((element) => {
-  gsap.to(element, {
-    scrollTrigger: {
-      trigger: element,
-      start: 'top 80%', // 원하는 스크롤 위치에 맞게 조정
-      end:'bottom 50%',
-      onEnter: () => {
-        const parent = element.closest('.animation-item');
-        if (parent) {
-          parent.classList.remove('unactive');
-          parent.classList.add('active');
-        }
-      },
-      onLeaveBack: () => {
-        const parent = element.closest('.animation-item');
-        if (parent) {
-          parent.classList.add('unactive');
-          parent.classList.remove('active');
-        }
-      },
-    },
-  });
-});
+    // ScrollTrigger를 사용하여 '.inner' 요소에 'active' 클래스 추가
+    gsap.utils.toArray('.scroll-item').forEach((element) => {
+      gsap.to(element, {
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 80%', // 원하는 스크롤 위치에 맞게 조정
+          end: 'bottom 50%',
+          onEnter: () => {
+            const parent = element.closest('.animation-item');
+            if (parent) {
+              parent.classList.remove('unactive');
+              parent.classList.add('active');
+            }
+          },
+          onLeaveBack: () => {
+            // const parent = element.closest('.animation-item');
+            // if (parent) {
+            //   parent.classList.add('unactive');
+            //   parent.classList.remove('active');
+            // }
+          },
+        },
+      });
+    });
     // 컴포넌트가 언마운트될 때 클린업 함수 설정
     return () => {
       console.log('Component unmounted');
@@ -149,20 +149,20 @@ gsap.utils.toArray('.scroll-item').forEach((element) => {
         <div className="inner">
           <div className="benefitWrap">
             <ul className="row-list">
-            {cardLists.map((cardList, index) => (
-              <li key={index}>
-              <Box boxClassName="animation-item">
-                <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
-                  {/* <TextField textClassName="tit" text={cardList.title} /> */}
-                  <div className='tit' dangerouslySetInnerHTML={{ __html: cardList.title }}/>
-                  <Card cardClassName="item-box">
-                    <CardMedia imageSrc={`images/${cardList.imageIndex}.png`} />
-                    <CardList features={cardList.list} ></CardList>
-                  </Card>
-                </Box>
-              </Box>
-              </li>
-              ))}             
+              {cardLists.map((cardList, index) => (
+                <li key={index}>
+                  <Box boxClassName="animation-item">
+                    <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
+                      {/* <TextField textClassName="tit" text={cardList.title} /> */}
+                      <div className='tit' dangerouslySetInnerHTML={{ __html: cardList.title }} />
+                      <Card cardClassName="item-box">
+                        <CardMedia imageSrc={`images/${cardList.imageIndex}.png`} />
+                        <CardList features={cardList.list} ></CardList>
+                      </Card>
+                    </Box>
+                  </Box>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
