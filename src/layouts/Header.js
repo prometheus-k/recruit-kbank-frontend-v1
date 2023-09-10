@@ -45,7 +45,7 @@ const Header = () => {
     <header className={isHeaderOn ? 'on' : ''}>
       <div className="headerWrap">
         <h1>
-          <Link to="/" ><img src="images/logo.png" alt="케이뱅크" /></Link>
+          <Link to="/" ><img src="images/logo.png" alt="케이뱅크" onClick={handleMenuClick} /></Link>
         </h1>
         <div className="gnbWrap">
           <Link to="#" className={`m_menu ${isMenuOpen ? 'on' : ''}`} onClick={handleMenuClick}>
@@ -54,11 +54,11 @@ const Header = () => {
           <nav className={`${isMenuOpen ? 'on' : ''}`}>
             <ul className="gnb main">
               <li><Link to="/sub1" onClick={handleMenuItemClick}>인재영입</Link></li>
-              <li><Link to="/sub2" onClick={handleMenuItemClick}>케이뱅크 이야기</Link></li>              
+              <li><Link to="/sub2" onClick={handleMenuItemClick}>케이뱅크 이야기</Link></li>
               <li><Link to="/sub3" onClick={handleMenuItemClick}>베네핏</Link></li>
               <li><Link to="/sub4" onClick={handleMenuItemClick}>자주묻는 질문</Link></li>
               <li><Link to="/sub5" onClick={handleMenuItemClick}>나의 지원현황</Link></li>
-              <li><Link to="https://kbank-recruit.tistory.com" onClick={handleMenuItemClick}>블로그</Link></li>            
+              <li><Link to="https://kbank-recruit.tistory.com" onClick={handleMenuItemClick}>블로그</Link></li>
             </ul>
           </nav>
         </div>
