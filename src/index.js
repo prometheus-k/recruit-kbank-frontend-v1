@@ -6,7 +6,7 @@ import './assets/css/Common.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StyleProvider } from './components2/StyleContext';
-
+import ScrollTop from './components2/ScrollToTop';
 import ReactGA from "react-ga4";
 
 // 구글 애널리틱스 운영서버만 적용
@@ -19,6 +19,7 @@ root.render(
   <React.StrictMode>
     <StyleProvider>
       <BrowserRouter>
+        <ScrollTop/>
         <App />
       </BrowserRouter>
     </StyleProvider>

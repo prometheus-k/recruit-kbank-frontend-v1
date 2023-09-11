@@ -152,7 +152,7 @@ const Main = () => {
 
         {/* 사람들 이야기 */}
         <div className="inner">
-          <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
+          <Box boxClassName="scroll-item" >
             <div className="storyWrap">
               <div className="inner-titleWrap">
                 <h2 className="title2">케이뱅크<br className="m" /> 사람들 이야기</h2>
@@ -222,7 +222,7 @@ const Main = () => {
 
         {/* 베네핏 */}
         <div className="inner">
-          <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
+          <Box boxClassName="scroll-item" >
             <div className="workbalanceWrap">
               <div className="inner-titleWrap">
                 <h2 className="title2">케이뱅크는<br />일과 삶의 효율을 추구해요</h2>
@@ -311,7 +311,7 @@ const Main = () => {
 
         {/* 공고바로가기 */}
         <div className="inner">
-          <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
+          <Box boxClassName="scroll-item" >
             <div className="recruit-linkWrap">
               <img src="images/9.png" alt="" />
               <div className="txtWrap">

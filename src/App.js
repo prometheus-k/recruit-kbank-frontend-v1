@@ -13,6 +13,7 @@ import Sub2view from './pages/Sub2view'
 import ErrorPage from './pages/ErrorPage'; // 추가
 
 import { useStyleContext } from './components2/StyleContext';
+
 import RouteChangeTracker from "./utils/RouteChangeTracker";
 
 const App = () => {
@@ -23,7 +24,7 @@ const App = () => {
       <Link to="/#content" className="skipnav">본문 바로가기</Link>
       <Header />
       <div id="container">
-        <Routes>
+        <Routes>        
           <Route path="/" exact element={<Main />}></Route>
           <Route path="/sub1" exact element={<Sub1 />}></Route>
           <Route path="/sub2" exact element={<Sub2 />}></Route>
