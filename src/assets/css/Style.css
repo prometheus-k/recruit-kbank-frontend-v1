@@ -91,8 +91,12 @@ header.on {box-shadow:0 2px 6px 0 rgba(0, 0, 0, 0.05);}
 
 /* main */
     /* visual*/
-.imgWRap {margin: 4.6rem 0 4rem;position: relative;/*width:100%;height: 54.5rem;background: url(../images/hero_img-2.png) center center no-repeat;background-size: 100%;*/}
-.imgWRap img.pc-img {width:auto;height:54.5rem;position: relative;transform:translateX(-50%);left:50%}
+    /* 2023-09-12 수정*/
+.imgWRap {margin: 4.6rem 0 4rem;position: relative;}
+.imgWRap::before {content: '';display: block;position: absolute;top: 0;left: 50%;right: 0; bottom: 0; background-color: #100161;z-index: -1;}
+.imgWRap::after {content: '';display: block;position: absolute;top: 0;left: 0;right: calc(50%-72rem); bottom: 0; background:linear-gradient(180deg,#2004b3 73.76%,#1d04a7 91.01%);z-index:-1;}
+.imgWRap img.pc-img {max-width: 144rem;width: auto;position: relative;transform: translateX(-50%);left: 50%;vertical-align: top;}
+
 .imgWRap img.m-img {display:none}
 
     /* story */
