@@ -22,6 +22,7 @@ import 'swiper/css/pagination';
 import './Main.css'
 import hero_img_mw from '../assets/images/hero_img_mw.png';
 import hero_img_pc from '../assets/images/hero_img-2.png';
+import foot_img from '../assets/images/9.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -315,7 +316,7 @@ const Main = () => {
         <div className="inner">
           <Box boxClassName="scroll-item" >
             <div className="recruit-linkWrap">
-              <img src="images/9.png" alt="" />
+              <img src={foot_img} alt="" />
               <div className="txtWrap">
                 <p className="txt">지금 새로운 금융의 여정에<br className="m" /> 합류해 보세요.</p>
                 <Link to="/sub1" className="btn">채용공고 바로가기 →</Link>
