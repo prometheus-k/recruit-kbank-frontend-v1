@@ -20,6 +20,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import './Main.css'
+import hero_img_mw from '../assets/images/hero_img_mw.png';
+import hero_img_pc from '../assets/images/hero_img-2.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -115,8 +117,8 @@ const Main = () => {
           <div className="inner w100">
             <Box boxClassName="imgWRap">
               <Suspense fallback={<Loading color={color} loading={loading} />}>
-                <Image src="images/hero_img-2.png" alt="" className="pc-img"></Image>
-                <Image src="images/hero_img_mw.png" alt="" className="m-img"></Image>
+                <Image src={hero_img_pc} alt="" className="pc-img"></Image>
+                <Image src={hero_img_mw} alt="" className="m-img"></Image>
               </Suspense>
             </Box>
           </div>
