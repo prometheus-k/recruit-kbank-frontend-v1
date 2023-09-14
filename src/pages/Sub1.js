@@ -89,13 +89,13 @@ const Sub1 = () => {
 
     };
   }, []);
-  return (
-    <div className="content">
-      <div className="inner">
+  return (    
+    <Box boxClassName="content">
+      <Box boxClassName="inner">
         <Title titleClassName="title1" titleText="케이뱅크와 함께<br />더 나은 금융을 만들어갈<br />동료를 기다립니다." />
-      </div>
+      </Box>
 
-      <div className="inner">
+      <Box boxClassName="inner">
         <div className="formWrap">
           <div className="form-group">
             <SearchField title="검색" onChange={handleSearchInputChange} value={searchTerm} />
@@ -107,9 +107,9 @@ const Sub1 = () => {
             <Select options={careerOptionsData} onChange={handleCareerSelect} />
           </div>
         </div>
-      </div>
+      </Box>
 
-      <div className="inner">
+      <Box boxClassName="inner">
         <List>
           {filteredLists.map((list, index) => (
             <ListItem listItemTo={`/Sub1view?search=${encodeURIComponent(searchTerm)}`} key={index}>
@@ -132,8 +132,8 @@ const Sub1 = () => {
         <div className="btnWrap">
           <Button buttonText="더보기" onClick={handleMoreButtonClick} />
         </div>
-      </div>
-    </div>
+      </Box>
+    </Box>
 
   );
 }

@@ -78,35 +78,35 @@ const Sub2 = () => {
     };
   }, []);
   return (
-    <div className="content">
-      <div className="inner">
+    <Box boxClassName="content">
+      <Box boxClassName="inner">
         <Title titleClassName="title1" titleText="케이뱅크<br />사람들의 이야기" />
-      </div>
-      <div className="inner">
+      </Box>
+      <Box boxClassName="inner">
         <div className="kbank-manWrap">
           <ul className="column-list">
             {cards.map((card, index) => (
               <li className="col-box" key={index}>
                 <CardAction linkUrl='/Sub2view' cardActionClassName={`kbank-man-item ${activeTab === 0 ? 'active' : ''}`}>
-                  <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
+                  <div className="scroll-item">
                     <CardMedia cardImgClassName={card.type} imageSrc={card.imageSrc}></CardMedia>
                     <CardContent>
                       <Typography titleClassName="tit">{card.title}</Typography>
                       <Typography titleClassName="txt">{card.sub}</Typography>
                     </CardContent>
-                  </Box>
+                  </div>
                 </CardAction>
               </li>
             ))}
           </ul>
         </div>
-      </div>
-      <div className="inner">
+      </Box>
+      <Box boxClassName="inner">
         <div className="btnWrap">
           <Button buttonText="더보기" onClick={handleMoreButtonClick} />
         </div>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }
 

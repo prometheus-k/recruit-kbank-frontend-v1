@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useStyleContext } from '../components/StyleContext';
 // import './header.css'; // Footer 컴포넌트의 CSS 파일을 import
+import Box from '../components/Box';
 
 const Header = () => {
   const [isHeaderOn, setIsHeaderOn] = useState(false);
@@ -43,7 +44,7 @@ const Header = () => {
 
   return (
     <header className={isHeaderOn ? 'on' : ''}>
-      <div className="headerWrap">
+      <Box boxClassName="headerWrap">
         <h1>
           <Link to="/" ><img src="images/logo.png" alt="케이뱅크" onClick={handleMenuClick} /></Link>
         </h1>
@@ -62,7 +63,7 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-      </div>
+      </Box>
     </header>
   );
 }

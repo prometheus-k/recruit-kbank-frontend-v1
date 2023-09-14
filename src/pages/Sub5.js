@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
-import Title from '../components/TitleText'
 import { Link } from 'react-router-dom';
+
+import Title from '../components/TitleText'
+import Box from '../components/Box';
 
 const Sub5 = () => {
   useEffect(() => {
@@ -14,11 +16,11 @@ const Sub5 = () => {
     };
   }, []);
   return (
-    <div className="content">
-      <div className="inner">
+    <Box boxClassName="content">
+      <Box boxClassName="inner">
         <Title titleClassName="title1" titleText="나의 지원현황" />
-      </div>
-      <div className="inner">
+      </Box>
+      <Box boxClassName="inner">
         <div className="applyWrap">
           <p className="tit">지원현황은 PC를 이용해주세요</p>
           <div className="btnWrap">
@@ -29,8 +31,8 @@ const Sub5 = () => {
             </button>
           </div>
         </div>
-      </div>
-    </div>
+      </Box>
+    </Box>
 
   );
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 import Card from '../components/Card';
 import CardList from '../components/CardList';
+import Box from '../components/Box';
 import Button from '../components/Button';
 import Title from '../components/TitleText'
 import { useNavigate,useLocation } from 'react-router-dom';
@@ -29,16 +30,16 @@ const Sub1view = () => {
   }, []);
   return (
 
-    <div className="content">
-      <div className="inner">
+    <Box boxClassName="content">
+      <Box boxClassName="inner">
         <Title titleClassName="title1" wrapClassName="recruit" titleText="프로덕트 디자이너">
           <div className="recruit-cate">
             <span>Tech</span>
             <span>경력</span>
           </div>
         </Title>
-      </div>
-      <div className="inner">
+      </Box>
+      <Box boxClassName="inner">
         <div className="boardWrap">
           <div className="recruit-view">
             {/* 등록영역*/}
@@ -99,8 +100,8 @@ const Sub1view = () => {
         <div className="btnWrap list">
           <Button className="btn-list" spanClassName="txt" buttonText='목록으로 돌아가기' onClick={handleGoBack}></Button>
         </div>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }
 

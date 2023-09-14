@@ -133,34 +133,31 @@ const Sub3 = () => {
     };
   }, []);
   return (
-    <div className="content">
-      <div className="inner">
+    <Box boxClassName="content">
+      <Box boxClassName="inner">
         <Title titleClassName="title1" titleText="케이뱅크의 베넷핏" />
-      </div>
-      <section>
-        <div className="inner">
+      </Box>
+        <Box boxClassName="inner">
           <div className="benefitWrap">
             <ul className="row-list">
               {cardLists.map((cardList, index) => (
                 <li key={index}>
-                  <Box boxClassName="animation-item">
-                    <Box boxClassName="scroll-item" ref={(el) => (scrollItems.current[0] = el)}>
+                  <div className="animation-item">
+                    <div className="scroll-item">
                       {/* <TextField textClassName="tit" text={cardList.title} /> */}
                       <div className='tit' dangerouslySetInnerHTML={{ __html: cardList.title }} />
                       <Card cardClassName="item-box">
                         <CardMedia imageSrc={`images/${cardList.imageIndex}.png`} />
                         <CardList features={cardList.list} ></CardList>
                       </Card>
-                    </Box>
-                  </Box>
+                    </div>
+                  </div>
                 </li>
               ))}
             </ul>
           </div>
-        </div>
-      </section>
-    </div>
-
+        </Box>
+    </Box>
   );
 }
 

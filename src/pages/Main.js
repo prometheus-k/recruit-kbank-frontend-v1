@@ -106,24 +106,23 @@ const Main = () => {
   }, []);
   return (
     <ErrorBoundary>
-      <div className="content">
-
-        {/* 메인 로고 */}
+      <Box boxClassName="content">
         <div className="default_ani">
-          <div className="inner">
+          <Box boxClassName="inner">
             <div className="titleWrap">
               <p className="title1">돈을 모으고, <br className="m" />빌리고,<br className="pc" />불릴 수 있는<br className="m" /> 금융을 만들어요.</p>
             </div>
-          </div>
-          <div className="inner w100">
-            <Box boxClassName="imgWRap">
+          </Box>
+          
+          <Box boxClassName="inner w100">
+            <div className='imgWRap'>
               <Suspense fallback={<Loading color={color} loading={loading} />}>
                 <Image src={hero_img_pc} alt="" className="pc-img"></Image>
                 <Image src={hero_img_mw} alt="" className="m-img"></Image>
               </Suspense>
-            </Box>
-          </div>
-          <div className="inner m">
+            </div>                      
+          </Box>
+          <Box boxClassName="inner m">
             <div className="textWrap">
               <p className="text1">
                 케이뱅크는 구성원들이<br className="m" /> 성장할 다양한 기회와<br />
@@ -136,8 +135,8 @@ const Main = () => {
                 금융권의 미래를<br className="m" /> 함께 만들어갈 여러분의 지원을 기다립니다.
               </p>
             </div>
-          </div>
-          <div className="inner pc">
+          </Box>
+          <Box boxClassName="inner pc">
             <div className="textWrap">
               <p className="text1">
                 케이뱅크는 구성원들이<br className="m" /> 성장할 다양한 기회와<br />
@@ -150,12 +149,12 @@ const Main = () => {
                 금융권의 미래를<br className="m" /> 함께 만들어갈 여러분의 지원을 기다립니다.
               </p>
             </div>
-          </div>
+          </Box>
         </div>
 
         {/* 사람들 이야기 */}
-        <div className="inner">
-          <Box boxClassName="scroll-item" >
+        <Box boxClassName="inner">
+          <div className='scroll-item'>
             <div className="storyWrap">
               <div className="inner-titleWrap">
                 <h2 className="title2">케이뱅크<br className="m" /> 사람들 이야기</h2>
@@ -183,8 +182,8 @@ const Main = () => {
                     <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
                     </Suspense>
-                    <Box boxClassName="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
-                    <Box boxClassName="swiper-story-txt2">준법지원팀 / 이강병</Box>
+                    <div className='swiper-story-txt1'>국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
+                    <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
                   </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
@@ -192,8 +191,8 @@ const Main = () => {
                     <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/2.png"></CardMedia>
                     </Suspense>
-                    <Box boxClassName="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
-                    <Box boxClassName="swiper-story-txt2">준법지원팀 / 이강병</Box>
+                    <div className='swiper-story-txt1'>국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
+                    <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
                   </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
@@ -201,8 +200,8 @@ const Main = () => {
                     <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/10.png"></CardMedia>
                     </Suspense>
-                    <Box boxClassName="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
-                    <Box boxClassName="swiper-story-txt2">준법지원팀 / 이강병</Box>
+                    <div className='swiper-story-txt1'>국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
+                    <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
                   </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
@@ -210,22 +209,22 @@ const Main = () => {
                     <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
                     </Suspense>
-                    <Box boxClassName="swiper-story-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
-                    <Box boxClassName="swiper-story-txt2">준법지원팀 / 이강병</Box>
+                    <div className='swiper-story-txt1'>국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
+                    <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
                   </CardAction>
                 </SwiperSlide>
               </Swiper>
+              </div>
             </div>
-          </Box>
-        </div>
+         </Box>
 
         {/* 케미코드  */}
-        <div className="inner">
-        </div>
+        <Box boxClassName="inner">
+        </Box>
 
         {/* 베네핏 */}
-        <div className="inner">
-          <Box boxClassName="scroll-item" >
+        <Box boxClassName="inner">
+          <div className="scroll-item" >
             <div className="workbalanceWrap">
               <div className="inner-titleWrap">
                 <h2 className="title2">케이뱅크는<br />일과 삶의 효율을 추구해요</h2>
@@ -258,8 +257,8 @@ const Main = () => {
                     <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/10.png"></CardMedia>
                     </Suspense>
-                    <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
-                    <Box boxClassName="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</Box>
+                    <div className='swiper-workbalance-txt1'>유연한 자율 출퇴근</div>
+                    <div className='swiper-workbalance-txt2'>개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
                   </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
@@ -267,8 +266,8 @@ const Main = () => {
                     <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/11.png"></CardMedia>
                     </Suspense>
-                    <Box boxClassName="swiper-workbalance-txt1">국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</Box>
-                    <Box boxClassName="swiper-workbalance-txt2">준법지원팀 / 이강병</Box>
+                    <div className='swiper-workbalance-txt1'>유연한 자율 출퇴근</div>
+                    <div className='swiper-workbalance-txt2'>개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
                   </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
@@ -276,8 +275,8 @@ const Main = () => {
                     <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/13.png"></CardMedia>
                     </Suspense>
-                    <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
-                    <Box boxClassName="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</Box>
+                    <div className='swiper-workbalance-txt1'>유연한 자율 출퇴근</div>
+                    <div className='swiper-workbalance-txt2'>개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
                   </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
@@ -285,8 +284,8 @@ const Main = () => {
                     <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/11.png"></CardMedia>
                     </Suspense>
-                    <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
-                    <Box boxClassName="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</Box>
+                    <div className='swiper-workbalance-txt1'>유연한 자율 출퇴근</div>
+                    <div className='swiper-workbalance-txt2'>개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
                   </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
@@ -294,8 +293,8 @@ const Main = () => {
                     <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/13.png"></CardMedia>
                     </Suspense>
-                    <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
-                    <Box boxClassName="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</Box>
+                    <div className='swiper-workbalance-txt1'>유연한 자율 출퇴근</div>
+                    <div className='swiper-workbalance-txt2'>개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
                   </CardAction>
                 </SwiperSlide>
                 <SwiperSlide className="swiper-slide">
@@ -303,18 +302,18 @@ const Main = () => {
                     <Suspense fallback={<Loading color={color} loading={loading} />}>
                       <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/10.png"></CardMedia>
                     </Suspense>
-                    <Box boxClassName="swiper-workbalance-txt1">유연한 자율 출퇴근</Box>
-                    <Box boxClassName="swiper-workbalance-txt2">개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</Box>
+                    <div className='swiper-workbalance-txt1'>유연한 자율 출퇴근</div>
+                    <div className='swiper-workbalance-txt2'>개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
                   </CardAction>
                 </SwiperSlide>
               </Swiper>
             </div>
-          </Box>
-        </div>
+          </div>
+        </Box>
 
         {/* 공고바로가기 */}
-        <div className="inner">
-          <Box boxClassName="scroll-item" >
+        <Box boxClassName="inner">
+          <div className="scroll-item">
             <div className="recruit-linkWrap">
               <img src={foot_img} alt="" />
               <div className="txtWrap">
@@ -322,10 +321,10 @@ const Main = () => {
                 <Link to="/sub1" className="btn">채용공고 바로가기 →</Link>
               </div>
             </div>
-          </Box>
-        </div>
+          </div>
+        </Box>
 
-        <div className="inner">
+        <Box boxClassName="inner">
           <div className="snsWrap">
             <p className="txt">케이뱅크의<br className="m" /> 다양한 소식을 확인해보세요.</p>
             <ul>
@@ -334,9 +333,9 @@ const Main = () => {
               <li><Link to="https://www.youtube.com/@kbanknow"><img src="images/ic_youtube.png" alt="youtube" /></Link></li>
             </ul>
           </div>
-        </div>
+        </Box>
 
-      </div>
+      </Box>
     </ErrorBoundary>
   );
 }

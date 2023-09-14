@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
+import Box from '../components/Box';
 import Title from '../components/TitleText'
+
 const Sub2view = () => {
 
     useEffect(() => {
@@ -13,13 +14,13 @@ const Sub2view = () => {
     }, []);
     return (
 
-        <div className="content">
-            <div className="inner">
+        <Box boxClassName="content">
+            <Box boxClassName="inner">
                 <Title titleClassName="title1" wrapClassName="recruit" titleText="이야기 상세">
 
                 </Title>
-            </div>
-        </div>
+            </Box>
+        </Box>
     );
 }
 

@@ -23,7 +23,7 @@ Box.propTypes = {
 };
 
 Box.defaultProps = {
-    boxClassName: 'btn-more', // 기본 클래스명 없음
+    boxClassName: '', // 기본 클래스명 없음
 };
 
 

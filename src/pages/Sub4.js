@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Title from '../components/TitleText'
 import FAQList from '../components/FAQList'; // FAQList 컴포넌트의 경로에 따라 수정해주세요.
+import Box from '../components/Box';
 
 const faqData = [
   {
@@ -66,7 +67,7 @@ const faqData = [
     faqs: [
       {
         question: '전형 안내메일을 받지 못했는데 어떻게 해야 하나요?',
-        answer: '프로모션함이나 스팸메일함 확인 부탁드리며, 확인되지 않을 경우 1:1 문의하기 또는 채용 메일(recruit@kbanknow.com) 로 연락을 부탁드립니다.'
+        answer: '프로모션함이나 스팸메일함 확인 부탁드리며, 확인되지 않을 경우 1:1 문의하기 또는 <br />채용 메일(recruit@kbanknow.com) 로 연락을 부탁드립니다.'
       },
       {
         question: '지원서 작성 시 오류가 발생하는 경우 어떻게 해야 하나요?',
@@ -95,19 +96,17 @@ const Sub4 = () => {
   }, []);
 
   return (
-    <div className="content">
-      <div className="inner">
+    <Box boxClassName="content">
+      <Box boxClassName="inner">
         <Title titleClassName="title1" titleText="자주 묻는 질문" />
-      </div>
-      <section>
-        <div className="inner">
-          <div className="faqWrap">
-            {/* 이 부분을 FAQList 컴포넌트로 대체합니다. */}
-            <FAQList faqData={faqData} activeTab={activeTab} handleTabClick={handleTabClick} />
-          </div>
+      </Box>
+      <Box boxClassName="inner">
+        <div className="faqWrap">
+          {/* 이 부분을 FAQList 컴포넌트로 대체합니다. */}
+          <FAQList faqData={faqData} activeTab={activeTab} handleTabClick={handleTabClick} />
         </div>
-      </section>
-    </div>
+      </Box>
+    </Box>
   );
 }
 
