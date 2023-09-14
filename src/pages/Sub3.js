@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import Title from '../components2/TitleText'
+import Title from '../components/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
-import Box from '../components2/Box';
-import CardMedia from '../components2/CardMedia';
-import Card from '../components2/Card';
-import CardList from '../components2/CardList'; // FeaturesList 컴포넌트의 경로를 맞게 수정해주세요.
-import TextField from '../components2/TextField';
+import Box from '../components/Box';
+import CardMedia from '../components/CardMedia';
+import Card from '../components/Card';
+import CardList from '../components/CardList'; // FeaturesList 컴포넌트의 경로를 맞게 수정해주세요.
+import TextField from '../components/TextField';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 

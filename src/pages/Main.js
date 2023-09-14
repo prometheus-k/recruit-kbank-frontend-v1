@@ -9,9 +9,9 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 
-import Box from '../components2/Box';
-import CardAction from '../components2/CardAction';
-import Loading from '../components2/Loading';
+import Box from '../components/Box';
+import CardAction from '../components/CardAction';
+import Loading from '../components/Loading';
 import ErrorBoundary from './ErrorBoundary';
 
 // Import Swiper styles
@@ -26,8 +26,8 @@ import foot_img from '../assets/images/9.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Image = React.lazy(() => import('../components2/Image'));
-const CardMedia = React.lazy(() => import('../components2/CardMedia'));
+const Image = React.lazy(() => import('../components/Image'));
+const CardMedia = React.lazy(() => import('../components/CardMedia'));
 
 const override = {
   display: "block",

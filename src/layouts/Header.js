@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useStyleContext } from '../components2/StyleContext';
+import { useStyleContext } from '../components/StyleContext';
 // import './header.css'; // Footer 컴포넌트의 CSS 파일을 import
 
 const Header = () => {

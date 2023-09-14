@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
-import Title from '../components2/TitleText'
+import Title from '../components/TitleText'
 import { Link } from 'react-router-dom';
 
 const Sub5 = () => {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Title from '../components2/TitleText'
-import FAQList from '../components2/FAQList'; // FAQList 컴포넌트의 경로에 따라 수정해주세요.
+import Title from '../components/TitleText'
+import FAQList from '../components/FAQList'; // FAQList 컴포넌트의 경로에 따라 수정해주세요.
 
 const faqData = [
   {

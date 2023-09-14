@@ -1,12 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
-import Title from '../components2/TitleText'
+import Title from '../components/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
-import Button from '../components2/Button'
-import CardAction from '../components2/CardAction';
-import CardMedia from '../components2/CardMedia';
-import CardContent from '../components2/CardContent';
-import Typography from '../components2/Typography';
-import Box from '../components2/Box';
+import Button from '../components/Button'
+import CardAction from '../components/CardAction';
+import CardMedia from '../components/CardMedia';
+import CardContent from '../components/CardContent';
+import Typography from '../components/Typography';
+import Box from '../components/Box';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 

@@ -12,7 +12,7 @@ import Sub1view from './pages/Sub1view'
 import Sub2view from './pages/Sub2view'
 import ErrorPage from './pages/ErrorPage'; // 추가
 
-import { useStyleContext } from './components2/StyleContext';
+import { useStyleContext } from './components/StyleContext';
 
 import RouteChangeTracker from "./utils/RouteChangeTracker";
 

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
-import Card from '../components2/Card';
-import CardList from '../components2/CardList';
-import Button from '../components2/Button';
-import Title from '../components2/TitleText'
+import Card from '../components/Card';
+import CardList from '../components/CardList';
+import Button from '../components/Button';
+import Title from '../components/TitleText'
 import { useNavigate,useLocation } from 'react-router-dom';
 
 const Sub1view = () => {

@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import Title from '../components2/TitleText'
+import Title from '../components/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
-import List from '../components2/List';
-import ListItem from '../components2/ListItem';
-import ListItemText from '../components2/ListItemText';
-import TextBox from '../components2/TextBox';
-import Button from '../components2/Button';
-import Box from '../components2/Box';
-import Select from '../components2/Select'
-import SearchField from '../components2/SearchField';
+import List from '../components/List';
+import ListItem from '../components/ListItem';
+import ListItemText from '../components/ListItemText';
+import TextBox from '../components/TextBox';
+import Button from '../components/Button';
+import Box from '../components/Box';
+import Select from '../components/Select'
+import SearchField from '../components/SearchField';
 
 const jobGroupOptionsData = [
   { value: '', label: '전체' },

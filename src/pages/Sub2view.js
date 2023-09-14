@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import Title from '../components2/TitleText'
+import Title from '../components/TitleText'
 const Sub2view = () => {
 
     useEffect(() => {
