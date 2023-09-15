@@ -74,22 +74,22 @@ const cardList4 = [
 const cardLists = [
   {
     title: '일할 땐,<br>일하고 쉴 땐 쉬어요.',
-    imageIndex: 10,
+    imageSrc: 'images/benefit_01.jpg',
     list: cardList1,
   },
   {
     title: '나와 소중한 가족까지<br>생각해요.',
-    imageIndex: 10,
+    imageSrc: 'images/benefit_02.jpg',
     list: cardList2,
   },
   {
     title: '소통하며<br>함께해요.',
-    imageIndex: 13,
+    imageSrc: 'images/benefit_03.jpg',
     list: cardList3,
   },
   {
     title: '개인의 성장을<br>지원해요.',
-    imageIndex: 13,
+    imageSrc: 'images/benefit_04.jpg',
     list: cardList4,
   },
   // ... (다른 cardList들 추가)
@@ -147,7 +147,7 @@ const Sub3 = () => {
                       {/* <TextField textClassName="tit" text={cardList.title} /> */}
                       <div className='tit' dangerouslySetInnerHTML={{ __html: cardList.title }} />
                       <Card cardClassName="item-box">
-                        <CardMedia imageSrc={`images/${cardList.imageIndex}.png`} />
+                        <CardMedia imageSrc={cardList.imageSrc} />
                         <CardList features={cardList.list} ></CardList>
                       </Card>
                     </div>

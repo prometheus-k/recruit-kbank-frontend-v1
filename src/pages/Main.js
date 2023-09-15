@@ -6,6 +6,7 @@ import _ from 'lodash';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 
@@ -22,7 +23,7 @@ import 'swiper/css/pagination';
 import './Main.css'
 import hero_img_mw from '../assets/images/hero_img_mw.png';
 import hero_img_pc from '../assets/images/hero_img-2.png';
-import foot_img from '../assets/images/9.png';
+import foot_img from '../assets/images/main_team_join.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
