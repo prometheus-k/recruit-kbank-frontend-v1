@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -36,6 +38,18 @@ const override = {
   borderColor: "D199D0",
 };
 
+const initialMainCards = [
+  // 초기 카드 목록
+  // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
+  { title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_01.jpg', type: 'type1' },
+  { title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_02.jpg', type: 'type3' },
+  { title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_03.jpg', type: 'type2' },
+  { title: '4국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_04.jpg', type: 'type1' },
+  { title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_07.jpg', type: 'type1' },
+  // { title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_08.jpg', type: 'type1' },
+  // { title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_09.jpg', type: 'type1' },
+  // { title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_10.jpg', type: 'type1' },
+];
 
 const Main = () => {
   const scrollItems = useRef([]);
@@ -45,8 +59,6 @@ const Main = () => {
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
-
-
 
     // ScrollTrigger를 사용하여 '.inner' 요소에 'active' 클래스 추가
     gsap.utils.toArray('.scroll-item').forEach((element) => {
@@ -114,14 +126,26 @@ const Main = () => {
               <p className="title1">돈을 모으고, <br className="m" />빌리고,<br className="pc" />불릴 수 있는<br className="m" /> 금융을 만들어요.</p>
             </div>
           </Box>
-          
+
           <Box boxClassName="inner w100">
             <div className='imgWRap'>
-              <Suspense fallback={<Loading color={color} loading={loading} />}>
-                <Image src={hero_img_pc} alt="" className="pc-img"></Image>
-                <Image src={hero_img_mw} alt="" className="m-img"></Image>
-              </Suspense>
-            </div>                      
+              <LazyLoadImage
+                alt=''
+                delayTime={1000}
+                effect="blur"
+                height={'100%'}
+                width={'100%'}
+                src={hero_img_pc}
+                className="pc-img" />
+              <LazyLoadImage
+                alt=''
+                effect="blur"
+                delayTime={1000}
+                height={'100%'}
+                width={'100%'}
+                src={hero_img_mw}
+                className="m-img" />
+            </div>
           </Box>
           <Box boxClassName="inner m">
             <div className="textWrap">
@@ -178,46 +202,19 @@ const Main = () => {
                 }}
                 className="swiper-container swiper-container-horizontal mySwiper main-story"
               >
-                <SwiperSlide className="swiper-slide">
-                  <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading} />}>
-                      <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
-                    </Suspense>
-                    <div className='swiper-story-txt1'>국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                    <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
-                  </CardAction>
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slide">
-                  <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading} />}>
-                      <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/2.png"></CardMedia>
-                    </Suspense>
-                    <div className='swiper-story-txt1'>국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                    <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
-                  </CardAction>
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slide">
-                  <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading} />}>
-                      <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/10.png"></CardMedia>
-                    </Suspense>
-                    <div className='swiper-story-txt1'>국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                    <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
-                  </CardAction>
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slide">
-                  <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading} />}>
-                      <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
-                    </Suspense>
-                    <div className='swiper-story-txt1'>국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.</div>
-                    <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
-                  </CardAction>
-                </SwiperSlide>
+                {initialMainCards.map((card, index) => (
+                  <SwiperSlide className="swiper-slide" key={index}>
+                    <CardAction>
+                      <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia>
+                      <div className='swiper-story-txt1'>{card.title}</div>
+                      <div className='swiper-story-txt2'>{card.sub}</div>
+                    </CardAction>
+                  </SwiperSlide>
+                ))}
               </Swiper>
-              </div>
             </div>
-         </Box>
+          </div>
+        </Box>
 
         {/* 케미코드  */}
         <Box boxClassName="inner">

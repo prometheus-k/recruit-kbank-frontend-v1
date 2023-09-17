@@ -21,7 +21,7 @@ const cardList1 = [
   {
     title: '경조사 지원',
     description: '기쁜 일은 축하하고,슬픈 일은 위로가 될 수 있도록<br />경조금과 경조휴가를 제공해요.',
-  },
+  }
   // 다른 특성들도 추가
 ];
 const cardList2 = [
@@ -51,7 +51,7 @@ const cardList3 = [
   {
     title: '케미데이',
     description: '반기별로 동료들과 실컷 웃고, 맘껏 이야기하고,<br />함께 어울리는 시간을 가져요.',
-  },
+  }
   // 다른 특성들도 추가
 ];
 const cardList4 = [
@@ -66,7 +66,7 @@ const cardList4 = [
   {
     title: '성장지원제도',
     description: '새것을 익히고 성장할 수 있도록 <br />교육 자격증 지원 시스템을 갖추고 있어요',
-  },
+  }
 
   // 다른 특성들도 추가
 ];
@@ -137,26 +137,26 @@ const Sub3 = () => {
       <Box boxClassName="inner">
         <Title titleClassName="title1" titleText="케이뱅크의 베넷핏" />
       </Box>
-        <Box boxClassName="inner">
-          <div className="benefitWrap">
-            <ul className="row-list">
-              {cardLists.map((cardList, index) => (
-                <li key={index}>
-                  <div className="animation-item">
-                    <div className="scroll-item">
-                      {/* <TextField textClassName="tit" text={cardList.title} /> */}
-                      <div className='tit' dangerouslySetInnerHTML={{ __html: cardList.title }} />
-                      <Card cardClassName="item-box">
-                        <CardMedia imageSrc={cardList.imageSrc} />
-                        <CardList features={cardList.list} ></CardList>
-                      </Card>
-                    </div>
+      <Box boxClassName="inner">
+        <div className="benefitWrap">
+          <ul className="row-list">
+            {cardLists.map((cardList, index) => (
+              <li key={index}>
+                <div className="animation-item">
+                  <div className="scroll-item">
+                    {/* <TextField textClassName="tit" text={cardList.title} /> */}
+                    <div className='tit' dangerouslySetInnerHTML={{ __html: cardList.title }} />
+                    <Card cardClassName="item-box">
+                      <CardMedia imageSrc={cardList.imageSrc} />
+                      <CardList features={cardList.list} ></CardList>
+                    </Card>
                   </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Box>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Box>
     </Box>
   );
 }

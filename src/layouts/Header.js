@@ -60,6 +60,7 @@ const Header = () => {
               <li><Link to="/sub4" onClick={handleMenuItemClick}>자주묻는 질문</Link></li>
               <li><Link to="/sub5" onClick={handleMenuItemClick}>나의 지원현황</Link></li>
               <li><Link to="https://kbank-recruit.tistory.com" onClick={handleMenuItemClick}>블로그</Link></li>
+              <li><Link to="ImageTest" onClick={handleMenuItemClick}>테스트</Link></li>
             </ul>
           </nav>
         </div>

@@ -11,6 +11,7 @@ import Sub5 from './pages/Sub5'
 import Sub1view from './pages/Sub1view'
 import Sub2view from './pages/Sub2view'
 import ErrorPage from './pages/ErrorPage'; // 추가
+import ImageTest from './pages/ImageTest'; // 추가
 
 import { useStyleContext } from './components/StyleContext';
 
@@ -24,7 +25,7 @@ const App = () => {
       <Link to="/#content" className="skipnav">본문 바로가기</Link>
       <Header />
       <div id="container">
-        <Routes>        
+        <Routes>
           <Route path="/" exact element={<Main />}></Route>
           <Route path="/sub1" exact element={<Sub1 />}></Route>
           <Route path="/sub2" exact element={<Sub2 />}></Route>
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/sub5" exact element={<Sub5 />}></Route>
           <Route path="/Sub1view" exact element={<Sub1view />}></Route>
           <Route path="/Sub2view" exact element={<Sub2view />}></Route>
+          <Route path="/ImageTest" exact element={<ImageTest />}></Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>

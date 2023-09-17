@@ -26,8 +26,8 @@ const Sub5 = () => {
           <div className="btnWrap">
             <button className="btn-apply">
               <span className="txt">
-              <Link to="https://kbank.recruiter.co.kr/app/applicant/myPage/login" rel="preconnect" >나의 지원현황 조회</Link>
-                </span>
+                <Link to="https://kbank.recruiter.co.kr/app/applicant/myPage/login" rel="preconnect" >나의 지원현황 조회</Link>
+              </span>
             </button>
           </div>
         </div>

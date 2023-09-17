@@ -1,4 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import Title from '../components/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 import Button from '../components/Button'
@@ -7,28 +13,63 @@ import CardMedia from '../components/CardMedia';
 import CardContent from '../components/CardContent';
 import Typography from '../components/Typography';
 import Box from '../components/Box';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 
 const initialCards = [
   // 초기 카드 목록
   // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
-  { title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/1.png', type: 'type1' },
-  { title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/5.png', type: 'type3' },
-  { title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/4.png', type: 'type2' },
-  { title: '4국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/1.png', type: 'type1' },
-  { title: '5국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/5.png', type: 'type3' },
-  { title: '6국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/4.png', type: 'type2' },
-  { title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/1.png', type: 'type1' },
-  // ... 더 많은 카드들
+  { title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_01.jpg', type: 'type1' },
+  { title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_02.jpg', type: 'type3' },
+  { title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_03.jpg', type: 'type2' },
+  { title: '4국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_04.jpg', type: 'type1' },
+  { title: '5국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_05.jpg', type: 'type3' },
+  { title: '6국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_06.jpg', type: 'type2' },
+  // { title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_07.jpg', type: 'type1' },
+  // { title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_08.jpg', type: 'type1' },
+  // { title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_09.jpg', type: 'type1' },
+  // { title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_10.jpg', type: 'type1' },
 ];
+const initialCards2 = [
+  // 초기 카드 목록
+  // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
+  { title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc_main_story_01.jpg', type: 'type1' },
+  { title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc_main_story_02.jpg', type: 'type3' },
+  { title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc_main_story_03.jpg', type: 'type2' },
+  { title: '4국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc_main_story_04.jpg', type: 'type1' },
+  { title: '5국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc_main_story_05.jpg', type: 'type3' },
+  { title: '6국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc_main_story_06.jpg', type: 'type2' },
+  // { title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_07.jpg', type: 'type1' },
+  // { title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_08.jpg', type: 'type1' },
+  // { title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_09.jpg', type: 'type1' },
+  // { title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_10.jpg', type: 'type1' },
+];
+
+const Desktop = () => {
+  const isDesktop = useMediaQuery({ minWidth: 992 })
+  return isDesktop;
+}
+
+const Tablet = () => {
+  const isTablet = useMediaQuery({ maxWidth: 768, maxWidth: 991 })
+  return isTablet;
+}
+const Mobile = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 })
+  return isMobile;
+}
+
+const Default = () => {
+  const isDefault = useMediaQuery({ minWidth: 768 })
+  return isDefault;
+}
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 
 const Sub2 = () => {
   const scrollItems = useRef([]);
-  const [cards, setCards] = useState(initialCards);
+  const [cards, setCards] = useState(Mobile() ? initialCards : initialCards2);
   const [activeTab, setActiveTab] = useState(1);
   const handleMoreButtonClick = () => {
     setActiveTab(0);
