@@ -130,8 +130,7 @@ const Main = () => {
           <Box boxClassName="inner w100">
             <div className='imgWRap'>
               <LazyLoadImage
-                alt=''
-                delayTime={300}
+                alt=''                
                 effect="blur"
                 height={'100%'}
                 width={'100%'}
@@ -139,8 +138,7 @@ const Main = () => {
                 className="pc-img" />
               <LazyLoadImage
                 alt=''
-                effect="blur"
-                delayTime={300}
+                effect="blur"                
                 height={'100%'}
                 width={'100%'}
                 src={hero_img_mw}
