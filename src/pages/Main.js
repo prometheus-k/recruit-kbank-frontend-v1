@@ -131,7 +131,7 @@ const Main = () => {
             <div className='imgWRap'>
               <LazyLoadImage
                 alt=''
-                delayTime={1000}
+                delayTime={300}
                 effect="blur"
                 height={'100%'}
                 width={'100%'}
@@ -140,7 +140,7 @@ const Main = () => {
               <LazyLoadImage
                 alt=''
                 effect="blur"
-                delayTime={1000}
+                delayTime={300}
                 height={'100%'}
                 width={'100%'}
                 src={hero_img_mw}
