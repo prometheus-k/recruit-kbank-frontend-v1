@@ -80,7 +80,7 @@ const Main = () => {
   let [color, setColor] = useState("#D199D0");
   const [bigBanner, setBigBanner] = useState(Mobile() ? hero_img_mw : hero_img_pc);
   const [bigBannerClass, setBigBannerClass] = useState(Mobile() ? "m-img" : "pc-img");
-  const [footerImg, setFooterImg] = useState(Mobile() ? 'images/main/mw/mw_main_team_join.jpg' : 'images/main/pc/main_team_join.jpg');
+  const [footerImg, setFooterImg] = useState(Mobile() ? 'images/main/mw/mw_main_team_join.jpg' : 'images/main/pc/pc_main_team_join.jpg');
 
   const initialBenefitCard = [
     {
