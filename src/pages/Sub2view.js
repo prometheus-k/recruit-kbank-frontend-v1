@@ -9,7 +9,8 @@ import { Navigation, Pagination } from 'swiper/modules';
 
 import Box from '../components/Box';
 import CardAction from '../components/CardAction';
-import Loading from '../components/Loading';
+import Image from '../components/Image';
+import CardMedia from '../components/CardMedia';
 
 // Import Swiper styles
 
@@ -18,9 +19,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import './Main.css'
-
-const Image = React.lazy(() => import('../components/Image'));
-const CardMedia = React.lazy(() => import('../components/CardMedia'));
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -132,36 +130,28 @@ const Sub2view = () => {
                     >
                         <SwiperSlide className="swiper-slide">
                             <CardAction>
-                                <Suspense fallback={<Loading color={color} loading={loading} />}>
-                                    <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
-                                </Suspense>
+                                <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
                                 <div className='swiper-story-txt1'>내 코드가 고객에게 닿기를</div>
                                 <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
                             </CardAction>
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide">
                             <CardAction>
-                                <Suspense fallback={<Loading color={color} loading={loading} />}>
-                                    <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
-                                </Suspense>
+                                <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>                                
                                 <div className='swiper-story-txt1'>'나'라는 브랜드를 만들어가다.</div>
                                 <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
                             </CardAction>
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide">
                             <CardAction>
-                                <Suspense fallback={<Loading color={color} loading={loading} />}>
-                                    <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
-                                </Suspense>
+                                <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
                                 <div className='swiper-story-txt1'>국내 첫 인터넷은행의 커리어</div>
                                 <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
                             </CardAction>
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide">
-                            <CardAction>
-                                <Suspense fallback={<Loading color={color} loading={loading} />}>
-                                    <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/1.png"></CardMedia>
-                                </Suspense>
+                            <CardAction>                                
+                                <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/1.png"></CardMedia>                                
                                 <div className='swiper-workbalance-txt1'>국내 첫 인터넷은행의 커리어</div>
                                 <div className='swiper-workbalance-txt2'>준법지원팀 / 이강병</div>
                             </CardAction>
