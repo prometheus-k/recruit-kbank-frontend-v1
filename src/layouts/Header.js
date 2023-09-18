@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation, Link, NavLink } from 'react-router-dom';
 import { useStyleContext } from '../components/StyleContext';
 // import './header.css'; // Footer 컴포넌트의 CSS 파일을 import
 import Box from '../components/Box';
 
 const Header = () => {
   const [isHeaderOn, setIsHeaderOn] = useState(false);
-
+  const location = useLocation();
 
   useEffect(() => {
+
+  
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
     const handleScroll = () => {
@@ -53,14 +55,14 @@ const Header = () => {
             <span>열기</span>
           </Link>
           <nav className={`${isMenuOpen ? 'on' : ''}`}>
-            <ul className="gnb main">
-              <li><Link to="/sub1" onClick={handleMenuItemClick}>인재영입</Link></li>
-              <li><Link to="/sub2" onClick={handleMenuItemClick}>케이뱅크 이야기</Link></li>
-              <li><Link to="/sub3" onClick={handleMenuItemClick}>베네핏</Link></li>
-              <li><Link to="/sub4" onClick={handleMenuItemClick}>자주묻는 질문</Link></li>
-              <li><Link to="/sub5" onClick={handleMenuItemClick}>나의 지원현황</Link></li>
-              <li><Link to="https://kbank-recruit.tistory.com" onClick={handleMenuItemClick}>블로그</Link></li>
-              <li><Link to="ImageTest" onClick={handleMenuItemClick}>테스트</Link></li>
+            <ul className={`gnb ${location.pathname === '/' ? 'main' : ''}`}>
+              <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="/sub1" onClick={handleMenuItemClick} >인재영입</NavLink></li>
+              <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="/sub2" onClick={handleMenuItemClick}>케이뱅크 이야기</NavLink></li>
+              <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="/sub3" onClick={handleMenuItemClick}>베네핏</NavLink></li>
+              <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="/sub4" onClick={handleMenuItemClick}>자주묻는 질문</NavLink></li>
+              <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="/sub5" onClick={handleMenuItemClick}>나의 지원현황</NavLink></li>
+              <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="https://kbank-recruit.tistory.com" onClick={handleMenuItemClick}>블로그</NavLink></li>
+              <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="ImageTest" onClick={handleMenuItemClick}>테스트</NavLink></li>
             </ul>
           </nav>
         </div>
