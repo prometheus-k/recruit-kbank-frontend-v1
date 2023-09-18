@@ -119,7 +119,6 @@ const Sub3 = () => {
       imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_04.jpg': 'images/benefit/pc/pc_benetfit_04.jpg',
       list: cardList4,
     },
-    // ... (다른 cardList들 추가)
   ];
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드

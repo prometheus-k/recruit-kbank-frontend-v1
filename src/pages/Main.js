@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect, Suspense, CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 
-// import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 import _ from 'lodash';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -29,6 +29,26 @@ import foot_img from '../assets/images/main_team_join.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
+
+const Desktop = () => {
+  const isDesktop = useMediaQuery({ minWidth: 992 })
+  return isDesktop;
+}
+
+const Tablet = () => {
+  const isTablet = useMediaQuery({ maxWidth: 768, maxWidth: 991 })
+  return isTablet;
+}
+const Mobile = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 })
+  return isMobile;
+}
+
+const Default = () => {
+  const isDefault = useMediaQuery({ minWidth: 768 })
+  return isDefault;
+}
+
 const Image = React.lazy(() => import('../components/Image'));
 const CardMedia = React.lazy(() => import('../components/CardMedia'));
 
@@ -38,7 +58,7 @@ const override = {
   borderColor: "D199D0",
 };
 
-const initialMainCards = [
+const initialStoryCards = [
   // 초기 카드 목록
   // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
   { title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw_main_story_01.jpg', type: 'type1' },
@@ -55,6 +75,29 @@ const Main = () => {
   const scrollItems = useRef([]);
   let [loading, setLoading] = useState(true);
   let [color, setColor] = useState("#D199D0");
+
+  const initialBenefitCard = [
+    {
+      title: '유연한 자율 출퇴근', 
+      sub: '개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.', 
+      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_01.jpg': 'images/benefit/pc/pc_benetfit_01.jpg'    
+    },
+    {
+      title: '유연한 자율 출퇴근', 
+      sub: '개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.', 
+      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_02.jpg': 'images/benefit/pc/pc_benetfit_02.jpg'    
+    },
+    {
+      title: '유연한 자율 출퇴근', 
+      sub: '개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.', 
+      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_03.jpg': 'images/benefit/pc/pc_benetfit_03.jpg'    
+    },
+    {
+      title: '유연한 자율 출퇴근', 
+      sub: '개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.', 
+      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_04.jpg': 'images/benefit/pc/pc_benetfit_04.jpg'    
+    },
+  ]
 
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
@@ -118,7 +161,7 @@ const Main = () => {
     };
   }, []);
   return (
-    <ErrorBoundary>
+    // <ErrorBoundary>
       <Box boxClassName="content">
         <div className="default_ani">
           <Box boxClassName="inner">
@@ -196,7 +239,7 @@ const Main = () => {
                 }}
                 className="swiper-container swiper-container-horizontal mySwiper main-story"
               >
-                {initialMainCards.map((card, index) => (
+                {initialStoryCards.map((card, index) => (
                   <SwiperSlide className="swiper-slide" key={index}>
                     <CardAction>
                       <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia>
@@ -244,60 +287,15 @@ const Main = () => {
                 }}
                 className="swiper-container swiper-container-horizontal mySwiper main-workbalance"
               >
-                <SwiperSlide className="swiper-slide">
-                  <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading} />}>
-                      <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/10.png"></CardMedia>
-                    </Suspense>
-                    <div className='swiper-workbalance-txt1'>유연한 자율 출퇴근</div>
-                    <div className='swiper-workbalance-txt2'>개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                  </CardAction>
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slide">
-                  <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading} />}>
-                      <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/11.png"></CardMedia>
-                    </Suspense>
-                    <div className='swiper-workbalance-txt1'>유연한 자율 출퇴근</div>
-                    <div className='swiper-workbalance-txt2'>개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                  </CardAction>
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slide">
-                  <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading} />}>
-                      <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/13.png"></CardMedia>
-                    </Suspense>
-                    <div className='swiper-workbalance-txt1'>유연한 자율 출퇴근</div>
-                    <div className='swiper-workbalance-txt2'>개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                  </CardAction>
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slide">
-                  <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading} />}>
-                      <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/11.png"></CardMedia>
-                    </Suspense>
-                    <div className='swiper-workbalance-txt1'>유연한 자율 출퇴근</div>
-                    <div className='swiper-workbalance-txt2'>개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                  </CardAction>
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slide">
-                  <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading} />}>
-                      <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/13.png"></CardMedia>
-                    </Suspense>
-                    <div className='swiper-workbalance-txt1'>유연한 자율 출퇴근</div>
-                    <div className='swiper-workbalance-txt2'>개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                  </CardAction>
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slide">
-                  <CardAction>
-                    <Suspense fallback={<Loading color={color} loading={loading} />}>
-                      <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/10.png"></CardMedia>
-                    </Suspense>
-                    <div className='swiper-workbalance-txt1'>유연한 자율 출퇴근</div>
-                    <div className='swiper-workbalance-txt2'>개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.</div>
-                  </CardAction>
-                </SwiperSlide>
+                {initialBenefitCard.map((card, index) => (
+                    <SwiperSlide className="swiper-slide" key={index}>
+                    <CardAction>
+                        <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc={card.imageSrc}></CardMedia>>
+                      <div className='swiper-workbalance-txt1'>{card.title}</div>
+                      <div className='swiper-workbalance-txt2'>{card.sub}</div>
+                    </CardAction>
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </div>
           </div>
@@ -328,7 +326,7 @@ const Main = () => {
         </Box>
 
       </Box>
-    </ErrorBoundary>
+    // </ErrorBoundary>
   );
 }
 
