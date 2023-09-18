@@ -13,7 +13,7 @@ const CardMedia = ({ cardImgClassName, imageSrc, art }) => {
 
     return (
         <div className={`img-item ${cardImgClassName}`}>
-            <img src={imageSrc} alt={art} loading="lazy" />
+            <img src={imageSrc} alt={art} />
         </div >
     );
 };
