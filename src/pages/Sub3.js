@@ -1,13 +1,36 @@
 import React, { useEffect, useRef } from 'react';
+import { useMediaQuery } from 'react-responsive';
+
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import Title from '../components/TitleText'
-// import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 import Box from '../components/Box';
 import CardMedia from '../components/CardMedia';
 import Card from '../components/Card';
 import CardList from '../components/CardList'; // FeaturesList 컴포넌트의 경로를 맞게 수정해주세요.
 import TextField from '../components/TextField';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+const Desktop = () => {
+  const isDesktop = useMediaQuery({ minWidth: 992 })
+  return isDesktop;
+}
+
+const Tablet = () => {
+  const isTablet = useMediaQuery({ maxWidth: 768, maxWidth: 991 })
+  return isTablet;
+}
+const Mobile = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 })
+  return isMobile;
+}
+
+const Default = () => {
+  const isDefault = useMediaQuery({ minWidth: 768 })
+  return isDefault;
+}
+
 
 const cardList1 = [
   {
@@ -71,34 +94,33 @@ const cardList4 = [
   // 다른 특성들도 추가
 ];
 
-const cardLists = [
-  {
-    title: '일할 땐,<br>일하고 쉴 땐 쉬어요.',
-    imageSrc: 'images/benefit_01.jpg',
-    list: cardList1,
-  },
-  {
-    title: '나와 소중한 가족까지<br>생각해요.',
-    imageSrc: 'images/benefit_02.jpg',
-    list: cardList2,
-  },
-  {
-    title: '소통하며<br>함께해요.',
-    imageSrc: 'images/benefit_03.jpg',
-    list: cardList3,
-  },
-  {
-    title: '개인의 성장을<br>지원해요.',
-    imageSrc: 'images/benefit_04.jpg',
-    list: cardList4,
-  },
-  // ... (다른 cardList들 추가)
-];
-
 gsap.registerPlugin(ScrollTrigger);
 
 const Sub3 = () => {
   const scrollItems = useRef([]);
+  const cardLists = [
+    {
+      title: '일할 땐,<br>일하고 쉴 땐 쉬어요.',
+      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_01.jpg': 'images/benefit/pc/pc_benetfit_01.jpg',
+      list: cardList1,
+    },
+    {
+      title: '나와 소중한 가족까지<br>생각해요.',
+      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_02.jpg': 'images/benefit/pc/pc_benetfit_02.jpg',
+      list: cardList2,
+    },
+    {
+      title: '소통하며<br>함께해요.',
+      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_03.jpg': 'images/benefit/pc/pc_benetfit_03.jpg',
+      list: cardList3,
+    },
+    {
+      title: '개인의 성장을<br>지원해요.',
+      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_04.jpg': 'images/benefit/pc/pc_benetfit_04.jpg',
+      list: cardList4,
+    },
+    // ... (다른 cardList들 추가)
+  ];
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
