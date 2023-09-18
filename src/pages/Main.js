@@ -219,8 +219,8 @@ const Main = () => {
           <div className='scroll-item'>
             <div className="storyWrap">
               <div className="inner-titleWrap">
-                <h2 className="title2">케이뱅크<br className="m" /> 사람들 이야기</h2>
-                <Link to="#" className="link">사람들의 이야기 자세히 보기 →</Link>
+                <h2 className="title2">사람들 이야기</h2>
+                <Link to="/sub2" className="link">more</Link>
               </div>
               <Swiper
                 pagination={{ clickable: true }}
@@ -262,8 +262,8 @@ const Main = () => {
           <div className="scroll-item" >
             <div className="workbalanceWrap">
               <div className="inner-titleWrap">
-                <h2 className="title2">케이뱅크는<br />일과 삶의 효율을 추구해요</h2>
-                <Link to="#" className="link">베네핏 자세히 보기 →</Link>
+                <h2 className="title2">일과 삶의 효율을 추구해요</h2>
+                <Link to="/sub3" className="link">more</Link>
               </div>
               <Swiper
                 pagination={true}
@@ -290,7 +290,7 @@ const Main = () => {
                 {initialBenefitCard.map((card, index) => (
                     <SwiperSlide className="swiper-slide" key={index}>
                     <CardAction>
-                        <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc={card.imageSrc}></CardMedia>>
+                        <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc={card.imageSrc}></CardMedia>
                       <div className='swiper-workbalance-txt1'>{card.title}</div>
                       <div className='swiper-workbalance-txt2'>{card.sub}</div>
                     </CardAction>

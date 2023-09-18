@@ -57,12 +57,12 @@ const Header = () => {
           <nav className={`${isMenuOpen ? 'on' : ''}`}>
             <ul className={`gnb ${location.pathname === '/' ? 'main' : ''}`}>
               <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="/sub1" onClick={handleMenuItemClick} >인재영입</NavLink></li>
-              <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="/sub2" onClick={handleMenuItemClick}>케이뱅크 이야기</NavLink></li>
+              <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="/sub2" onClick={handleMenuItemClick}>사람들 이야기</NavLink></li>
               <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="/sub3" onClick={handleMenuItemClick}>베네핏</NavLink></li>
               <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="/sub4" onClick={handleMenuItemClick}>자주묻는 질문</NavLink></li>
               <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="/sub5" onClick={handleMenuItemClick}>나의 지원현황</NavLink></li>
               <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="https://kbank-recruit.tistory.com" onClick={handleMenuItemClick}>블로그</NavLink></li>
-              <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="ImageTest" onClick={handleMenuItemClick}>테스트</NavLink></li>
+              {/* <li><NavLink className={({isActive})=>{return isActive ? 'on':'';}} to="ImageTest" onClick={handleMenuItemClick}>테스트</NavLink></li> */}
             </ul>
           </nav>
         </div>
