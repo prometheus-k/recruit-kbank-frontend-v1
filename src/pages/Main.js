@@ -132,15 +132,11 @@ const Main = () => {
               <LazyLoadImage
                 alt=''                
                 effect="blur"
-                height={'100%'}
-                width={'100%'}
                 src={hero_img_pc}
                 className="pc-img" />
               <LazyLoadImage
                 alt=''
                 effect="blur"                
-                height={'100%'}
-                width={'100%'}
                 src={hero_img_mw}
                 className="m-img" />
             </div>
