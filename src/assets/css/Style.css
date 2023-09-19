@@ -430,7 +430,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 
     .imgWRap img.m-img {display:block;height:auto;width:100%;}
     .imgWRap img.pc-img {display:none}
-    .recruit-linkWrap img {width: auto;height: 120%;}
+    .recruit-linkWrap img {width: 335;height: 300px}
 
 
     /* 케이뱅크 사람들의 이야기 */
