@@ -11,10 +11,10 @@ const Sub1view = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const searchQuery = queryParams.get('search') || ''; // 이전 페이지에서 전달된 검색어
-  console.log(searchQuery);
+  const search = queryParams.get('search') || ''; // 이전 페이지에서 전달된 검색어
+  console.log(search);
   const handleGoBack = () => {
-    navigate(`/Sub1?search=${encodeURIComponent(searchQuery)}`); // Sub1 페이지로 이동하면서 검색어 전달
+    navigate(`/Sub1?search=${encodeURIComponent(search)}`); // Sub1 페이지로 이동하면서 검색어 전달
   };
 
   const handleClick = () => {

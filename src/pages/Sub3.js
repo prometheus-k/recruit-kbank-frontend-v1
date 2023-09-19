@@ -156,7 +156,7 @@ const Sub3 = () => {
   return (
     <Box boxClassName="content">
       <Box boxClassName="inner">
-        <Title titleClassName="title1" titleText="케이뱅크의 베넷핏" />
+        <Title titleClassName="title1" titleText="몰입과 효율의<br /> 워라벨을 실현합니다." />
       </Box>
       <Box boxClassName="inner">
         <div className="benefitWrap">
