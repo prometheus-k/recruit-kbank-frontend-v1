@@ -72,48 +72,68 @@ const Main = () => {
   const initialStoryCards = [
     // 초기 카드 목록
     // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
-    { idx:1,title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-     imageSrc: Mobile() ?'images/main/mw/mw_main_story_01.jpg':'images/main/pc/pc_main_story_01.jpg', type: 'type1' },
-    { idx:3,title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', 
-    imageSrc: Mobile() ? 'images/main/mw/mw_main_story_03.jpg':'images/main/pc/pc_main_story_03.jpg', type: 'type2' },
-    { idx:5,title: '5국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', 
-    imageSrc: Mobile() ?'images/main/mw/mw_main_story_05.jpg':'images/main/pc/pc_main_story_05.jpg', type: 'type1' },
-    { idx:7,title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', 
-    imageSrc: Mobile() ?'images/main/mw/mw_main_story_07.jpg':'images/main/pc/pc_main_story_07.jpg', type: 'type3' },
-    { idx:9,title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', 
-    imageSrc: Mobile() ?'images/main/mw/mw_main_story_09.jpg':'images/main/pc/pc_main_story_09.jpg', type: 'type2' },
-    { idx:2,title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', 
-    imageSrc: Mobile() ?'images/main/mw/mw_main_story_02.jpg':'images/main/pc/pc_main_story_02.jpg', type: 'type2' },
-    { idx:4,title: '4국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', 
-    imageSrc: Mobile() ?'images/main/mw/mw_main_story_04.jpg':'images/main/pc/pc_main_story_04.jpg', type: 'type2' },
-    { idx:6,title: '6국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', 
-    imageSrc: Mobile() ?'images/main/mw/mw_main_story_06.jpg':'images/main/pc/pc_main_story_06.jpg', type: 'type2' },
-    { idx:8,title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', 
-    imageSrc: Mobile() ?'images/main/mw/mw_main_story_08.jpg':'images/main/pc/pc_main_story_08.jpg', type: 'type1' },
-    { idx:10,title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', 
-    imageSrc: Mobile() ?'images/main/mw/mw_main_story_10.jpg':'images/main/pc/pc_main_story_10.jpg', type: 'type2' },
+    {
+      idx: 1, title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_story_01.jpg' : 'images/main/pc/pc_main_story_01.jpg', type: 'type1'
+    },
+    {
+      idx: 3, title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_story_03.jpg' : 'images/main/pc/pc_main_story_03.jpg', type: 'type2'
+    },
+    {
+      idx: 5, title: '5국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_story_05.jpg' : 'images/main/pc/pc_main_story_05.jpg', type: 'type1'
+    },
+    {
+      idx: 7, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_story_07.jpg' : 'images/main/pc/pc_main_story_07.jpg', type: 'type3'
+    },
+    {
+      idx: 9, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_story_09.jpg' : 'images/main/pc/pc_main_story_09.jpg', type: 'type2'
+    },
+    {
+      idx: 2, title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_story_02.jpg' : 'images/main/pc/pc_main_story_02.jpg', type: 'type2'
+    },
+    {
+      idx: 4, title: '4국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_story_04.jpg' : 'images/main/pc/pc_main_story_04.jpg', type: 'type2'
+    },
+    {
+      idx: 6, title: '6국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_story_06.jpg' : 'images/main/pc/pc_main_story_06.jpg', type: 'type2'
+    },
+    {
+      idx: 8, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_story_08.jpg' : 'images/main/pc/pc_main_story_08.jpg', type: 'type1'
+    },
+    {
+      idx: 10, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_story_10.jpg' : 'images/main/pc/pc_main_story_10.jpg', type: 'type2'
+    },
   ];
 
   const initialBenefitCard = [
     {
       title: '유연한 자율 출퇴근',
       sub: '개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.',
-      imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_01.jpg':'images/main/pc/pc_main_benefit_01.jpg'
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_01.jpg' : 'images/main/pc/pc_main_benefit_01.jpg'
     },
     {
       title: '유연한 자율 출퇴근',
       sub: '개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.',
-      imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_02.jpg':'images/main/pc/pc_main_benefit_02.jpg'
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_02.jpg' : 'images/main/pc/pc_main_benefit_02.jpg'
     },
     {
       title: '유연한 자율 출퇴근',
       sub: '개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.',
-      imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_03.jpg':'images/main/pc/pc_main_benefit_03.jpg'
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_03.jpg' : 'images/main/pc/pc_main_benefit_03.jpg'
     },
     {
       title: '유연한 자율 출퇴근',
       sub: '개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.',
-      imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_04.jpg':'images/main/pc/pc_main_benefit_04.jpg'
+      imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_04.jpg' : 'images/main/pc/pc_main_benefit_04.jpg'
     },
   ]
 

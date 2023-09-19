@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Suspense } from 'react';
-import { Link, useLocation} from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -22,42 +23,166 @@ import './Main.css'
 
 gsap.registerPlugin(ScrollTrigger);
 
-const initialStoryCards = [
+const Desktop = () => {
+    const isDesktop = useMediaQuery({ minWidth: 992 })
+    return isDesktop;
+}
+
+const Tablet = () => {
+    const isTablet = useMediaQuery({ maxWidth: 768, maxWidth: 991 })
+    return isTablet;
+}
+const Mobile = () => {
+    const isMobile = useMediaQuery({ maxWidth: 767 })
+    return isMobile;
+}
+
+const Default = () => {
+    const isDefault = useMediaQuery({ minWidth: 768 })
+    return isDefault;
+}
+
+
+const initialStoryDetails = [
     // 초기 카드 목록
     // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
-    { idx:1,title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_1.jpg', type: 'type1' },
-    { idx:2,title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_2.jpg', type: 'type3' },
-    { idx:3,title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_3.jpg', type: 'type2' },
-    { idx:4,title: '4국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_4.jpg', type: 'type1' },
-    { idx:5,title: '5국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_5.jpg', type: 'type3' },
-    { idx:6,title: '6국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_6.jpg', type: 'type2' },
-    { idx:7,title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_7.jpg', type: 'type1' },
-    { idx:8,title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_8.jpg', type: 'type1' },
-    { idx:9,title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_9.jpg', type: 'type1' },
-    { idx:10,title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_10.jpg', type: 'type1' },
-  ];
-  const initialStoryCards2 = [
-    // 초기 카드 목록
-    // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
-    { idx:1,title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_1.jpg', type: 'type1' },
-    { idx:2,title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_2.jpg', type: 'type3' },
-    { idx:3,title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_3.jpg', type: 'type2' },
-    { idx:4,title: '4국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_4.jpg', type: 'type1' },
-    { idx:5,title: '5국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_5.jpg', type: 'type3' },
-    { idx:6,title: '6국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_6.jpg', type: 'type2' },
-    { idx:7,title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_7.jpg', type: 'type1' },
-    { idx:8,title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_8.jpg', type: 'type1' },
-    { idx:9,title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_9.jpg', type: 'type1' },
-    { idx:10,title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_10.jpg', type: 'type1' },
-  ];
+    {
+        idx: 1, title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+        imageSrc: [
+            'images/blog/01/people_blog_1_01.jpg',
+            'images/blog/01/people_blog_1_02.jpg',
+            'images/blog/01/people_blog_1_03.jpg',
+        ]
+    },
+    {
+        idx: 2, title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+        imageSrc: [
+            'images/blog/02/people_blog_2_01.jpg'
+        ],
+    },
+    {
+        idx: 3, title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+        imageSrc: [
+            'images/blog/03/people_blog_3_01.jpg'
+        ],
+    },
+    {
+        idx: 4, title: '4국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+        imageSrc: [
+            'images/blog/04/people_blog_4_01.jpg',
+            'images/blog/04/people_blog_4_02.jpg',
+            'images/blog/04/people_blog_4_03.jpg',
+        ],
+    },
+    {
+        idx: 5, title: '5국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+        imageSrc: [
+            'images/blog/05/people_blog_5_01.jpg',
+            'images/blog/05/people_blog_5_02.jpg',
+            'images/blog/05/people_blog_5_03.jpg',
+        ],
+    },
+    {
+        idx: 6, title: '6국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+        imageSrc: [
+            'images/blog/06/people_blog_6_01.jpg',
+            'images/blog/06/people_blog_6_02.jpg',
+            'images/blog/06/people_blog_6_03.jpg',
+        ],
+    },
+    {
+        idx: 7, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+        imageSrc: [
+            'images/blog/07/people_blog_7_01.jpg'
+        ],
+    },
+    {
+        idx: 8, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+        imageSrc: [
+            'images/blog/08/people_blog_8_01.jpg'
+        ],
+    },
+    {
+        idx: 9, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+        imageSrc: [
+            'images/blog/09/people_blog_9_01.jpg'
+        ],
+    },
+    {
+        idx: 10, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+        imageSrc: [
+            'images/blog/10/people_blog_10_01.jpg'
+        ],
+    },
+];
 
 const Sub2view = () => {
     let [loading, setLoading] = useState(true);
     let [color, setColor] = useState("#D199D0");
+    // const params = useParams();
+    // const idx = params.idx; // 
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
-    const index = queryParams.get('idx') || ''; // 이전 페이지에서 전달된 검색어
-    console.log(index);
+    const idx = queryParams.get('idx') || ''; // 이전 페이지에서 전달된 검색어
+    const storyDetail = initialStoryDetails.find(story => story.idx === parseInt(idx));
+
+    const initialStoryCards = [
+        // 초기 카드 목록
+        // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
+        {
+            idx: 1, title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+            imageSrc: Mobile() ? 'images/main/mw/mw_main_story_01.jpg' : 'images/main/pc/pc_main_story_01.jpg', type: 'type1'
+        },
+        {
+            idx: 3, title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+            imageSrc: Mobile() ? 'images/main/mw/mw_main_story_03.jpg' : 'images/main/pc/pc_main_story_03.jpg', type: 'type2'
+        },
+        {
+            idx: 5, title: '5국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+            imageSrc: Mobile() ? 'images/main/mw/mw_main_story_05.jpg' : 'images/main/pc/pc_main_story_05.jpg', type: 'type1'
+        },
+        {
+            idx: 7, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+            imageSrc: Mobile() ? 'images/main/mw/mw_main_story_07.jpg' : 'images/main/pc/pc_main_story_07.jpg', type: 'type3'
+        },
+        {
+            idx: 9, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+            imageSrc: Mobile() ? 'images/main/mw/mw_main_story_09.jpg' : 'images/main/pc/pc_main_story_09.jpg', type: 'type2'
+        },
+        {
+            idx: 2, title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+            imageSrc: Mobile() ? 'images/main/mw/mw_main_story_02.jpg' : 'images/main/pc/pc_main_story_02.jpg', type: 'type2'
+        },
+        {
+            idx: 4, title: '4국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+            imageSrc: Mobile() ? 'images/main/mw/mw_main_story_04.jpg' : 'images/main/pc/pc_main_story_04.jpg', type: 'type2'
+        },
+        {
+            idx: 6, title: '6국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+            imageSrc: Mobile() ? 'images/main/mw/mw_main_story_06.jpg' : 'images/main/pc/pc_main_story_06.jpg', type: 'type2'
+        },
+        {
+            idx: 8, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+            imageSrc: Mobile() ? 'images/main/mw/mw_main_story_08.jpg' : 'images/main/pc/pc_main_story_08.jpg', type: 'type1'
+        },
+        {
+            idx: 10, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+            imageSrc: Mobile() ? 'images/main/mw/mw_main_story_10.jpg' : 'images/main/pc/pc_main_story_10.jpg', type: 'type2'
+        },
+    ];
+
+    const handleAnchorClick = event => {
+        // 👇️ use event.preventDefault() if you want to
+        // prevent navigation
+        // event.preventDefault();
+        window.scrollTo(0, 0);
+
+        //console.log('Anchor element clicked');
+
+        // 👇️ refers to the link element
+        console.log(event.currentTarget);
+    };
+
 
     useEffect(() => {
         // 컴포넌트가 처음 렌더링될 때 실행되는 코드
@@ -90,7 +215,7 @@ const Sub2view = () => {
         <Box boxClassName="content">
             <Box boxClassName="inner">
                 <div className="kbank-manWrap-view">
-                    <Image src={"images/9.png"} alt="" className={"manWrap-view01"} />
+                    <Image src={storyDetail.imageSrc[0]} alt="" className={"manWrap-view01"} />
                     <div className="boardWrap">
                         <div className="recruit-view">
                             {/* 등록영역*/}
@@ -116,7 +241,7 @@ const Sub2view = () => {
                                     "합리적이고, 실용적인 은행 Kbank"
                                 </dd>
                                 <dd className="txt img">
-                                    <Image imageSrc={"images/1.png"} alt="" />
+                                    <Image src={storyDetail.imageSrc[1]} alt="" />
                                 </dd>
                                 <dt className="tit">그럼 업무하시면서 위기의 순간도 있으셨나요?</dt>
                                 <dd className="txt">
@@ -134,7 +259,7 @@ const Sub2view = () => {
                 <div className="recruit-linkWrap type2">
                     <div className="txtWrap">
                         <p className="txt">지금 새로운 금융의 여정에<br className="m" /> 합류해 보세요.</p>
-                        <Link to="#" className="btn">지원하러 가기 →</Link>
+                        <Link to="/sub1" className="btn">지원하러 가기 →</Link>
                     </div>
                 </div>
             </Box>
@@ -158,36 +283,20 @@ const Sub2view = () => {
                                 slidesPerGroup: 2,
                             }
                         }}
-                        className="swiper-container swiper-container-horizontal main-workbalance swiper-wrapper"
+                        className="swiper-container swiper-container-horizontal mySwiper main-story"
                     >
-                        <SwiperSlide className="swiper-slide">
-                            <CardAction>
-                                <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
-                                <div className='swiper-story-txt1'>내 코드가 고객에게 닿기를</div>
-                                <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
-                            </CardAction>
-                        </SwiperSlide>
-                        <SwiperSlide className="swiper-slide">
-                            <CardAction>
-                                <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>                                
-                                <div className='swiper-story-txt1'>'나'라는 브랜드를 만들어가다.</div>
-                                <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
-                            </CardAction>
-                        </SwiperSlide>
-                        <SwiperSlide className="swiper-slide">
-                            <CardAction>
-                                <CardMedia cardImgClassName="swiper-story-img" imageSrc="images/1.png"></CardMedia>
-                                <div className='swiper-story-txt1'>국내 첫 인터넷은행의 커리어</div>
-                                <div className='swiper-story-txt2'>준법지원팀 / 이강병</div>
-                            </CardAction>
-                        </SwiperSlide>
-                        <SwiperSlide className="swiper-slide">
-                            <CardAction>                                
-                                <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc="images/1.png"></CardMedia>                                
-                                <div className='swiper-workbalance-txt1'>국내 첫 인터넷은행의 커리어</div>
-                                <div className='swiper-workbalance-txt2'>준법지원팀 / 이강병</div>
-                            </CardAction>
-                        </SwiperSlide>
+                        {initialStoryCards.map((card, index) => (
+                            <SwiperSlide className="swiper-slide" key={index}>
+                                <CardAction linkUrl={`/Sub2view?idx=${card.idx}`} onClick={handleAnchorClick}>
+                                    {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
+                                    <div className="img-item swiper-story-img">
+                                        <img src={card.imageSrc} alt="" loading="lazy" />
+                                    </div >
+                                    <div className='swiper-story-txt1'>{card.title}</div>
+                                    <div className='swiper-story-txt2'>{card.sub}</div>
+                                </CardAction>
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </div>
 

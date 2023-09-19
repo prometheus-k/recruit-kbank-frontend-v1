@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'; // Link 컴포넌트를 import
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 
-const CardAction = ({ linkUrl, cardActionClassName, children }) => {
+const CardAction = ({ linkUrl, cardActionClassName, children, onClick }) => {
     useEffect(() => {
         console.log('Component mounted');
 
@@ -13,7 +13,7 @@ const CardAction = ({ linkUrl, cardActionClassName, children }) => {
     }, []);
 
     return (
-        <Link to={linkUrl} className={cardActionClassName}>
+        <Link to={linkUrl} className={cardActionClassName} onClick={onClick}>
             {children}
         </Link>
     );
@@ -21,9 +21,10 @@ const CardAction = ({ linkUrl, cardActionClassName, children }) => {
 
 
 CardAction.propTypes = {
-    linkUrl:PropTypes.string,
+    linkUrl: PropTypes.string,
     cardActionClassName: PropTypes.string, // 버튼에 추가될 클래스명};
     children: PropTypes.node, // Card 컴포넌트 내용(children)을 받을 수 있도록 추가]
+    onClick: PropTypes.func.isRequired, // onClick 이벤트 핸들러 함수
 }
 CardAction.defaultProps = {
     linkUrl: '/',
