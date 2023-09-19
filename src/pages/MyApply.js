@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-// import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
+import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
 
 import Title from '../components/TitleText'
 import Box from '../components/Box';
 
-const Sub5 = () => {
+const MyApply = () => {
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
@@ -37,4 +37,4 @@ const Sub5 = () => {
   );
 }
 
-export default Sub5;
+export default MyApply;

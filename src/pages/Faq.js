@@ -79,7 +79,7 @@ const faqData = [
 ];
 
 
-const Sub4 = () => {
+const Faq = () => {
   const [activeTab, setActiveTab] = useState(0);
   const handleTabClick = (index) => {
     setActiveTab(index);
@@ -110,4 +110,4 @@ const Sub4 = () => {
   );
 }
 
-export default Sub4;
+export default Faq;

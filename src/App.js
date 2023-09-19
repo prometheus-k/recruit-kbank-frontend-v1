@@ -3,13 +3,13 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 import Main from './pages/Main'
-import Sub1 from './pages/Sub1'
-import Sub2 from './pages/Sub2'
-import Sub3 from './pages/Sub3'
-import Sub4 from './pages/Sub4'
-import Sub5 from './pages/Sub5'
-import Sub1view from './pages/Sub1view'
-import Sub2view from './pages/Sub2view'
+import Recruit from './pages/Recruit'
+import Story from './pages/Story'
+import Benefit from './pages/Benefit'
+import Faq from './pages/Faq'
+import MyApply from './pages/MyApply'
+import RecruitView from './pages/RecruitView'
+import StoryView from './pages/StoryView'
 import ErrorPage from './pages/ErrorPage'; // 추가
 import ImageTest from './pages/ImageTest'; // 추가
 
@@ -27,13 +27,13 @@ const App = () => {
       <div id="container">
         <Routes>
           <Route path="/" exact element={<Main />}></Route>
-          <Route path="/sub1" exact element={<Sub1 />}></Route>
-          <Route path="/sub2" exact element={<Sub2 />}></Route>
-          <Route path="/sub3" exact element={<Sub3 />}></Route>
-          <Route path="/sub4" exact element={<Sub4 />}></Route>
-          <Route path="/sub5" exact element={<Sub5 />}></Route>
-          <Route path="/Sub1view" exact element={<Sub1view />}></Route>
-          <Route path="/Sub2view" exact element={<Sub2view />}></Route>
+          <Route path="/Recruit" exact element={<Recruit />}></Route>
+          <Route path="/Story" exact element={<Story />}></Route>
+          <Route path="/Benefit" exact element={<Benefit />}></Route>
+          <Route path="/Faq" exact element={<Faq />}></Route>
+          <Route path="/MyApply" exact element={<MyApply />}></Route>
+          <Route path="/RecruitView" exact element={<RecruitView />}></Route>
+          <Route path="/StoryView" exact element={<StoryView />}></Route>
           <Route path="/ImageTest" exact element={<ImageTest />}></Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>

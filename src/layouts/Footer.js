@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Link 컴포넌트를 import
-// import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 import Box from '../components/Box';
 
 const Footer = () => {

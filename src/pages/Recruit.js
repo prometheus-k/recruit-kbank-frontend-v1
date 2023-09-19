@@ -42,7 +42,7 @@ const initialListdata = [
   // ... 더 많은 카드들
 ];
 
-const Sub1 = () => {
+const Recruit = () => {
   const [lists, setLists] = useState(initialListdata);
   const [selectedJobGroup, setSelectedJobGroup] = useState("");
   const [selectedCareer, setSelectedCareer] = useState("");
@@ -89,7 +89,7 @@ const Sub1 = () => {
 
     };
   }, []);
-  return (    
+  return (
     <Box boxClassName="content">
       <Box boxClassName="inner">
         <Title titleClassName="title1" titleText="케이뱅크와 함께<br />더 나은 금융을 만들어갈<br />동료를 기다립니다." />
@@ -112,7 +112,7 @@ const Sub1 = () => {
       <Box boxClassName="inner">
         <List>
           {filteredLists.map((list, index) => (
-            <ListItem listItemTo={`/Sub1view?search=${encodeURIComponent(searchTerm)}`} key={index}>
+            <ListItem listItemTo={`/RecruitView?search=${encodeURIComponent(searchTerm)}`} key={index}>
               <ListItemText>
                 <Box boxClassName="recruit-tit">
                   {list.tag ? <TextBox titleClassName="tag">NEW</TextBox> : null}
@@ -138,4 +138,4 @@ const Sub1 = () => {
   );
 }
 
-export default Sub1;
+export default Recruit;

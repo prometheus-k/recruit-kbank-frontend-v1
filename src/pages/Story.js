@@ -67,7 +67,7 @@ const Default = () => {
 gsap.registerPlugin(ScrollTrigger);
 
 
-const Sub2 = () => {
+const Story = () => {
   const scrollItems = useRef([]);
   const [cards, setCards] = useState(Mobile() ? initialStoryCards : initialStoryCards2);
   const [activeTab, setActiveTab] = useState(1);
@@ -128,7 +128,7 @@ const Sub2 = () => {
           <ul className="column-list">
             {cards.map((card, index) => (
               <li className="col-box" key={index}>
-                <CardAction linkUrl={`/Sub2view?idx=${card.idx}`} cardActionClassName={`kbank-man-item ${activeTab === 0 ? 'active' : ''}`}>
+                <CardAction linkUrl={`/StoryView?idx=${card.idx}`} cardActionClassName={`kbank-man-item ${activeTab === 0 ? 'active' : ''}`}>
                   <div className="scroll-item">
                     <CardMedia cardImgClassName={card.type} imageSrc={card.imageSrc}></CardMedia>
                     <CardContent>
@@ -151,4 +151,4 @@ const Sub2 = () => {
   );
 }
 
-export default Sub2;
+export default Story;

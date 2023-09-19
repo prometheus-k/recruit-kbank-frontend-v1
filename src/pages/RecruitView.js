@@ -5,16 +5,16 @@ import CardList from '../components/CardList';
 import Box from '../components/Box';
 import Button from '../components/Button';
 import Title from '../components/TitleText'
-import { useNavigate,useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-const Sub1view = () => {
+const RecruitView = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const search = queryParams.get('search') || ''; // 이전 페이지에서 전달된 검색어
   console.log(search);
   const handleGoBack = () => {
-    navigate(`/Sub1?search=${encodeURIComponent(search)}`); // Sub1 페이지로 이동하면서 검색어 전달
+    navigate(`/Recruit?search=${encodeURIComponent(search)}`); // Sub1 페이지로 이동하면서 검색어 전달
   };
 
   const handleClick = () => {
@@ -105,4 +105,4 @@ const Sub1view = () => {
   );
 }
 
-export default Sub1view;
+export default RecruitView;

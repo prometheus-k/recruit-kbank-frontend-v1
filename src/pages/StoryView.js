@@ -116,7 +116,7 @@ const initialStoryDetails = [
     },
 ];
 
-const Sub2view = () => {
+const StoryView = () => {
     let [loading, setLoading] = useState(true);
     let [color, setColor] = useState("#D199D0");
     // const params = useParams();
@@ -259,7 +259,7 @@ const Sub2view = () => {
                 <div className="recruit-linkWrap type2">
                     <div className="txtWrap">
                         <p className="txt">지금 새로운 금융의 여정에<br className="m" /> 합류해 보세요.</p>
-                        <Link to="/sub1" className="btn">지원하러 가기 →</Link>
+                        <Link to="/Recruit" className="btn">지원하러 가기 →</Link>
                     </div>
                 </div>
             </Box>
@@ -287,7 +287,7 @@ const Sub2view = () => {
                     >
                         {initialStoryCards.map((card, index) => (
                             <SwiperSlide className="swiper-slide" key={index}>
-                                <CardAction linkUrl={`/Sub2view?idx=${card.idx}`} onClick={handleAnchorClick}>
+                                <CardAction linkUrl={`/StoryView?idx=${card.idx}`} onClick={handleAnchorClick}>
                                     {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
                                     <div className="img-item swiper-story-img">
                                         <img src={card.imageSrc} alt="" loading="lazy" />
@@ -305,4 +305,4 @@ const Sub2view = () => {
     );
 }
 
-export default Sub2view;
+export default StoryView;

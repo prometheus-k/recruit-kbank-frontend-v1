@@ -96,27 +96,27 @@ const cardList4 = [
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Sub3 = () => {
+const Benefit = () => {
   const scrollItems = useRef([]);
   const cardLists = [
     {
       title: '일할 땐,<br>일하고 쉴 땐 쉬어요.',
-      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_01.jpg': 'images/benefit/pc/pc_benetfit_01.jpg',
+      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_01.jpg' : 'images/benefit/pc/pc_benetfit_01.jpg',
       list: cardList1,
     },
     {
       title: '나와 소중한 가족까지<br>생각해요.',
-      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_02.jpg': 'images/benefit/pc/pc_benetfit_02.jpg',
+      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_02.jpg' : 'images/benefit/pc/pc_benetfit_02.jpg',
       list: cardList2,
     },
     {
       title: '소통하며<br>함께해요.',
-      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_03.jpg': 'images/benefit/pc/pc_benetfit_03.jpg',
+      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_03.jpg' : 'images/benefit/pc/pc_benetfit_03.jpg',
       list: cardList3,
     },
     {
       title: '개인의 성장을<br>지원해요.',
-      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_04.jpg': 'images/benefit/pc/pc_benetfit_04.jpg',
+      imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_04.jpg' : 'images/benefit/pc/pc_benetfit_04.jpg',
       list: cardList4,
     },
   ];
@@ -182,4 +182,4 @@ const Sub3 = () => {
   );
 }
 
-export default Sub3;
+export default Benefit;

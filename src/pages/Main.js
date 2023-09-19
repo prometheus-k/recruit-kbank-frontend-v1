@@ -253,7 +253,7 @@ const Main = () => {
           <div className="storyWrap">
             <div className="inner-titleWrap">
               <h2 className="title2">사람들 이야기</h2>
-              <Link to="/sub2" className="link">more</Link>
+              <Link to="/Story" className="link">more</Link>
             </div>
             <Swiper
               pagination={{ clickable: true }}
@@ -300,7 +300,7 @@ const Main = () => {
           <div className="workbalanceWrap">
             <div className="inner-titleWrap">
               <h2 className="title2">일과 삶의<br /> 효율을 추구해요</h2>
-              <Link to="/sub3" className="link">more</Link>
+              <Link to="/Benefit" className="link">more</Link>
             </div>
             <Swiper
               pagination={true}
@@ -345,7 +345,7 @@ const Main = () => {
             <LazyImage src={footerImg} alt="" />
             <div className="txtWrap">
               <p className="txt">지금 새로운 금융의 여정에<br className="m" /> 합류해 보세요.</p>
-              <Link to="/sub1" className="btn">채용공고 바로가기 →</Link>
+              <Link to="/Recruit" className="btn">채용공고 바로가기 →</Link>
             </div>
           </div>
         </div>
