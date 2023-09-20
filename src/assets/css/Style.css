@@ -261,7 +261,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 
 @media screen and (max-width:800px){
     .main-story .swiper-wrapper .swiper-slide,
-    .workbalanceWrap .swiper-wrapper .swiper-slide {width:95%}
+    .workbalanceWrap .swiper-wrapper .swiper-slide {margin-right: 10px;}
     
     .main-story .swiper-wrapper .swiper-slide + .swiper-slide,
     .workbalanceWrap .swiper-wrapper .swiper-slide + .swiper-slide {margin-left: 1rem;}
