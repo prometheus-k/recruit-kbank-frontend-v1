@@ -21,9 +21,14 @@ const RecruitView = () => {
     navigate(`/Recruit?search=${encodeURIComponent(search)}`); // Sub1 페이지로 이동하면서 검색어 전달
   };
 
-  const handleClick = () => {
-    console.log('test');
-    //window.open(url, '_blank');
+  const handleClick = (url) => {
+    //console.log('test');
+    if(url === 'S'){
+      window.open(writeUrl, '_blank');
+    }else{
+      window.open(updateUrl, '_blank');
+    }
+    
   };
 
   useEffect(() => {
@@ -90,16 +95,16 @@ const RecruitView = () => {
         {/*pc 용*/}
         <div className="pc">
           <div className="btnWrap appli">
-            <Button className="btn-appli-submit" spanClassName="txt" buttonText='지원하기' onClick={handleGoBack}></Button>
-            <Button className="btn-appli-edit" spanClassName="txt" buttonText='지원서 수정' onClick={handleGoBack}></Button>
+            <Button className="btn-appli-submit" spanClassName="txt" buttonText='지원하기' onClick={(writeUrl)=> handleClick('S')}></Button>
+            <Button className="btn-appli-edit" spanClassName="txt" buttonText='지원서 수정' onClick={(updateUrl)=> handleClick('U')}></Button>
           </div>
         </div>
         {/*//pc 용*/}
         {/*mobile 용*/}
         <div className="m">
           <div className="btnWrap appli">
-            <Button className="btn-appli-submit" spanClassName="txt" buttonText='지원서 작성은 PC를 이용해주세요!' onClick={handleGoBack}></Button>
-            <Button className="btn-appli-edit" spanClassName="txt" buttonText='지원서 수정은 PC를 이용해주세요!' onClick={handleGoBack}></Button>
+            <Button className="btn-appli-submit" spanClassName="txt" buttonText='지원서 작성은 PC를 이용해주세요!' onClick={(writeUrl)=> handleClick('S')}></Button>
+            <Button className="btn-appli-edit" spanClassName="txt" buttonText='지원서 수정은 PC를 이용해주세요!' onClick={(updateUrl)=> handleClick('U')}></Button>
           </div>
         </div>
         {/*//mobile 용*/}
