@@ -5,7 +5,6 @@ import { useMediaQuery } from 'react-responsive';
 import _ from 'lodash';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-// import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 

@@ -3,7 +3,6 @@ import { useMediaQuery } from 'react-responsive';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import Title from '../components/TitleText'
 import Box from '../components/Box';

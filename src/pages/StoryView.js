@@ -4,6 +4,8 @@ import { useMediaQuery } from 'react-responsive';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -214,8 +216,12 @@ const StoryView = () => {
     return (
         <Box boxClassName="content">
             <Box boxClassName="inner">
-                <div className="kbank-manWrap-view">
-                    <Image src={storyDetail.imageSrc[0]} alt="" className={"manWrap-view01"} />
+                <div className="kbank-manWrap-view scroll-item" key={idx}>
+                    <LazyLoadImage
+                    alt=''
+                    effect="blur"
+                    src={storyDetail.imageSrc[0]}
+                    className={"manWrap-view01"} />
                     <div className="boardWrap">
                         <div className="recruit-view">
                             {/* 등록영역*/}
