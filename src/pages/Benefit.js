@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import Title from '../components/TitleText'
+import TitleText from '../components/TitleText'
 import Box from '../components/Box';
 import CardMedia from '../components/CardMedia';
 import Card from '../components/Card';
@@ -49,7 +49,7 @@ const cardList1 = [
 const cardList2 = [
   {
     title: '단체보험',
-    description: '보인과 배우자, 자녀까지 든든한 단체보험을 지원해요.',
+    description: '본인과 배우자, 자녀까지 든든한 단체보험을 지원해요.',
   },
   {
     title: '건강검진 지원',
@@ -155,7 +155,7 @@ const Benefit = () => {
   return (
     <Box boxClassName="content">
       <Box boxClassName="inner">
-        <Title titleClassName="title1" titleText="몰입과 효율의<br /> 워라벨을 실현합니다." />
+        <TitleText titleClassName="title1" titleText="몰입과 효율의<br /> 워라벨을 실현합니다." />
       </Box>
       <Box boxClassName="inner">
         <div className="benefitWrap">

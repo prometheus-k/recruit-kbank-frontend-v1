@@ -13,8 +13,8 @@ const TitleText = ({ titleClassName, wrapClassName, titleText, children }) => {
     }, []);
 
     return (
-        <div className={`titleWrap ${wrapClassName}`}>
-            <p className={titleClassName} dangerouslySetInnerHTML={{ __html: titleText }} />
+        <div className={`active titleWrap ${wrapClassName}`}>
+            <p className={`scroll-item ${titleClassName}`} dangerouslySetInnerHTML={{ __html: titleText }} />
             {children}
         </div>
     );

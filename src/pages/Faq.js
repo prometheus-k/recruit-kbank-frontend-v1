@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Title from '../components/TitleText'
+import TitleText from '../components/TitleText'
 import FAQList from '../components/FAQList'; // FAQList 컴포넌트의 경로에 따라 수정해주세요.
 import Box from '../components/Box';
 
@@ -98,7 +98,7 @@ const Faq = () => {
   return (
     <Box boxClassName="content">
       <Box boxClassName="inner">
-        <Title titleClassName="title1" titleText="자주 묻는 질문" />
+        <TitleText titleClassName="title1" titleText="자주 묻는 질문" />
       </Box>
       <Box boxClassName="inner">
         <div className="faqWrap">

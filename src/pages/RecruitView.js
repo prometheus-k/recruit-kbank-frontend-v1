@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-// import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
+import { Link } from 'react-router-dom';
+
 import Card from '../components/Card';
 import CardList from '../components/CardList';
 import Box from '../components/Box';
 import Button from '../components/Button';
-import Title from '../components/TitleText'
+import TitleText from '../components/TitleText'
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const RecruitView = () => {
@@ -12,14 +13,19 @@ const RecruitView = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const search = queryParams.get('search') || ''; // 이전 페이지에서 전달된 검색어
-  console.log(search);
+  const writeUrl = 'https://kbank.recruiter.co.kr/app/applicant/registResume?jobnoticeSn=157516&systemKindCode=MRS2';
+  const updateUrl = 'https://kbank.recruiter.co.kr/app/applicant/modifyResume?jobnoticeSn=157516&systemKindCode=MRS2';
+  
+
   const handleGoBack = () => {
     navigate(`/Recruit?search=${encodeURIComponent(search)}`); // Sub1 페이지로 이동하면서 검색어 전달
   };
 
   const handleClick = () => {
-
+    console.log('test');
+    //window.open(url, '_blank');
   };
+
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
@@ -32,12 +38,12 @@ const RecruitView = () => {
 
     <Box boxClassName="content">
       <Box boxClassName="inner">
-        <Title titleClassName="title1" wrapClassName="recruit" titleText="프로덕트 디자이너">
+        <TitleText titleClassName="title1" wrapClassName="recruit" titleText="프로덕트 디자이너">
           <div className="recruit-cate">
             <span>Tech</span>
             <span>경력</span>
           </div>
-        </Title>
+        </TitleText>
       </Box>
       <Box boxClassName="inner">
         <div className="boardWrap">
@@ -84,16 +90,16 @@ const RecruitView = () => {
         {/*pc 용*/}
         <div className="pc">
           <div className="btnWrap appli">
-            <Button className="btn-appli-submit" spanClassName="txt" buttonText='지원하기' onClick={handleClick}></Button>
-            <Button className="btn-appli-edit" spanClassName="txt" buttonText='지원서 수정' onClick={handleClick}></Button>
+            <Button className="btn-appli-submit" spanClassName="txt" buttonText='지원하기' onClick={handleGoBack}></Button>
+            <Button className="btn-appli-edit" spanClassName="txt" buttonText='지원서 수정' onClick={handleGoBack}></Button>
           </div>
         </div>
         {/*//pc 용*/}
         {/*mobile 용*/}
         <div className="m">
           <div className="btnWrap appli">
-            <Button className="btn-appli-submit" spanClassName="txt" buttonText='지원서 작성은 PC를 이용해주세요!' onClick={handleClick}></Button>
-            <Button className="btn-appli-edit" spanClassName="txt" buttonText='지원서 수정은 PC를 이용해주세요!' onClick={handleClick}></Button>
+            <Button className="btn-appli-submit" spanClassName="txt" buttonText='지원서 작성은 PC를 이용해주세요!' onClick={handleGoBack}></Button>
+            <Button className="btn-appli-edit" spanClassName="txt" buttonText='지원서 수정은 PC를 이용해주세요!' onClick={handleGoBack}></Button>
           </div>
         </div>
         {/*//mobile 용*/}

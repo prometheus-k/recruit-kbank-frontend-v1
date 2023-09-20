@@ -76,7 +76,7 @@ const Header = () => {
             <ul className={`gnb ${location.pathname === '/' ? 'main' : ''}`}>
               <li><NavLink className={({ isActive }) => { return isActive ? 'on' : ''; }} to="/Recruit" onClick={handleMenuItemClick} >인재영입</NavLink></li>
               <li><NavLink className={({ isActive }) => { return isActive ? 'on' : ''; }} to="/Story" onClick={handleMenuItemClick}>사람들 이야기</NavLink></li>
-              <li><NavLink className={({ isActive }) => { return isActive ? 'on' : ''; }} to="/Benefit" onClick={handleMenuItemClick}>베네핏</NavLink></li>
+              <li><NavLink className={({ isActive }) => { return isActive ? 'on' : ''; }} to="/Benefit" onClick={handleMenuItemClick}>복지와 혜택</NavLink></li>
               <li><NavLink className={({ isActive }) => { return isActive ? 'on' : ''; }} to="/Faq" onClick={handleMenuItemClick}>자주묻는 질문</NavLink></li>
               <li><NavLink className={({ isActive }) => { return isActive ? 'on' : ''; }} to={Desktop() ? "https://kbank.recruiter.co.kr/app/applicant/myPage/login" : "/MyApply"} onClick={handleMenuItemClick}>나의 지원현황</NavLink></li>
               <li><NavLink className={({ isActive }) => { return isActive ? 'on' : ''; }} to="https://kbank-recruit.tistory.com" onClick={handleMenuItemClick}>블로그</NavLink></li>

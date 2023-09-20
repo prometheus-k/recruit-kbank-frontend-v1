@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import Title from '../components/TitleText'
+import TitleText from '../components/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 import List from '../components/List';
 import ListItem from '../components/ListItem';
@@ -92,7 +92,7 @@ const Recruit = () => {
   return (
     <Box boxClassName="content">
       <Box boxClassName="inner">
-        <Title titleClassName="title1" titleText="케이뱅크와 함께<br />더 나은 금융을 만들어갈<br />동료를 기다립니다." />
+        <TitleText titleClassName="title1" titleText="케이뱅크와 함께<br />더 나은 금융을 만들어갈<br />동료를 기다립니다." />
       </Box>
 
       <Box boxClassName="inner">

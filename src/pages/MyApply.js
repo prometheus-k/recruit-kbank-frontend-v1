@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
 
-import Title from '../components/TitleText'
+import TitleText from '../components/TitleText'
 import Box from '../components/Box';
 
 const MyApply = () => {
@@ -18,7 +18,7 @@ const MyApply = () => {
   return (
     <Box boxClassName="content">
       <Box boxClassName="inner">
-        <Title titleClassName="title1" titleText="나의 지원현황" />
+        <TitleText titleClassName="title1" titleText="나의 지원현황" />
       </Box>
       <Box boxClassName="inner">
         <div className="applyWrap">

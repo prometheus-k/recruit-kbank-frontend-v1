@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import Title from '../components/TitleText'
+import TitleText from '../components/TitleText'
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 import Button from '../components/Button'
 import CardAction from '../components/CardAction';
@@ -18,9 +18,9 @@ import Box from '../components/Box';
 const initialStoryCards = [
   // 초기 카드 목록
   // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
-  { idx: 1, title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_1.jpg', type: 'type1' },
-  { idx: 3, title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_3.jpg', type: 'type2' },
   { idx: 5, title: '5국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_5.jpg', type: 'type1' },
+  { idx: 3, title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_3.jpg', type: 'type2' },
+  { idx: 1, title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_1.jpg', type: 'type1' },
   { idx: 7, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_7.jpg', type: 'type3' },
   { idx: 9, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_9.jpg', type: 'type2' },
   { idx: 2, title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/mw/mw_people_stroy_2.jpg', type: 'type2' },
@@ -32,9 +32,9 @@ const initialStoryCards = [
 const initialStoryCards2 = [
   // 초기 카드 목록
   // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
-  { idx: 1, title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_1.jpg', type: 'type1' },
-  { idx: 3, title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_3.jpg', type: 'type2' },
   { idx: 5, title: '5국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_5.jpg', type: 'type1' },
+  { idx: 3, title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_3.jpg', type: 'type2' },
+  { idx: 1, title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_1.jpg', type: 'type1' },
   { idx: 7, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_7.jpg', type: 'type3' },
   { idx: 9, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_9.jpg', type: 'type2' },
   { idx: 2, title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ', imageSrc: 'images/kbankstory/pc/pc_people_stroy_2.jpg', type: 'type2' },
@@ -121,7 +121,7 @@ const Story = () => {
   return (
     <Box boxClassName="content">
       <Box boxClassName="inner">
-        <Title titleClassName="title1" titleText="케이뱅크<br />사람들의 이야기" />
+        <TitleText titleClassName="title1" titleText="케이뱅크<br />사람들의 이야기" />
       </Box>
       <Box boxClassName="inner">
         <div className="kbank-manWrap">
