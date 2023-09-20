@@ -266,7 +266,7 @@ const Main = () => {
                 },
                 801: {
                   slidesPerView: 2,
-                  spaceBetween: 30,
+                  spaceBetween: 10,
                   slidesPerGroup: 2,
                 }
               }}
@@ -312,12 +312,12 @@ const Main = () => {
                 },
                 801: {
                   slidesPerView: 2,
-                  spaceBetween: 30,
+                  spaceBetween: 10,
                   slidesPerGroup: 2,
                 },
                 1000: {
                   slidesPerView: 3,
-                  spaceBetween: 25,
+                  spaceBetween: 20,
                   slidesPerGroup: 2,
                 },
               }}
