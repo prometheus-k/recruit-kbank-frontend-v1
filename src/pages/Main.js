@@ -265,7 +265,7 @@ const Main = () => {
                   slidesPerGroup: 1,
                 },
                 801: {
-                  slidesPerView: 2,
+                  slidesPerView: 1,
                   spaceBetween: 10,
                   slidesPerGroup: 2,
                 }
