@@ -25,25 +25,6 @@ import './Main.css'
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Desktop = () => {
-    const isDesktop = useMediaQuery({ minWidth: 992 })
-    return isDesktop;
-}
-
-const Tablet = () => {
-    const isTablet = useMediaQuery({ maxWidth: 768, maxWidth: 991 })
-    return isTablet;
-}
-const Mobile = () => {
-    const isMobile = useMediaQuery({ maxWidth: 767 })
-    return isMobile;
-}
-
-const Default = () => {
-    const isDefault = useMediaQuery({ minWidth: 768 })
-    return isDefault;
-}
-
 
 const initialStoryDetails = [
     // 초기 카드 목록
@@ -119,8 +100,40 @@ const initialStoryDetails = [
 ];
 
 const StoryView = () => {
-    let [loading, setLoading] = useState(true);
-    let [color, setColor] = useState("#D199D0");
+    
+    const Desktop = () => {
+        const isDesktop = useMediaQuery({ minWidth: 992 })
+        return isDesktop;
+    }
+
+    const Tablet = () => {
+        const isTablet = useMediaQuery({ maxWidth: 768, maxWidth: 991 })
+        return isTablet;
+    }
+    const Mobile = () => {
+        const isMobile = useMediaQuery({ maxWidth: 767 })
+        return isMobile;
+    }
+
+    const Default = () => {
+        const isDefault = useMediaQuery({ minWidth: 768 })
+        return isDefault;
+    }
+
+            
+    const swiperModulesPc = [
+        Navigation,
+        Pagination
+    ];
+
+    const swiperModulesMobile = [
+        Navigation
+    ];
+    
+
+    const [loading, setLoading] = useState(true);
+    const [color, setColor] = useState("#D199D0");
+    const [swiperModules, setSwiperModules] = useState(Mobile() ? [...swiperModulesMobile] : [...swiperModulesPc]);
     // const params = useParams();
     // const idx = params.idx; // 
     const location = useLocation();
@@ -275,8 +288,9 @@ const StoryView = () => {
                         <h2 className="title2">다른 이야기</h2>
                     </div>
                     <Swiper
+                        lazy={true}
                         pagination={{ clickable: true }}
-                        modules={[Navigation, Pagination]}
+                        modules={swiperModules}
                         breakpoints={{
                             768: {
                                 slidesPerView: 1,

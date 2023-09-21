@@ -29,7 +29,16 @@ const careerOptionsData = [
 const initialListdata = [
   // 초기 카드 목록
   // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
-
+  { tag: true, tit: '여신상품 리스크관리 담당자', sub1: 'Tech', sub2: '경력', dday: '오늘마감', ddayclassName: 'day' },
+  { tag: true, tit: 'HR 어시스턴트', sub1: 'Management', sub2: '인턴', dday: '오늘마감', ddayclassName: 'day' },
+  { tag: true, tit: 'UX Researcher', sub1: 'UX팀', sub2: '경력', dday: '오늘마감', ddayclassName: 'day' },
+  { tag: true, tit: '프로덕트 디자이너', sub1: 'UX팀', sub2: '경력', dday: 'D-14', ddayclassName: 'day' },
+  { tag: false, tit: '플랫폼 디자이너', sub1: 'UX팀', sub2: '경력', dday: '상시채용', ddayclassName: 'day' },
+  { tag: false, tit: 'GUI 그래픽 디자이너', sub1: 'UX팀', sub2: '경력', dday: '상시채용', ddayclassName: 'day' },
+  { tag: false, tit: '여신 및 사후 감리 담당자', sub1: 'Risk', sub2: '경력', dday: '상시채용', ddayclassName: 'day' },
+  { tag: false, tit: '수신상품 기획/운영 담당자 채용', sub1: 'Risk', sub2: '경력', dday: '상시채용', ddayclassName: 'day' },
+  { tag: false, tit: '여신 및 사후 감리 담당자', sub1: 'Risk', sub2: '경력', dday: '지원마감', ddayclassName: 'day end' },
+  { tag: false, tit: '데이터플랫폼 엔지니어', sub1: 'Risk', sub2: '경력', dday: '지원마감', ddayclassName: 'day end' },
   // ... 더 많은 카드들
 ];
 
@@ -49,6 +58,11 @@ const Recruit = () => {
     // 실제 데이터를 추가하는 로직을 구현해야 합니다.
     const newList = { tag: false, tit: '데이터플랫폼 엔지니어', sub1: 'Risk', sub2: '경력', dday: '지원마감', ddayclassName: 'day end' };
     setLists([...lists, newList]);
+  };
+  const handleinitButtonClick = () => {
+    setSearchTerm(''); // 검색어 업데이트
+    setSelectedJobGroup('');
+    setSelectedCareer('');
   };
 
   const handleSearchInputChange = (event) => {
@@ -131,7 +145,7 @@ const Recruit = () => {
               <div className='applyWrap type2'>
                 <p className='tit'>현재 진행중인 공고가 없습니다.</p>
                 <div className='btnWrap'>
-                  <button className='btn-apply'>
+                  <button className='btn-apply' onClick={handleinitButtonClick}>
                     <span className='txt'>전제 공고로 돌아가기</span>
                   </button>
                 </div>
