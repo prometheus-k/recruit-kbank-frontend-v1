@@ -10,6 +10,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { EffectFade } from 'swiper/modules';
 
 import Box from '../components/Box';
 import CardAction from '../components/CardAction';
