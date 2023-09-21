@@ -99,6 +99,8 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 .imgWRap::after {content: '';display: block;position: absolute;top:0;left:0;width:calc(50% - 72rem);bottom: 0;background:linear-gradient(180deg, #2004b3 73.76%, #1d04a7 91.01%);z-index: -1;}
 /*.imgWRap img.pc-img {max-width:144rem;width:auto;position: relative;transform:translateX(-50%);left:50%;vertical-align: top;}*/
 .imgWRap img.pc-img {width:auto;height:100%;position: relative;transform:translateX(-50%);left:50%;vertical-align: top;}/* 2023-09-19*/
+.imgWRap .lazyload {width: 100%;height: 100%;position: relative;}
+/* .imgWRap img.pc-img {width:auto;height:54.5rem;position: relative;transform:translateX(-50%);left:50%;vertical-align: top;} */
 /* //2023-09-12 수정*/
 .imgWRap img.m-img {display:none}
 
