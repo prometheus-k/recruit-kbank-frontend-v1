@@ -1,6 +1,6 @@
 .swiper-pagination {position: relative;padding-top: 10rem;}
-.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {margin: 0 1.2rem;}
-.swiper-pagination-bullet {width:1.4rem;height:1.4rem;background: transparent;border:1.5px solid #0f0060;opacity: 1;}
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {margin: 0 1rem;} /* 2023-9-15*/
+.swiper-pagination-bullet {width:1.4rem;height:1.4rem;background: transparent;border:1.5px solid #141414;opacity: 1;} /* 2023-09-15*/
 .swiper-pagination-bullet.swiper-pagination-bullet-active {background: #141414;border-color: #141414;}
 
 @media screen and (max-width:1145px){

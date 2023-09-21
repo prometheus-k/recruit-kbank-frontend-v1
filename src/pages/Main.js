@@ -32,26 +32,6 @@ import hero_img_pc from '../assets/images/hero_img-2.png';
 gsap.registerPlugin(ScrollTrigger);
 
 
-const Desktop = () => {
-  const isDesktop = useMediaQuery({ minWidth: 992 })
-  return isDesktop;
-}
-
-const Tablet = () => {
-  const isTablet = useMediaQuery({ maxWidth: 768, maxWidth: 991 })
-  return isTablet;
-}
-const Mobile = () => {
-  const isMobile = useMediaQuery({ maxWidth: 767 })
-  return isMobile;
-}
-
-const Default = () => {
-  const isDefault = useMediaQuery({ minWidth: 768 })
-  return isDefault;
-}
-
-
 const CardMedia = React.lazy(() => import('../components/CardMedia'));
 
 const override = {
@@ -61,12 +41,32 @@ const override = {
 };
 
 const Main = () => {
+  const Desktop = () => {
+    const isDesktop = useMediaQuery({ minWidth: 992 })
+    return isDesktop;
+  }
+  
+  const Tablet = () => {
+    const isTablet = useMediaQuery({ maxWidth: 768, maxWidth: 991 })
+    return isTablet;
+  }
+  const Mobile = () => {
+    const isMobile = useMediaQuery({ maxWidth: 767 })
+    return isMobile;
+  }
+  
+  const Default = () => {
+    const isDefault = useMediaQuery({ minWidth: 768 })
+    return isDefault;
+  }
+  
   const scrollItems = useRef([]);
-  let [loading, setLoading] = useState(true);
-  let [color, setColor] = useState("#D199D0");
+  const [loading, setLoading] = useState(true);
+  const [color, setColor] = useState("#D199D0");
   const [bigBanner, setBigBanner] = useState(Mobile() ? hero_img_mw : hero_img_pc);
   const [bigBannerClass, setBigBannerClass] = useState(Mobile() ? "m-img" : "pc-img");
   const [footerImg, setFooterImg] = useState(Mobile() ? 'images/main/mw/mw_main_team_join.jpg' : 'images/main/pc/pc_main_team_join.jpg');
+  const [activeClass, setActiveClass] = useState();
 
   const initialStoryCards = [
     // 초기 카드 목록
@@ -135,6 +135,10 @@ const Main = () => {
       imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_04.jpg' : 'images/main/pc/pc_main_benefit_04.jpg'
     },
   ]
+
+  const bigBannerLoad = () => {
+    setActiveClass('on');
+  }
 
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
@@ -208,29 +212,16 @@ const Main = () => {
         </Box>
 
         <Box boxClassName="inner w100">
-          <div className='imgWRap'>
+          <div className={`imgWRap ${activeClass}`}>
             <LazyLoadImage
+              onLoad={bigBannerLoad}
               alt=''
               effect="blur"
               src={bigBanner}
               className={bigBannerClass} />
           </div>
         </Box>
-        <Box boxClassName="inner m">
-          <div className="textWrap">
-            <p className="text1">
-              케이뱅크는 구성원들이<br className="m" /> 성장할 다양한 기회와<br />
-              새로운 가능성을 끊임없이 제공합니다. <br />
-              <span className="pc">
-                이를 통해서 모든 구성원들은 치열하게 고민하고 과감하게 도전하며, <br />
-                우리가 가진 상상을 현실로 만들어가고 있습니다. <br />
-              </span>
-              케이뱅크는 무한한 가능성의 공간에서<br className="m" /> 모두가 꿈꾸는<br className="pc" />
-              금융권의 미래를<br className="m" /> 함께 만들어갈 여러분의 지원을 기다립니다.
-            </p>
-          </div>
-        </Box>
-        <Box boxClassName="inner pc">
+        <Box boxClassName={Mobile()? "inner m":"inner pc"}>
           <div className="textWrap">
             <p className="text1">
               케이뱅크는 구성원들이<br className="m" /> 성장할 다양한 기회와<br />

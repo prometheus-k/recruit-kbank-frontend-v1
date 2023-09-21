@@ -7,7 +7,7 @@
 .content .inner.w100 {max-width:100%}
 
 /* header */
-header {display: flex;justify-content: center;width:100%;margin: 0 auto;position: fixed;top:0;left:0;z-index: 2;background-color: #fff;}
+header {display: flex;justify-content: center;width:100%;margin: 0 auto;position: fixed;top:0;left:0;z-index: 2;background-color: #fff;}/* 2023-09-18*/
 /*header.on {box-shadow:0 2px 6px 0 rgba(0, 0, 0, 0.05);}*/
 .headerWrap {position: relative; width:100%;max-width:119.4rem;height: 7rem; display: flex;justify-content: space-between;align-items: center;padding: 0 2.4rem;z-index: 1;}
 .headerWrap > h1 a {display: block; max-width: 17.4rem;}
@@ -93,11 +93,12 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 /* main */
     /* visual*/
     /* 2023-09-12 수정*/
-.imgWRap {margin: 4.6rem 0 4rem;position: relative;}
+.imgWRap {margin: 4.6rem 0 4rem;position: relative;width: 100%;height: 54.5rem;background-color: #100161;}/* 2023-09-19*/
+.imgWRap.on {background-color: transparent;}/* 2023-09-19*/
 .imgWRap::before {content: '';display: block;position: absolute;top:0;left:50%;right:0;bottom: 0;background-color: #100161;z-index: -1;}
 .imgWRap::after {content: '';display: block;position: absolute;top:0;left:0;width:calc(50% - 72rem);bottom: 0;background:linear-gradient(180deg, #2004b3 73.76%, #1d04a7 91.01%);z-index: -1;}
 /*.imgWRap img.pc-img {max-width:144rem;width:auto;position: relative;transform:translateX(-50%);left:50%;vertical-align: top;}*/
-.imgWRap img.pc-img {width:auto;height:54.5rem;position: relative;transform:translateX(-50%);left:50%;vertical-align: top;}
+.imgWRap img.pc-img {width:auto;height:100%;position: relative;transform:translateX(-50%);left:50%;vertical-align: top;}/* 2023-09-19*/
 /* //2023-09-12 수정*/
 .imgWRap img.m-img {display:none}
 
@@ -171,7 +172,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 .recruit-view .tit {font-size: 2.4rem;line-height: 2.8rem;font-weight: 700;}
 .recruit-view .tit + .txt {padding-top: 1.6rem;}
 .recruit-view .txt {font-size: 1.6rem;line-height: 2.4rem;}
-.recruit-view .txt + .tit {padding-top: 5rem;}
+.recruit-view .txt + .tit {padding-top: 6rem;}
 .list-dot li {padding-left: 1.2rem;position: relative;}
 .list-dot li:before {content: '';display: block;position: absolute;top:1rem;left:0;width:0.4rem;height:0.4rem;background: #141414;border-radius: 50%;}
 .list-dot li + li {margin-top: 1.2rem;}
@@ -187,10 +188,12 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
     opacity: 1;
     transform: translateY(0);
   }
-  
+
+.applyWrap.type2 {height:auto;margin: 17rem auto -10rem;}
+.applyWrap.type2 .btn-apply {width:37rem;}
 
     /* 케이뱅크 사람들의 이야기 */
-.kbank-manWrap {margin-top: 6rem;}
+.kbank-manWrap {margin-top: 8rem;} /*2023-09-19*/
 .column-list {column-count: 2; column-gap: 3rem;margin-bottom: -9rem;}
 .column-list .col-box {display: inline-block;break-inside: avoid;margin-bottom:9rem; }
 .column-list .img-item {display: flex;align-items: center;justify-content: center;position: relative;overflow: hidden;width:100%;border-radius: 1.6rem;}
@@ -345,8 +348,10 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
     .ico-search-input {width:2.4rem;height: 2.4rem;}
 
     /* main */
-    .imgWRap {margin: 3rem 0 2rem;}
-    
+    .imgWRap {margin: 3rem 0 2rem;height: auto;}/* 2023-09-19*/
+    .imgWRap img.m-img {display: block;height: auto;width: 100%;}/* 2023-09-19*/
+    .imgWRap img.pc-img {display: none;}/* 2023-09-19*/
+
     .storyWrap,
     .workbalanceWrap,
     .recruit-linkWrap,
@@ -394,8 +399,11 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
     .recruit-view .tit {font-size: 2rem;line-height: 2.8rem;}
     .recruit-view .txt + .tit {padding-top: 6rem;}
 
+    .applyWrap.type2 {margin: 4rem auto;}/* 2023-09-19*/
+    .applyWrap.type2 .btn-apply {width:19rem;}/* 2023-09-19*/
+
     /* 베넷핏 */
-.benefitWrap {padding-top: 7.2rem;}
+.benefitWrap {padding-top: 6rem;}/* 2023-09-19*/
 .row-list > li + li {padding-top:10rem}
 .row-list > li .tit {font-size: 2.2rem;line-height: 3.2rem;padding-bottom: 2.4rem;}
 .row-list > li .item-box {flex-direction: column;}
@@ -406,7 +414,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 .row-list > li .txt-item dd + dt {padding-top: 5.2rem;}
 
     /* FAQ */
-.faqWrap {padding-top: 6rem;}
+.faqWrap {padding-top: 6rem;} 
 .tab-list-col .tab-link {padding:0 1.6rem;height:4rem;}
 .tab-list-col .tab-link .txt {font-size: 1.4rem;line-height: 1.7rem;}
 .tab-list-col .tab-item + .tab-item {padding-left: 0.8rem;}
@@ -431,13 +439,13 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 /* ----------------------mobile---------------------- */
 @media screen and (max-width:768px){
 
-    .imgWRap img.m-img {display:block;height:auto;width:100%;}
-    .imgWRap img.pc-img {display:none}
+    /* .imgWRap img.m-img {display:block;height:auto;width:100%;}
+    .imgWRap img.pc-img {display:none} *//* 2023-09-19*/
     .recruit-linkWrap img {width: 335;height: 300px}
 
 
     /* 케이뱅크 사람들의 이야기 */
-    .kbank-manWrap {margin-top: 2.8rem;}
+    .kbank-manWrap {margin-top: 4rem;}/* 2023-09-19*/
     .column-list {column-count: inherit;column-gap: 0;margin-bottom: -6rem;}
     .column-list .txt-item {padding-top: 2rem;}
     .column-list .txt-item .tit {font-size: 2rem;line-height: 3.2rem;}
