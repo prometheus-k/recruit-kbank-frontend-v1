@@ -61,6 +61,16 @@ const Main = () => {
     return isDefault;
   }
   
+  const swiperModulesPc = [
+    Navigation,
+    Pagination
+  ];
+
+  const swiperModulesMobile = [
+    Navigation
+  ];
+  
+  
   const scrollItems = useRef([]);
   const [loading, setLoading] = useState(true);
   const [color, setColor] = useState("#D199D0");
@@ -68,6 +78,7 @@ const Main = () => {
   const [bigBannerClass, setBigBannerClass] = useState(Mobile() ? "m-img" : "pc-img");
   const [footerImg, setFooterImg] = useState(Mobile() ? 'images/main/mw/mw_main_team_join.jpg' : 'images/main/pc/pc_main_team_join.jpg');
   const [activeClass, setActiveClass] = useState();
+  const [swiperModules, setSwiperModules] = useState(Mobile() ? [...swiperModulesMobile] : [...swiperModulesPc]);
 
   const initialStoryCards = [
     // 초기 카드 목록
@@ -250,7 +261,7 @@ const Main = () => {
             <Swiper
               lazy={true}
               pagination={{ clickable: true }}
-              modules={[Navigation, Pagination]}
+              modules={swiperModules}
               lazyPreloadPrevNext={2}
               breakpoints={{
                 768: {
@@ -298,7 +309,7 @@ const Main = () => {
             <Swiper
             lazy={true}
               pagination={true}
-              modules={[Pagination]}
+              modules={swiperModules}
               breakpoints={{
                 768: {
                   slidesPerView: 1,
