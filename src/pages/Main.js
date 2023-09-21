@@ -248,6 +248,7 @@ const Main = () => {
               <Link to="/Story" className="link">more</Link>
             </div>
             <Swiper
+              lazy={true}
               pagination={{ clickable: true }}
               modules={[Navigation, Pagination]}
               lazyPreloadPrevNext={2}
@@ -295,6 +296,7 @@ const Main = () => {
               <Link to="/Benefit" className="link">more</Link>
             </div>
             <Swiper
+            lazy={true}
               pagination={true}
               modules={[Pagination]}
               breakpoints={{
