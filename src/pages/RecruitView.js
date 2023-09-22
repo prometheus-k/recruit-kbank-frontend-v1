@@ -65,7 +65,7 @@ const RecruitView = () => {
 
     <Box boxClassName="content">
       <Box boxClassName="inner">
-        <TitleText titleClassName="title1" wrapClassName="recruit" titleText="프로덕트 디자이너">
+        <TitleText titleClassName="title1" wrapClassName="recruit" titleText="프로덕트 디자이너" translate={false}>
           <div className="recruit-cate">
             <span>Tech</span>
             <span>경력</span>

@@ -128,7 +128,7 @@ const Story = () => {
           <ul className="column-list">
             {cards.map((card, index) => (
               <li className="col-box" key={index}>
-                <CardAction linkUrl={`/StoryView?idx=${card.idx}`} cardActionClassName={`kbank-man-item ${activeTab === 0 ? 'active' : ''}`}>
+                <CardAction linkUrl={`/StoryView/${card.idx}`} cardActionClassName={`kbank-man-item ${activeTab === 0 ? 'active' : ''}`}>
                   <div className="scroll-item">
                     <CardMedia cardImgClassName={card.type} imageSrc={card.imageSrc}></CardMedia>
                     <CardContent>

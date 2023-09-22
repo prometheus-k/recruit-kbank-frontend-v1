@@ -24,7 +24,7 @@ CardAction.propTypes = {
     linkUrl: PropTypes.string,
     cardActionClassName: PropTypes.string, // 버튼에 추가될 클래스명};
     children: PropTypes.node, // Card 컴포넌트 내용(children)을 받을 수 있도록 추가]
-    onClick: PropTypes.func.isRequired, // onClick 이벤트 핸들러 함수
+    onClick: PropTypes.func, // onClick 이벤트 핸들러 함수
 }
 CardAction.defaultProps = {
     linkUrl: '/',

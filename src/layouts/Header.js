@@ -65,7 +65,7 @@ const Header = () => {
     <header className={isHeaderOn ? 'on' : ''}>
       <Box boxClassName="headerWrap">
         <h1>
-          <Link to="/" ><img src="images/logo.png" alt="케이뱅크"/></Link>
+          <Link to="/" ><img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="케이뱅크"/></Link>
         </h1>
         <div className="gnbWrap">
           <Link to="#" className={`m_menu ${isMenuOpen ? 'on' : ''}`} onClick={handleMenuClick}>
