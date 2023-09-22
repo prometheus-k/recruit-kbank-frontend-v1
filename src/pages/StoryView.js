@@ -261,7 +261,10 @@ const StoryView = () => {
                                     "합리적이고, 실용적인 은행 Kbank"
                                 </dd>
                                 <dd className="txt img">
-                                    <Image src={process.env.PUBLIC_URL + storyDetail.imageSrc[1]} alt="" />
+                                <LazyLoadImage
+                                    alt=''
+                                    effect="blur"
+                                    src={process.env.PUBLIC_URL + storyDetail.imageSrc[1]}/>
                                 </dd>
                                 <dt className="tit">그럼 업무하시면서 위기의 순간도 있으셨나요?</dt>
                                 <dd className="txt">
