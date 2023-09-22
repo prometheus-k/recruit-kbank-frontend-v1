@@ -76,7 +76,7 @@ const initialStoryDetails = [
     {
         idx: 7, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
         imageSrc: [
-            'images/blog/07/people_blog_7_01.jpg'
+            '/images/blog/07/people_blog_7_01.jpg'
         ],
     },
     {
@@ -100,7 +100,7 @@ const initialStoryDetails = [
 ];
 
 const StoryView = () => {
-    
+
     const Desktop = () => {
         const isDesktop = useMediaQuery({ minWidth: 992 })
         return isDesktop;
@@ -120,7 +120,7 @@ const StoryView = () => {
         return isDefault;
     }
 
-            
+
     const swiperModulesPc = [
         Navigation,
         Pagination
@@ -129,7 +129,7 @@ const StoryView = () => {
     const swiperModulesMobile = [
         Navigation
     ];
-    
+
 
     const [loading, setLoading] = useState(true);
     const [color, setColor] = useState("#D199D0");
@@ -198,7 +198,7 @@ const StoryView = () => {
         console.log(event.currentTarget);
     };
 
-    console.log("path: "+process.env.PUBLIC_URL);
+    console.log("path: " + process.env.PUBLIC_URL);
 
     useEffect(() => {
         // 컴포넌트가 처음 렌더링될 때 실행되는 코드
@@ -232,10 +232,10 @@ const StoryView = () => {
             <Box boxClassName="inner">
                 <div className="kbank-manWrap-view scroll-item" key={idx}>
                     <LazyLoadImage
-                    alt=''
-                    effect="blur"
-                    src={process.env.PUBLIC_URL + storyDetail.imageSrc[0]}
-                    className={"manWrap-view01"} />
+                        alt=''
+                        effect="blur"
+                        src={process.env.PUBLIC_URL + storyDetail.imageSrc[0]}
+                        className={"manWrap-view01"} />
                     <div className="boardWrap">
                         <div className="recruit-view">
                             {/* 등록영역*/}
@@ -261,10 +261,10 @@ const StoryView = () => {
                                     "합리적이고, 실용적인 은행 Kbank"
                                 </dd>
                                 <dd className="txt img">
-                                <LazyLoadImage
-                                    alt=''
-                                    effect="blur"
-                                    src={process.env.PUBLIC_URL + storyDetail.imageSrc[1]}/>
+                                    <LazyLoadImage
+                                        alt=''
+                                        effect="blur"
+                                        src={process.env.PUBLIC_URL + storyDetail.imageSrc[1]} />
                                 </dd>
                                 <dt className="tit">그럼 업무하시면서 위기의 순간도 있으셨나요?</dt>
                                 <dd className="txt">
@@ -311,7 +311,7 @@ const StoryView = () => {
                     >
                         {initialStoryCards.map((card, index) => (
                             <SwiperSlide className="swiper-slide" key={index}>
-                                <CardAction linkUrl={`/StoryView/${card.idx}`} onClick={handleAnchorClick}>
+                                <CardAction linkUrl={`/Story/StoryView/${card.idx}`} onClick={handleAnchorClick}>
                                     {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
                                     <div className="img-item swiper-story-img">
                                         <img src={process.env.PUBLIC_URL + card.imageSrc} alt="" loading="lazy" />

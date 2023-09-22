@@ -26,7 +26,7 @@ const LazyImage = ({ src }) => {
 
     return (
         // 화면에 보여지기 전이라면 NoImage, 화면에 보여지고 있다면 src에 해당하는 이미지
-        <img ref={imgRef} src={src} />
+        <img ref={imgRef} src={src} loading="lazy" />
     )
 }
 

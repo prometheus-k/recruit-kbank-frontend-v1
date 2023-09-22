@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 import Main from './pages/Main'
@@ -28,12 +28,12 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<Main />}></Route>
           <Route path="/Recruit" exact element={<Recruit />}></Route>
-          <Route path="/Story" exact element={<Story />}></Route>
+          <Route path="/Story" element={<Story />}></Route>
+          <Route path="/Story/StoryView/:idx" element={<StoryView />}></Route>
           <Route path="/Benefit" exact element={<Benefit />}></Route>
           <Route path="/Faq" exact element={<Faq />}></Route>
           <Route path="/MyApply" exact element={<MyApply />}></Route>
           <Route path="/RecruitView" exact element={<RecruitView />}></Route>
-          <Route path="/StoryView/:idx" element={<StoryView />}></Route>
           <Route path="/ImageTest" exact element={<ImageTest />}></Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>

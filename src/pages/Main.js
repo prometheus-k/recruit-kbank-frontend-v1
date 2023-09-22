@@ -46,7 +46,7 @@ const Main = () => {
     const isDesktop = useMediaQuery({ minWidth: 992 })
     return isDesktop;
   }
-  
+
   const Tablet = () => {
     const isTablet = useMediaQuery({ maxWidth: 768, maxWidth: 991 })
     return isTablet;
@@ -55,12 +55,12 @@ const Main = () => {
     const isMobile = useMediaQuery({ maxWidth: 767 })
     return isMobile;
   }
-  
+
   const Default = () => {
     const isDefault = useMediaQuery({ minWidth: 768 })
     return isDefault;
   }
-  
+
   const swiperModulesPc = [
     Navigation,
     Pagination
@@ -69,8 +69,8 @@ const Main = () => {
   const swiperModulesMobile = [
     Navigation
   ];
-  
-  
+
+
   const scrollItems = useRef([]);
   const [loading, setLoading] = useState(true);
   const [color, setColor] = useState("#D199D0");
@@ -234,7 +234,7 @@ const Main = () => {
               className={bigBannerClass} />
           </div>
         </Box>
-        <Box boxClassName={Mobile()? "inner m":"inner pc"}>
+        <Box boxClassName={Mobile() ? "inner m" : "inner pc"}>
           <div className="textWrap">
             <p className="text1">
               케이뱅크는 구성원들이<br className="m" /> 성장할 다양한 기회와<br />
@@ -307,7 +307,7 @@ const Main = () => {
               <Link to="/Benefit" className="link">more</Link>
             </div>
             <Swiper
-            lazy="true"
+              lazy="true"
               pagination={true}
               modules={swiperModules}
               breakpoints={{
@@ -332,7 +332,10 @@ const Main = () => {
               {initialBenefitCard.map((card, index) => (
                 <SwiperSlide className="swiper-slide" key={index}>
                   <CardAction>
-                    <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc={card.imageSrc}></CardMedia>
+                    {/* <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc={card.imageSrc}></CardMedia> */}
+                    <div className="img-item swiper-workbalance-img">
+                      <img src={card.imageSrc} alt="" loading="lazy" />
+                    </div >
                     <div className='swiper-workbalance-txt1'>{card.title}</div>
                     <div className='swiper-workbalance-txt2'>{card.sub}</div>
                   </CardAction>
