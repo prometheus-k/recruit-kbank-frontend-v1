@@ -26,14 +26,16 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import './Main.css'
-import hero_img_mw from '../assets/images/hero_img_mw.png';
-import hero_img_pc from '../assets/images/hero_img-2.png';
+import hero_img_mw from '../assets/images/hero_img_mw.webp';
+import hero_img_pc from '../assets/images/hero_img-2.webp';
+import main_team_join_mw from '../assets/images/main/mw/mw_main_team_join.webp';
+import main_team_join_pc from '../assets/images/main/pc/pc_main_team_join.webp';
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 
-const CardMedia = React.lazy(() => import('../components/CardMedia'));
+//const CardMedia = React.lazy(() => import('../components/CardMedia'));
 
 const override = {
   display: "block",
@@ -76,7 +78,7 @@ const Main = () => {
   const [color, setColor] = useState("#D199D0");
   const [bigBanner, setBigBanner] = useState(Mobile() ? hero_img_mw : hero_img_pc);
   const [bigBannerClass, setBigBannerClass] = useState(Mobile() ? "m-img" : "pc-img");
-  const [footerImg, setFooterImg] = useState(Mobile() ? 'images/main/mw/mw_main_team_join.jpg' : 'images/main/pc/pc_main_team_join.jpg');
+  const [footerImg, setFooterImg] = useState(Mobile() ? main_team_join_mw : main_team_join_pc);
   const [activeClass, setActiveClass] = useState();
   const [swiperModules, setSwiperModules] = useState(Mobile() ? [...swiperModulesMobile] : [...swiperModulesPc]);
 
@@ -350,7 +352,7 @@ const Main = () => {
       <Box boxClassName="inner">
         <div className="scroll-item">
           <div className="recruit-linkWrap">
-            <LazyImage src={footerImg} alt="" />
+            <LazyImage src={footerImg} art="" />
             <div className="txtWrap">
               <p className="txt">지금 새로운 금융의 여정에<br className="m" /> 합류해 보세요.</p>
               <Link to="/Recruit" className="btn">채용공고 바로가기 →</Link>
