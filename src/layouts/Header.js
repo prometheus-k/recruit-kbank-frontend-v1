@@ -4,13 +4,14 @@ import { useMediaQuery } from 'react-responsive';
 
 import { useStyleContext } from '../components/StyleContext';
 import Box from '../components/Box';
+import logo from '../assets/images/logo.webp';
 
 const Header = () => {
   const Desktop = () => {
     const isDesktop = useMediaQuery({ minWidth: 992 })
     return isDesktop;
   }
-  
+
   const Tablet = () => {
     const isTablet = useMediaQuery({ maxWidth: 768, maxWidth: 991 })
     return isTablet;
@@ -19,12 +20,12 @@ const Header = () => {
     const isMobile = useMediaQuery({ maxWidth: 767 })
     return isMobile;
   }
-  
+
   const Default = () => {
     const isDefault = useMediaQuery({ minWidth: 768 })
     return isDefault;
   }
-  
+
   const [isHeaderOn, setIsHeaderOn] = useState(false);
   const location = useLocation();
 
@@ -65,7 +66,7 @@ const Header = () => {
     <header className={isHeaderOn ? 'on' : ''}>
       <Box boxClassName="headerWrap">
         <h1>
-          <Link to="/" ><img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="케이뱅크"/></Link>
+          <Link to="/" ><img src={process.env.PUBLIC_URL + logo} alt="케이뱅크" /></Link>
         </h1>
         <div className="gnbWrap">
           <Link to="#" className={`m_menu ${isMenuOpen ? 'on' : ''}`} onClick={handleMenuClick}>
