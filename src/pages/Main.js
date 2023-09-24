@@ -266,7 +266,7 @@ const Main = () => {
             <Swiper
               lazy="true"
               parallax={true}
-              speed={600}
+              speed={700}
               pagination={{ clickable: true }}
               lazyPreloadPrevNext={2}
               modules={swiperModules}
@@ -288,7 +288,7 @@ const Main = () => {
                 <SwiperSlide className="swiper-slide" key={index}>
                   <CardAction>
                     {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
-                    <div data-swiper-parallax="-15%">
+                    <div data-swiper-parallax="-10%">
                       <div className="img-item swiper-story-img">
                         <img src={card.imageSrc} alt="" loading="lazy" />
                       </div >
@@ -318,6 +318,7 @@ const Main = () => {
             <Swiper
               lazy="true"
               parallax={true}
+              speed={700}
               pagination={true}
               modules={swiperModules}
               breakpoints={{
@@ -343,7 +344,7 @@ const Main = () => {
                 <SwiperSlide className="swiper-slide" key={index}>
                   <CardAction>
                     {/* <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc={card.imageSrc}></CardMedia> */}
-                    <div data-swiper-parallax="-15%">
+                    <div data-swiper-parallax="-10%">
                       <div className="img-item swiper-workbalance-img">
                         <img src={card.imageSrc} alt="" loading="lazy" />
                       </div >
