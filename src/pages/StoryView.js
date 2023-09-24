@@ -318,7 +318,7 @@ const StoryView = () => {
                             <SwiperSlide className="swiper-slide" key={index}>
                                 <CardAction linkUrl={`/Story/StoryView/${card.idx}`} onClick={handleAnchorClick}>
                                     {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
-                                    <div data-swiper-parallax="-10%">
+                                    <div data-swiper-parallax="-3%">
                                         <div className="img-item swiper-story-img">
                                             <img src={process.env.PUBLIC_URL + card.imageSrc} alt="" loading="lazy" />
                                         </div >

@@ -291,7 +291,7 @@ const Main = () => {
                 <SwiperSlide className="swiper-slide" key={index}>
                   <CardAction>
                     {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
-                    <div data-swiper-parallax="-10%">
+                    <div data-swiper-parallax="-3%">
                       <div className="img-item swiper-story-img">
                         <img src={card.imageSrc} alt="" loading="lazy" />
                       </div >
@@ -347,7 +347,7 @@ const Main = () => {
                 <SwiperSlide className="swiper-slide" key={index}>
                   <CardAction>
                     {/* <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc={card.imageSrc}></CardMedia> */}
-                    <div data-swiper-parallax="-5%">
+                    <div data-swiper-parallax="-3%">
                       <div className="img-item swiper-workbalance-img">
                         <img src={card.imageSrc} alt="" loading="lazy" />
                       </div >
