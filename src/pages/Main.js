@@ -9,7 +9,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Parallax } from 'swiper/modules';
 import { EffectFade } from 'swiper/modules';
 
 import Box from '../components/Box';
@@ -24,6 +24,7 @@ import LazyImage from '../components/LazyImage';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/parallax'
 
 import './Main.css'
 import hero_img_mw from '../assets/images/hero_img_mw.webp';
@@ -65,11 +66,13 @@ const Main = () => {
 
   const swiperModulesPc = [
     Navigation,
-    Pagination
+    Pagination,
+    Parallax
   ];
 
   const swiperModulesMobile = [
-    Navigation
+    Navigation,
+    Parallax
   ];
 
 
@@ -262,9 +265,11 @@ const Main = () => {
             </div>
             <Swiper
               lazy="true"
+              parallax={true}
+              speed={600}
               pagination={{ clickable: true }}
-              modules={swiperModules}
               lazyPreloadPrevNext={2}
+              modules={swiperModules}
               breakpoints={{
                 768: {
                   slidesPerView: 1,
@@ -283,11 +288,13 @@ const Main = () => {
                 <SwiperSlide className="swiper-slide" key={index}>
                   <CardAction>
                     {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
-                    <div className="img-item swiper-story-img">
-                      <img src={card.imageSrc} alt="" loading="lazy" />
-                    </div >
-                    <div className='swiper-story-txt1'>{card.title}</div>
-                    <div className='swiper-story-txt2'>{card.sub}</div>
+                    <div data-swiper-parallax="-15%">
+                      <div className="img-item swiper-story-img">
+                        <img src={card.imageSrc} alt="" loading="lazy" />
+                      </div >
+                      <div className='swiper-story-txt1'>{card.title}</div>
+                      <div className='swiper-story-txt2'>{card.sub}</div>
+                    </div>
                   </CardAction>
                 </SwiperSlide>
               ))}
@@ -310,6 +317,7 @@ const Main = () => {
             </div>
             <Swiper
               lazy="true"
+              parallax={true}
               pagination={true}
               modules={swiperModules}
               breakpoints={{
@@ -335,11 +343,13 @@ const Main = () => {
                 <SwiperSlide className="swiper-slide" key={index}>
                   <CardAction>
                     {/* <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc={card.imageSrc}></CardMedia> */}
-                    <div className="img-item swiper-workbalance-img">
-                      <img src={card.imageSrc} alt="" loading="lazy" />
-                    </div >
-                    <div className='swiper-workbalance-txt1'>{card.title}</div>
-                    <div className='swiper-workbalance-txt2'>{card.sub}</div>
+                    <div data-swiper-parallax="-15%">
+                      <div className="img-item swiper-workbalance-img">
+                        <img src={card.imageSrc} alt="" loading="lazy" />
+                      </div >
+                      <div className='swiper-workbalance-txt1'>{card.title}</div>
+                      <div className='swiper-workbalance-txt2'>{card.sub}</div>
+                    </div>
                   </CardAction>
                 </SwiperSlide>
               ))}
