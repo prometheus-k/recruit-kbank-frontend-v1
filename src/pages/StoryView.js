@@ -178,7 +178,7 @@ const StoryView = () => {
         },
         {
             idx: 8, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-            imageSrc: Mobile() ? 'images/main/mw/mw_main_story_08.jpg' : '/images/main/pc/pc_main_story_08.jpg', type: 'type1'
+            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_08.jpg' : '/images/main/pc/pc_main_story_08.jpg', type: 'type1'
         },
         {
             idx: 10, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
