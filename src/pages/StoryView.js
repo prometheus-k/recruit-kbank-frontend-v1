@@ -8,7 +8,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Parallax } from 'swiper/modules';
 
 import Box from '../components/Box';
 import CardAction from '../components/CardAction';
@@ -123,11 +123,13 @@ const StoryView = () => {
 
     const swiperModulesPc = [
         Navigation,
-        Pagination
+        Pagination,
+        Parallax
     ];
 
     const swiperModulesMobile = [
-        Navigation
+        Navigation,
+        Parallax
     ];
 
 
@@ -146,43 +148,43 @@ const StoryView = () => {
         // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
         {
             idx: 5, title: '5국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_05.jpg' : '/images/main/pc/pc_main_story_05.jpg', type: 'type1'
+            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_05.webp' : '/images/main/pc/pc_main_story_05.webp', type: 'type1'
         },
         {
             idx: 3, title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_03.jpg' : '/images/main/pc/pc_main_story_03.jpg', type: 'type2'
+            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_03.webp' : '/images/main/pc/pc_main_story_03.webp', type: 'type2'
         },
         {
             idx: 1, title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_01.jpg' : '/images/main/pc/pc_main_story_01.jpg', type: 'type1'
+            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_01.webp' : '/images/main/pc/pc_main_story_01.webp', type: 'type1'
         },
         {
             idx: 7, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_07.jpg' : '/images/main/pc/pc_main_story_07.jpg', type: 'type3'
+            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_07.webp' : '/images/main/pc/pc_main_story_07.webp', type: 'type3'
         },
         {
             idx: 9, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_09.jpg' : '/images/main/pc/pc_main_story_09.jpg', type: 'type2'
+            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_09.webp' : '/images/main/pc/pc_main_story_09.webp', type: 'type2'
         },
         {
             idx: 2, title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_02.jpg' : '/images/main/pc/pc_main_story_02.jpg', type: 'type2'
+            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_02.webp' : '/images/main/pc/pc_main_story_02.webp', type: 'type2'
         },
         {
             idx: 4, title: '4국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_04.jpg' : '/images/main/pc/pc_main_story_04.jpg', type: 'type2'
+            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_04.webp' : '/images/main/pc/pc_main_story_04.webp', type: 'type2'
         },
         {
             idx: 6, title: '6국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_06.jpg' : '/images/main/pc/pc_main_story_06.jpg', type: 'type2'
+            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_06.webp' : '/images/main/pc/pc_main_story_06.webp', type: 'type2'
         },
         {
             idx: 8, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_08.jpg' : '/images/main/pc/pc_main_story_08.jpg', type: 'type1'
+            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_08.webp' : '/images/main/pc/pc_main_story_08.webp', type: 'type1'
         },
         {
             idx: 10, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_10.jpg' : '/images/main/pc/pc_main_story_10.jpg', type: 'type2'
+            imageSrc: Mobile() ? '/images/main/mw/mw_main_story_10.webp' : '/images/main/pc/pc_main_story_10.webp', type: 'type2'
         },
     ];
 
@@ -293,7 +295,10 @@ const StoryView = () => {
                     </div>
                     <Swiper
                         lazy="true"
+                        parallax={true}
+                        speed={800}
                         pagination={{ clickable: true }}
+                        lazyPreloadPrevNext={2}
                         modules={swiperModules}
                         breakpoints={{
                             768: {
@@ -313,11 +318,13 @@ const StoryView = () => {
                             <SwiperSlide className="swiper-slide" key={index}>
                                 <CardAction linkUrl={`/Story/StoryView/${card.idx}`} onClick={handleAnchorClick}>
                                     {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
-                                    <div className="img-item swiper-story-img">
-                                        <img src={process.env.PUBLIC_URL + card.imageSrc} alt="" loading="lazy" />
-                                    </div >
-                                    <div className='swiper-story-txt1'>{card.title}</div>
-                                    <div className='swiper-story-txt2'>{card.sub}</div>
+                                    <div data-swiper-parallax="-10%">
+                                        <div className="img-item swiper-story-img">
+                                            <img src={process.env.PUBLIC_URL + card.imageSrc} alt="" loading="lazy" />
+                                        </div >
+                                        <div className='swiper-story-txt1'>{card.title}</div>
+                                        <div className='swiper-story-txt2'>{card.sub}</div>
+                                    </div>
                                 </CardAction>
                             </SwiperSlide>
                         ))}

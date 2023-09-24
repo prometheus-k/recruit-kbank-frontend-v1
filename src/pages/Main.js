@@ -31,6 +31,9 @@ import hero_img_mw from '../assets/images/hero_img_mw.webp';
 import hero_img_pc from '../assets/images/hero_img-2.webp';
 import main_team_join_mw from '../assets/images/main/mw/mw_main_team_join.webp';
 import main_team_join_pc from '../assets/images/main/pc/pc_main_team_join.webp';
+import ic_facebook from '../assets/images/ic_facebook.webp';
+import ic_instargram from '../assets/images/ic_instargram.webp';
+import ic_youtube from '../assets/images/ic_youtube.webp';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -266,7 +269,7 @@ const Main = () => {
             <Swiper
               lazy="true"
               parallax={true}
-              speed={700}
+              speed={800}
               pagination={{ clickable: true }}
               lazyPreloadPrevNext={2}
               modules={swiperModules}
@@ -318,8 +321,8 @@ const Main = () => {
             <Swiper
               lazy="true"
               parallax={true}
-              speed={700}
-              pagination={true}
+              speed={800}
+              pagination={{ clickable: true }}
               modules={swiperModules}
               breakpoints={{
                 768: {
@@ -344,7 +347,7 @@ const Main = () => {
                 <SwiperSlide className="swiper-slide" key={index}>
                   <CardAction>
                     {/* <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc={card.imageSrc}></CardMedia> */}
-                    <div data-swiper-parallax="-10%">
+                    <div data-swiper-parallax="-5%">
                       <div className="img-item swiper-workbalance-img">
                         <img src={card.imageSrc} alt="" loading="lazy" />
                       </div >
@@ -376,9 +379,9 @@ const Main = () => {
         <div className="snsWrap">
           <p className="txt">케이뱅크의<br className="m" /> 다양한 소식을 확인해보세요.</p>
           <ul>
-            <li><Link to="https://www.instagram.com/kbank_official/?hl=ko"><img src="images/ic_instargram.png" alt="instargram" /></Link></li>
-            <li><Link to="https://ko-kr.facebook.com/kbanknow"><img src="images/ic_facebook.png" alt="facebook" /></Link></li>
-            <li><Link to="https://www.youtube.com/@kbanknow"><img src="images/ic_youtube.png" alt="youtube" /></Link></li>
+            <li><Link to="https://www.instagram.com/kbank_official/?hl=ko"><img src={ic_instargram} alt="instargram" /></Link></li>
+            <li><Link to="https://ko-kr.facebook.com/kbanknow"><img src={ic_facebook} alt="facebook" /></Link></li>
+            <li><Link to="https://www.youtube.com/@kbanknow"><img src={ic_youtube} alt="youtube" /></Link></li>
           </ul>
         </div>
       </Box>

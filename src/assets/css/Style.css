@@ -41,12 +41,12 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 .titleWrap .recruit-cate span {font-size: 1.8rem;letter-spacing: -0.04rem;}
 .titleWrap .recruit-cate span + span:before {content: '/';display: inline;padding: 0 0.5rem 0 0.3rem;}
 
-.ico-search-input{display:block;width:2.8rem;height:2.8rem;background:url("../images/ic_search.png") center center;background-size:contain;}
+.ico-search-input{display:block;width:2.8rem;height:2.8rem;background:url(../images/ic_search.webp) center center;background-size:contain;}
 
 .btnWrap {width:100%;text-align: center;margin-top: 10rem;}
 .btn-more {display: flex;align-items: center;justify-content: center;margin: 0 auto; width:22.3rem;height:7rem;background: #f8f8f8;border-radius: 99rem;}
 .btn-more .txt {font-size: 2.2rem;line-height: 2.6rem;font-weight: 700;}
-.btn-more .txt:after {content: '';display: inline-block;vertical-align: middle;margin: -0.4rem 0 0 0.4rem; width:2.2rem;height:2.2rem;background: url(../images/ic_more_down.png) center center no-repeat;background-size: contain;}
+.btn-more .txt:after {content: '';display: inline-block;vertical-align: middle;margin: -0.4rem 0 0 0.4rem; width:2.2rem;height:2.2rem;background: url(../images/ic_more_down.webp) center center no-repeat;background-size: contain;}
 
 .btnWrap.appli {display: flex;width:100%;max-width: 78rem;margin: 10rem auto 0;}
 [class*="btn-appli-"] {flex:1;align-items: center;justify-content: center;height:8rem;background: #f8f8f8;border-radius: 1.6rem;} 
@@ -58,7 +58,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 
 .btnWrap.list {width:100%;max-width: 78rem;margin: 6rem auto 0;text-align: left;}
 .btn-list .txt {font-size: 2rem;line-height: 2.4rem;font-weight: 500;}
-.btn-list .txt:before {content: '';display: inline-flex;width:2.6rem;height: 2.6rem;margin:-0.1rem 1.2rem 0 0;background: url(../images/ic_more_btn_circle.png) center center no-repeat;background-size: contain; align-items: center;justify-content: center;transform: rotate(180deg);vertical-align: middle;}
+.btn-list .txt:before {content: '';display: inline-flex;width:2.6rem;height: 2.6rem;margin:-0.1rem 1.2rem 0 0;background: url(../images/ic_more_btn_circle.webp) center center no-repeat;background-size: contain; align-items: center;justify-content: center;transform: rotate(180deg);vertical-align: middle;}
 
 /* scroll animation */
 .scroll-item {transform:translateY(4rem);opacity: 0;}
@@ -155,7 +155,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 .searchwrap .btn-search-input{position:relative;}
 
 .btn-select {position: relative; width:100%;}
-.btn-select select {width:100%;height:6rem;padding: 0 2.4rem;appearance: none; -webkit-appearance: none;background: url(../images/ic_more_down.png) 95% center no-repeat;background-size: 2rem 2rem; }
+.btn-select select {width:100%;height:6rem;padding: 0 2.4rem;appearance: none; -webkit-appearance: none;background: url(../images/ic_more_down.webp) 95% center no-repeat;background-size: 2rem 2rem; }
 /* .btn-select select:active {background: url(../images/ic_more_up.png) 95% center no-repeat;background-size: 2rem 2rem;} */
 
 .boardWrap {width:100%;margin-top: 5rem;}
@@ -165,7 +165,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 .recruit-list .col-box .day.end {color: #9b9b9b;}
 .recruit-list .recruit-tit {display: flex;align-items: center;}
 .recruit-list .recruit-tit .tit {font-size: 3.2rem;line-height: 3.8rem;font-weight: 700;letter-spacing: -0.1rem;}
-.recruit-list .recruit-tit .tag {width:5.8rem;height: 0;overflow: hidden;padding-top: 3.3rem;overflow: hidden; margin-right: 1.2rem;background: #e6ebf5 url(../images/img_new_label.png) center center no-repeat;background-size: contain;border-radius: 1rem;} /* FETASK-1078 수정 2023-09-01 */
+.recruit-list .recruit-tit .tag {width:5.8rem;height: 0;overflow: hidden;padding-top: 3.3rem;overflow: hidden; margin-right: 1.2rem;background: #e6ebf5 url(../images/img_new_label.webp) center center no-repeat;background-size: contain;border-radius: 1rem;} /* FETASK-1078 수정 2023-09-01 */
 .recruit-list .recruit-cate {padding-top: 1.2rem;}
 .recruit-list .recruit-cate span {font-size: 1.8rem;color: #9b9b9b;font-weight: 500;}
 .recruit-list .recruit-cate span + span::before {content: '/'; display: inline;padding: 0 0.5rem 0 0.2rem;}
@@ -286,9 +286,9 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 
     /* header */
     header {min-width: 100%;}
-    .m_menu {position: relative;display: block;width:2.6rem;height:0;padding-top:2.6rem;overflow:hidden;background: url(../images/ic_all_menu.png) center center no-repeat;background-size: contain;}
+    .m_menu {position: relative;display: block;width:2.6rem;height:0;padding-top:2.6rem;overflow:hidden;background: url(../images/ic_all_menu.webp) center center no-repeat;background-size: contain;}
 
-    .m_menu.on {background: url(../images/ic_menu_close.png) center center no-repeat;background-size: contain;}
+    .m_menu.on {background: url(../images/ic_menu_close.webp) center center no-repeat;background-size: contain;}
 
     .gnbWrap nav {position: fixed;top:100%;left:0;width:100%;height:0;overflow:hidden;background: #fff;}
     .headerWrap nav .gnb {justify-content: flex-start;flex-direction: column;padding-top: 2.2rem;}
@@ -401,7 +401,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
     .boardWrap {margin-top: 3rem;}
     .recruit-list > li:last-child > a {padding-bottom: 0;}
     .recruit-list > li > a {padding: 2rem 0; align-items: center;}
-    .recruit-list .recruit-tit .tag {margin: 0 0 1.2rem; width:4.4rem;padding-top: 2.5rem;background: #e6ebf5 url(../images/img_new_label_mw.png) center center no-repeat;background-size: contain;border-radius: 0.8rem;} /* FETASK-1078 수정 2023-09-01 */
+    .recruit-list .recruit-tit .tag {margin: 0 0 1.2rem; width:4.4rem;padding-top: 2.5rem;background: #e6ebf5 url(../images/img_new_label_mw.webp) center center no-repeat;background-size: contain;border-radius: 0.8rem;} /* FETASK-1078 수정 2023-09-01 */
     .recruit-list .recruit-tit {flex-direction: column;justify-content: flex-start;align-items: flex-start;}
     .recruit-list .recruit-tit .tit {font-size: 2rem;line-height: 2.4rem;}
     .recruit-list .recruit-cate {padding-top: 0.8rem;}
