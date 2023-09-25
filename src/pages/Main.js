@@ -1,4 +1,6 @@
 import React, { useRef, useState, useEffect, Suspense, CSSProperties } from 'react';
+import * as ReactDOMServer from "react-dom/server";
+
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
@@ -350,7 +352,19 @@ const Main = () => {
             parallax={true}
             speed={800}
             modules={swiperModules}
-            pagination={{ clickable: true }}
+            pagination={{
+              clickable: true,
+              clickableClass: "page-color2",
+              type: 'fraction',
+              formatFractionCurrent: function (number) {
+                console.log(number)
+                return ('0' + number).slice(-2);
+              },
+              formatFractionTotal: function (number) {
+                console.log(number)
+                return ('0' + number).slice(-2);
+              },
+            }}
             lazyPreloadPrevNext={1}
             breakpoints={{
               768: {
@@ -378,6 +392,7 @@ const Main = () => {
                   <div data-swiper-parallax="-3%">
                     <div className={`swiper-kbank-work ${card.type}`}>
                       <div className={Mobile() ? "m" : "pc"}>
+
                         <div className='swiper-kbank-work-txt'>
                           <div className='swiper-kbank-work-txt1'>{card.title}</div>
                           <div className='swiper-kbank-work-txt2'>{card.sub}</div>

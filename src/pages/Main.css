@@ -4,8 +4,8 @@
 .swiper-pagination-bullet.swiper-pagination-bullet-active {background: #141414;border-color: #141414;}
 
 /* 2023-09-25*/
-.page-color1 .swiper-pagination-bullet {border-color: #2c5530;}
-.page-color1 .swiper-pagination-bullet.swiper-pagination-bullet-active {border-color: #2c5530;background-color:#2c5530;}
+.page-color1.swiper-pagination-bullet {border-color: #2c5530;}
+.page-color1.swiper-pagination-bullet.swiper-pagination-bullet-active {border-color: #2c5530;background-color:#2c5530;}
 .page-color2 .swiper-pagination-bullet {border-color: #fff;}
 .page-color2 .swiper-pagination-bullet.swiper-pagination-bullet-active {border-color: #fff;background-color:#fff;}
 .page-color3 .swiper-pagination-bullet {border-color: #1c5b6f;}
