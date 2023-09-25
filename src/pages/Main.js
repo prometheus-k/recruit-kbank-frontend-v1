@@ -318,7 +318,7 @@ const Main = () => {
                   slidesPerGroup: 2,
                 }
               }}
-              className="swiper-container swiper-container-horizontal mySwiper main-story"
+              className="swiper-container swiper-container-horizontal mySwiper main-story swiper-wrapper"
             >
               {initialStoryCards.map((card, index) => (
                 <SwiperSlide className="swiper-slide" key={index}>
