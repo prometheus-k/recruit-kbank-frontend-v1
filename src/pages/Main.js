@@ -204,7 +204,7 @@ const Main = () => {
       gsap.to(element, {
         scrollTrigger: {
           trigger: element,
-          start: 'top 80%', // 원하는 스크롤 위치에 맞게 조정
+          start: 'top 85%', // 원하는 스크롤 위치에 맞게 조정
           onEnter: () => {
             const parent = element.closest('.inner');
             if (parent) {
@@ -343,68 +343,70 @@ const Main = () => {
 
       {/* 케미코드  */}
       <Box boxClassName="inner">
-        <div className="kbank-workWrap">
-          <div className="inner-titleWrap">
-            <h2 className="title2">케이뱅크는<br />이렇게 일해요</h2>
-          </div>
-          <Swiper
-            lazy="true"
-            parallax={true}
-            speed={800}
-            modules={swiperModules}
-            pagination={{
-              clickable: true,
-              clickableClass: "page-color2",
-              type: 'fraction',
-              formatFractionCurrent: function (number) {
-                console.log(number)
-                return ('0' + number).slice(-2);
-              },
-              formatFractionTotal: function (number) {
-                console.log(number)
-                return ('0' + number).slice(-2);
-              },
-            }}
-            lazyPreloadPrevNext={1}
-            breakpoints={{
-              768: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                slidesPerGroup: 1,
-              },
-              801: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                slidesPerGroup: 1,
-              },
-              1000: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                slidesPerGroup: 1,
-              },
-            }}
-            className="swiper-container swiper-container-horizontal kbank-work swiper-wrapper"
-          >
-            {initialWorkCard.map((card, index) => (
-              <SwiperSlide className="swiper-slide" key={index}>
-                <CardAction>
-                  {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
-                  <div data-swiper-parallax="-3%">
-                    <div className={`swiper-kbank-work ${card.type}`}>
-                      <div className={Mobile() ? "m" : "pc"}>
+        <div className="scroll-item" >
+          <div className="kbank-workWrap">
+            <div className="inner-titleWrap">
+              <h2 className="title2">케이뱅크는<br />이렇게 일해요</h2>
+            </div>
+            <Swiper
+              lazy="true"
+              parallax={true}
+              speed={800}
+              modules={swiperModules}
+              pagination={{
+                clickable: true,
+                clickableClass: "page-color2",
+                type: 'fraction',
+                formatFractionCurrent: function (number) {
+                  console.log(number)
+                  return ('0' + number).slice(-2);
+                },
+                formatFractionTotal: function (number) {
+                  console.log(number)
+                  return ('0' + number).slice(-2);
+                },
+              }}
+              lazyPreloadPrevNext={1}
+              breakpoints={{
+                768: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                  slidesPerGroup: 1,
+                },
+                801: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                  slidesPerGroup: 1,
+                },
+                1000: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                  slidesPerGroup: 1,
+                },
+              }}
+              className="swiper-container swiper-container-horizontal kbank-work swiper-wrapper"
+            >
+              {initialWorkCard.map((card, index) => (
+                <SwiperSlide className="swiper-slide" key={index}>
+                  <CardAction>
+                    {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
+                    <div data-swiper-parallax="-3%">
+                      <div className={`swiper-kbank-work ${card.type}`}>
+                        <div className={Mobile() ? "m" : "pc"}>
 
-                        <div className='swiper-kbank-work-txt'>
-                          <div className='swiper-kbank-work-txt1'>{card.title}</div>
-                          <div className='swiper-kbank-work-txt2'>{card.sub}</div>
-                        </div>
-                        <img src={card.imageSrc} alt="" loading="lazy" />
-                      </div >
+                          <div className='swiper-kbank-work-txt'>
+                            <div className='swiper-kbank-work-txt1'>{card.title}</div>
+                            <div className='swiper-kbank-work-txt2'>{card.sub}</div>
+                          </div>
+                          <img src={card.imageSrc} alt="" loading="lazy" />
+                        </div >
+                      </div>
                     </div>
-                  </div>
-                </CardAction>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                  </CardAction>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </Box>
 
