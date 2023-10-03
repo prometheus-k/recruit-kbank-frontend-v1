@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
 import { gsap } from 'gsap';
@@ -13,7 +14,6 @@ import CardList from '../components/CardList'; // FeaturesList 컴포넌트의 �
 gsap.registerPlugin(ScrollTrigger);
 
 const Benefit = () => {
-  const scrollItems = useRef([]);
 
   const Desktop = () => {
     const isDesktop = useMediaQuery({ minWidth: 992 })
@@ -32,6 +32,22 @@ const Benefit = () => {
   const Default = () => {
     const isDefault = useMediaQuery({ minWidth: 768 })
     return isDefault;
+  }
+
+  const cardListsRef = useRef([]);
+  const [topSize, settopSize] = useState(Mobile() ? 100 : 180);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const idx = queryParams.get('idx') || undefined; // 이전 페이지에서 전달된 검색어
+
+  const scrollToElement = (element, top) => {
+    if (element) {
+      const offsetTop = element.offsetTop - top;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+      });
+    }
   }
 
   const cardList1 = [
@@ -98,26 +114,31 @@ const Benefit = () => {
 
   const cardLists = [
     {
+      idx: 0,
       title: '일할 땐,<br>일하고 쉴 땐 쉬어요.',
       imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_01.webp' : 'images/benefit/pc/pc_benetfit_01.webp',
       list: cardList1,
     },
     {
+      idx: 1,
       title: '나와 소중한 가족까지<br>생각해요.',
       imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_02.webp' : 'images/benefit/pc/pc_benetfit_02.webp',
       list: cardList2,
     },
     {
+      idx: 2,
       title: '소통하며<br>함께해요.',
       imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_03.webp' : 'images/benefit/pc/pc_benetfit_03.webp',
       list: cardList3,
     },
     {
+      idx: 3,
       title: '개인의 성장을<br>지원해요.',
       imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_04.webp' : 'images/benefit/pc/pc_benetfit_04.webp',
       list: cardList4,
     },
   ];
+
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
@@ -145,6 +166,12 @@ const Benefit = () => {
         },
       });
     });
+    const scrollToIndex = parseInt(idx); // 예를 들어, 이 부분에서 스크롤할 요소의 인덱스를 지정
+    const selectedElement = cardListsRef.current[scrollToIndex];
+
+    if (selectedElement) {
+      scrollToElement(selectedElement, scrollToIndex === 0 ? topSize : 0);
+    }
     // 컴포넌트가 언마운트될 때 클린업 함수 설정
     return () => {
       console.log('Component unmounted');
@@ -160,7 +187,7 @@ const Benefit = () => {
         <div className="benefitWrap">
           <ul className="row-list">
             {cardLists.map((cardList, index) => (
-              <li key={index}>
+              <li key={index} ref={(el) => cardListsRef.current[index] = el}>
                 <div className="animation-item">
                   <div className="scroll-item">
                     {/* <TextField textClassName="tit" text={cardList.title} /> */}

@@ -12,11 +12,8 @@ import { Navigation, Pagination, Parallax } from 'swiper/modules';
 
 import Box from '../components/Box';
 import CardAction from '../components/CardAction';
-import Image from '../components/Image';
-import CardMedia from '../components/CardMedia';
 
 // Import Swiper styles
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -132,17 +129,6 @@ const StoryView = () => {
         Parallax
     ];
 
-
-    const [loading, setLoading] = useState(true);
-    const [color, setColor] = useState("#D199D0");
-    const [swiperModules, setSwiperModules] = useState(Mobile() ? [...swiperModulesMobile] : [...swiperModulesPc]);
-    const params = useParams();
-    const idx = params.idx; // 
-    const location = useLocation();
-    // const queryParams = new URLSearchParams(location.search);
-    // const idx = queryParams.get('idx') || ''; // 이전 페이지에서 전달된 검색어
-    const storyDetail = initialStoryDetails.find(story => story.idx === parseInt(idx));
-
     const initialStoryCards = [
         // 초기 카드 목록
         // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
@@ -188,6 +174,16 @@ const StoryView = () => {
         },
     ];
 
+    const [loading, setLoading] = useState(true);
+    const [color, setColor] = useState("#D199D0");
+    const [swiperModules, setSwiperModules] = useState(Mobile() ? [...swiperModulesMobile] : [...swiperModulesPc]);
+    const params = useParams();
+    const idx = params.idx; // 
+    // const location = useLocation();
+    // const queryParams = new URLSearchParams(location.search);
+    // const idx = queryParams.get('idx') || ''; // 이전 페이지에서 전달된 검색어
+    const storyDetail = initialStoryDetails.find(story => story.idx === parseInt(idx));
+    const updatedStoryCards = initialStoryCards.filter(card => card.idx !== parseInt(idx));
     const handleAnchorClick = event => {
         // 👇️ use event.preventDefault() if you want to
         // prevent navigation
@@ -314,7 +310,7 @@ const StoryView = () => {
                         }}
                         className="swiper-container swiper-container-horizontal mySwiper main-story"
                     >
-                        {initialStoryCards.map((card, index) => (
+                        {updatedStoryCards.map((card, index) => (
                             <SwiperSlide className="swiper-slide" key={index}>
                                 <CardAction linkUrl={`/Story/StoryView/${card.idx}`} onClick={handleAnchorClick}>
                                     {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
