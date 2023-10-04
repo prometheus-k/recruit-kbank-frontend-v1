@@ -86,6 +86,7 @@ const Main = () => {
   const [color, setColor] = useState("#D199D0");
   const [bigBanner, setBigBanner] = useState(Mobile() ? hero_img_mw : hero_img_pc);
   const [bigBannerClass, setBigBannerClass] = useState(Mobile() ? "m-img" : "pc-img");
+  const [gsapStart, setGsapStart] = useState(Mobile() ? 'top 80%' : 'top 85%');
   const [footerImg, setFooterImg] = useState(Mobile() ? main_team_join_mw : main_team_join_pc);
   const [activeClass, setActiveClass] = useState();
   const [swiperModules, setSwiperModules] = useState(Mobile() ? [...swiperModulesMobile] : [...swiperModulesPc]);
@@ -208,7 +209,7 @@ const Main = () => {
       gsap.to(element, {
         scrollTrigger: {
           trigger: element,
-          start: 'top 80%', // 원하는 스크롤 위치에 맞게 조정
+          start: gsapStart, // 원하는 스크롤 위치에 맞게 조정
           onEnter: () => {
             const parent = element.closest('.inner');
             if (parent) {
@@ -317,14 +318,19 @@ const Main = () => {
               breakpoints={{
                 768: {
                   slidesPerView: 1,
-                  spaceBetween: 10,
+                  spaceBetween: 20,
                   slidesPerGroup: 1,
                 },
                 801: {
                   slidesPerView: 2,
-                  spaceBetween: 10,
-                  slidesPerGroup: 2,
-                }
+                  spaceBetween: 15,
+                  slidesPerGroup: 1,
+                },
+                1000: {
+                  slidesPerView: 2,
+                  spaceBetween: 15,
+                  slidesPerGroup: 1,
+                },
               }}
               className="swiper-container swiper-container-horizontal mySwiper main-story"
             >
@@ -372,20 +378,21 @@ const Main = () => {
               },
             }}
             lazyPreloadPrevNext={1}
+            slidesPerView={1.3}            
             breakpoints={{
               768: {
                 slidesPerView: 1,
-                spaceBetween: 10,
+                spaceBetween: 20,
                 slidesPerGroup: 1,
               },
-              801: {
+              800: {
                 slidesPerView: 1,
                 spaceBetween: 10,
                 slidesPerGroup: 1,
               },
               1000: {
                 slidesPerView: 1,
-                spaceBetween: 10,
+                spaceBetween: 15,
                 slidesPerGroup: 1,
               },
             }}
@@ -429,6 +436,7 @@ const Main = () => {
               pagination={{ clickable: true }}
               modules={swiperModules}
               lazyPreloadPrevNext={3}
+              slidesPerView={1}
               breakpoints={{
                 768: {
                   slidesPerView: 1,
@@ -436,14 +444,14 @@ const Main = () => {
                   slidesPerGroup: 1,
                 },
                 801: {
-                  slidesPerView: 2,
-                  spaceBetween: 10,
-                  slidesPerGroup: 2,
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                  slidesPerGroup: 1,
                 },
                 1000: {
                   slidesPerView: 3,
-                  spaceBetween: 10,
-                  slidesPerGroup: 2,
+                  spaceBetween: 25,
+                  slidesPerGroup: 1,
                 },
               }}
               className="swiper-container swiper-container-horizontal mySwiper main-workbalance"
