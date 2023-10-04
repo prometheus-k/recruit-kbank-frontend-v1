@@ -28,12 +28,12 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<Main />}></Route>
           <Route path="/Recruit" exact element={<Recruit />}></Route>
+          <Route path="/Recruit/RecruitView/:jobid" exact element={<RecruitView />}></Route>
           <Route path="/Story" element={<Story />}></Route>
           <Route path="/Story/StoryView/:idx" element={<StoryView />}></Route>
           <Route path="/Benefit" exact element={<Benefit />}></Route>
           <Route path="/Faq" exact element={<Faq />}></Route>
           <Route path="/MyApply" exact element={<MyApply />}></Route>
-          <Route path="/RecruitView" exact element={<RecruitView />}></Route>
           <Route path="/ImageTest" exact element={<ImageTest />}></Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>

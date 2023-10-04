@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
 import Card from '../components/Card';
@@ -16,7 +16,7 @@ const RecruitView = () => {
     const isDesktop = useMediaQuery({ minWidth: 992 })
     return isDesktop;
   }
-  
+
   const Tablet = () => {
     const isTablet = useMediaQuery({ maxWidth: 768, maxWidth: 991 })
     return isTablet;
@@ -25,7 +25,7 @@ const RecruitView = () => {
     const isMobile = useMediaQuery({ maxWidth: 767 })
     return isMobile;
   }
-  
+
   const Default = () => {
     const isDefault = useMediaQuery({ minWidth: 768 })
     return isDefault;
@@ -34,23 +34,25 @@ const RecruitView = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const search = queryParams.get('search') || ''; // 이전 페이지에서 전달된 검색어
+  const keyword = queryParams.get('keyword') || ''; // 이전 페이지에서 전달된 검색어
   const writeUrl = 'https://kbank.recruiter.co.kr/app/applicant/registResume?jobnoticeSn=157516&systemKindCode=MRS2';
   const updateUrl = 'https://kbank.recruiter.co.kr/app/applicant/modifyResume?jobnoticeSn=157516&systemKindCode=MRS2';
-  
+
+  const params = useParams();
+  const jobid = params.jobid;
 
   const handleGoBack = () => {
-    navigate(`/Recruit?search=${encodeURIComponent(search)}`); // Sub1 페이지로 이동하면서 검색어 전달
+    navigate(`/Recruit?keyword=${encodeURIComponent(keyword)}`); // Sub1 페이지로 이동하면서 검색어 전달
   };
 
   const handleClick = (url) => {
     //console.log('test');
-    if(url === 'S'){
+    if (url === 'S') {
       window.open(writeUrl, '_blank');
-    }else{
+    } else {
       window.open(updateUrl, '_blank');
     }
-    
+
   };
 
   useEffect(() => {
@@ -114,20 +116,20 @@ const RecruitView = () => {
               <dd className="txt">
                 <ul className="list-dot">
                   <li>금융 혹은 Tech 전문가 양성을 위한 교육 운영 및 기획 경험을 보유하신 분</li>
-                  <li>금융 혹은 Tech 전문가 양성을 위한 교육 운영 및 기획 경험을 보유하신 분</li>                  
-                  <li>메시지와 딜리버리 방식을 고민하고 개선한 경험이 있는 분</li>                  
+                  <li>금융 혹은 Tech 전문가 양성을 위한 교육 운영 및 기획 경험을 보유하신 분</li>
+                  <li>메시지와 딜리버리 방식을 고민하고 개선한 경험이 있는 분</li>
                 </ul>
               </dd>
               <dt className="tit">채용과정</dt>
               <dd className="txt">
-                서류전형 &gt; 인성검사 및 코딩테스트 &gt; 1차면접 &gt; 처우협의 및 평판조회 &gt; 최종합격 <br/>(상황에 따라 과제 또는 면접 전형이 추가될 수 있습니다.)
+                서류전형 &gt; 인성검사 및 코딩테스트 &gt; 1차면접 &gt; 처우협의 및 평판조회 &gt; 최종합격 <br />(상황에 따라 과제 또는 면접 전형이 추가될 수 있습니다.)
               </dd>
               <dt className="tit">기타사항</dt>
               <dd className="txt">
                 <ul className="list-dot">
                   <li>근무지는 서울 중구 을지로 170, 을지트윈타워(을지1사옥)입니다.</li>
-                  <li>전형일정 및 결과는 지원서에 등록하신 이메일로 개별 안내드립니다.</li>                  
-                  <li>전형일정 및 결과는 지원서에 등록하신 이메일로 개별 안내드립니다.</li>                                
+                  <li>전형일정 및 결과는 지원서에 등록하신 이메일로 개별 안내드립니다.</li>
+                  <li>전형일정 및 결과는 지원서에 등록하신 이메일로 개별 안내드립니다.</li>
                 </ul>
               </dd>
             </dl>
@@ -135,10 +137,10 @@ const RecruitView = () => {
           </div>
         </div>
         {/*mobile 용*/}
-        <div className={Mobile()? "m":"pc"}>
+        <div className={Mobile() ? "m" : "pc"}>
           <div className="btnWrap appli">
-            <Button className="btn-appli-submit" spanClassName="txt" buttonText={Mobile()? '지원서 작성은 PC를 이용해주세요!':'지원하기'} onClick={(writeUrl)=> handleClick('S')}></Button>
-            <Button className="btn-appli-edit" spanClassName="txt" buttonText={Mobile()? '지원서 수정은 PC를 이용해주세요!':'지원서 수정'}onClick={(updateUrl)=> handleClick('U')}></Button>
+            <Button className="btn-appli-submit" spanClassName="txt" buttonText={Mobile() ? '지원서 작성은 PC를 이용해주세요!' : '지원하기'} onClick={(writeUrl) => handleClick('S')}></Button>
+            <Button className="btn-appli-edit" spanClassName="txt" buttonText={Mobile() ? '지원서 수정은 PC를 이용해주세요!' : '지원서 수정'} onClick={(updateUrl) => handleClick('U')}></Button>
           </div>
         </div>
         {/*//mobile 용*/}

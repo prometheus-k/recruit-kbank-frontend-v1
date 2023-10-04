@@ -311,7 +311,7 @@ const Main = () => {
               preventClicksPropagation={true}
               lazy="true"
               parallax={true}
-              speed={800}
+              speed={850}
               modules={swiperModules}
               pagination={{ clickable: true }}
               lazyPreloadPrevNext={2}
@@ -362,7 +362,7 @@ const Main = () => {
           <Swiper
             lazy="true"
             parallax={true}
-            speed={800}
+            speed={850}
             modules={swiperModules}
             pagination={{
               clickable: true,
@@ -378,7 +378,7 @@ const Main = () => {
               },
             }}
             lazyPreloadPrevNext={1}
-            slidesPerView={1.3}            
+            slidesPerView={1.3}
             breakpoints={{
               768: {
                 slidesPerView: 1,
@@ -432,7 +432,7 @@ const Main = () => {
             <Swiper
               lazy="true"
               parallax={true}
-              speed={800}
+              speed={850}
               pagination={{ clickable: true }}
               modules={swiperModules}
               lazyPreloadPrevNext={3}
