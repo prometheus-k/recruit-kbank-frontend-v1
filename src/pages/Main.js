@@ -83,7 +83,7 @@ const Main = () => {
 
   const scrollItems = useRef([]);
   const [loading, setLoading] = useState(true);
-  const [color, setColor] = useState("#D199D0");
+  const [color, setColor] = useState("page-color1");
   const [bigBanner, setBigBanner] = useState(Mobile() ? hero_img_mw : hero_img_pc);
   const [bigBannerClass, setBigBannerClass] = useState(Mobile() ? "m-img" : "pc-img");
   const [gsapStart, setGsapStart] = useState(Mobile() ? 'top 80%' : 'top 85%');
@@ -201,7 +201,17 @@ const Main = () => {
   }
 
   const slideCssChange = (swiper) => {
-    console.log("slideCssChange"+ swiper)
+    if(swiper.activeIndex === 0){
+      setColor("page-color1");
+    }else if(swiper.activeIndex === 1){
+      setColor("page-color2");
+    }else if(swiper.activeIndex === 2){
+      setColor("page-color3");
+    }else if(swiper.activeIndex === 3){
+      setColor("page-color4");
+    }else if(swiper.activeIndex === 4){
+      setColor("page-color5");
+    }    
   }
 
   useEffect(() => {
@@ -365,17 +375,7 @@ const Main = () => {
             speed={800}
             modules={swiperModules}
             pagination={{
-              clickable: true,
-              clickableClass: "page-color2",
-              type: 'fraction',
-              formatFractionCurrent: function (number) {
-                console.log(number)
-                return ('0' + number).slice(-2);
-              },
-              formatFractionTotal: function (number) {
-                console.log(number)
-                return ('0' + number).slice(-2);
-              },
+              clickable: true,              
             }}
             onSlideChange={slideCssChange}
             lazyPreloadPrevNext={1}
@@ -397,7 +397,7 @@ const Main = () => {
                 slidesPerGroup: 1,
               },
             }}
-            className="swiper-container swiper-container-horizontal kbank-work swiper-wrapper"
+            className={`swiper-container swiper-container-horizontal kbank-work ${color}`}
           >
             {initialWorkCard.map((card, index) => (
               <SwiperSlide className="swiper-slide" key={index}>
@@ -444,7 +444,7 @@ const Main = () => {
                   spaceBetween: 10,
                   slidesPerGroup: 1,
                 },
-                801: {
+                800: {
                   slidesPerView: 2,
                   spaceBetween: 30,
                   slidesPerGroup: 2,
