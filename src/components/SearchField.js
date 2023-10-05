@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const SearchField = ({ buttonClassName, inputClassName, placeholder, title, onChange,value  }) => {
+const SearchField = ({ buttonClassName, inputClassName, placeholder, title, onChange, value  }) => {
     useEffect(() => {
         console.log('Component mounted');
 

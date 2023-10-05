@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 
-const Select = ({ sekectClassName, options, onChange }) => {
+const Select = ({ sekectClassName, options, onChange, value }) => {
     useEffect(() => {
         console.log('Component mounted');
 
@@ -14,7 +14,7 @@ const Select = ({ sekectClassName, options, onChange }) => {
     return (
         <div className="selectWrap">
             <div className={sekectClassName}>
-                <select name="" id="" onChange={onChange}>
+                <select name="" id="" onChange={onChange} value={value}>
                     {options.map((option, index) => (
                         <option key={index} value={option.value}>
                             {option.label}
@@ -33,12 +33,14 @@ Select.propTypes = {
             label: PropTypes.string.isRequired
         })
     ),
-    onChange: PropTypes.func.isRequired // Adding onChange prop
+    onChange: PropTypes.func.isRequired, // Adding onChange prop
+    value: PropTypes.string, // value 속성 추가
 };
 
 Select.defaultProps = {
     sekectClassName: 'btn-select', // 기본 클래스명 없음
-    options: []
+    options: [],
+    value: '', // 기본값 설정
 };
 
 export default Select;

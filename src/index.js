@@ -6,6 +6,7 @@ import './assets/css/Common.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StyleProvider } from './components/StyleContext';
+import { SearchProvider } from './components/SearchContext';
 import ScrollTop from './components/ScrollToTop';
 import ReactGA from "react-ga4";
 
@@ -18,10 +19,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <StyleProvider>
+    <SearchProvider>
       <BrowserRouter>
         <ScrollTop/>
         <App />
       </BrowserRouter>
+      </SearchProvider>
     </StyleProvider>
   </React.StrictMode>
 );

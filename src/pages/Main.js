@@ -200,6 +200,10 @@ const Main = () => {
     setActiveClass('on');
   }
 
+  const slideCssChange = (swiper) => {
+    console.log("slideCssChange"+ swiper)
+  }
+
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
     console.log('Component mounted');
@@ -311,25 +315,21 @@ const Main = () => {
               preventClicksPropagation={true}
               lazy="true"
               parallax={true}
-              speed={850}
+              speed={800}
               modules={swiperModules}
               pagination={{ clickable: true }}
               lazyPreloadPrevNext={2}
+              spaceBetween={10}
               breakpoints={{
                 768: {
                   slidesPerView: 1,
-                  spaceBetween: 20,
+                  spaceBetween: 10,
                   slidesPerGroup: 1,
                 },
                 801: {
                   slidesPerView: 2,
-                  spaceBetween: 15,
-                  slidesPerGroup: 1,
-                },
-                1000: {
-                  slidesPerView: 2,
-                  spaceBetween: 15,
-                  slidesPerGroup: 1,
+                  spaceBetween: 30,
+                  slidesPerGroup: 2,
                 },
               }}
               className="swiper-container swiper-container-horizontal mySwiper main-story"
@@ -362,7 +362,7 @@ const Main = () => {
           <Swiper
             lazy="true"
             parallax={true}
-            speed={850}
+            speed={800}
             modules={swiperModules}
             pagination={{
               clickable: true,
@@ -377,8 +377,9 @@ const Main = () => {
                 return ('0' + number).slice(-2);
               },
             }}
+            onSlideChange={slideCssChange}
             lazyPreloadPrevNext={1}
-            slidesPerView={1.3}
+            slidesPerView={1.3}            
             breakpoints={{
               768: {
                 slidesPerView: 1,
@@ -432,8 +433,8 @@ const Main = () => {
             <Swiper
               lazy="true"
               parallax={true}
-              speed={850}
-              pagination={{ clickable: true }}
+              speed={800}
+              pagination={{ clickable: true}}
               modules={swiperModules}
               lazyPreloadPrevNext={3}
               slidesPerView={1}
@@ -444,14 +445,14 @@ const Main = () => {
                   slidesPerGroup: 1,
                 },
                 801: {
-                  slidesPerView: 3,
+                  slidesPerView: 2,
                   spaceBetween: 30,
-                  slidesPerGroup: 1,
+                  slidesPerGroup: 2,
                 },
                 1000: {
                   slidesPerView: 3,
                   spaceBetween: 25,
-                  slidesPerGroup: 1,
+                  slidesPerGroup: 3,
                 },
               }}
               className="swiper-container swiper-container-horizontal mySwiper main-workbalance"

@@ -11,6 +11,7 @@ import Button from '../components/Button';
 import Box from '../components/Box';
 import Select from '../components/Select'
 import SearchField from '../components/SearchField';
+import { useSearch } from '../components/SearchContext';
 
 const jobGroupOptionsData = [
   { value: '', label: '전체' },
@@ -44,14 +45,11 @@ const initialListdata = [
 
 const Recruit = () => {
   const [lists, setLists] = useState(initialListdata);
-  const [selectedJobGroup, setSelectedJobGroup] = useState("");
-  const [selectedCareer, setSelectedCareer] = useState("");
+  const { searchTerm, setSearchTerm, selectedJobGroup, setSelectedJobGroup, selectedCareer, setSelectedCareer } = useSearch();
 
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-
-  const initialSearchTerm = queryParams.get('search') || ''; // URL 쿼리 파라미터에서 검색어 가져오기
-  const [searchTerm, setSearchTerm] = useState(initialSearchTerm); // 검색어 상태 추가
+  // const location = useLocation();
+  // const queryParams = new URLSearchParams(location.search);
+  // const initialSearchTerm = queryParams.get('search') || ''; // URL 쿼리 파라미터에서 검색어 가져오기
 
   const handleMoreButtonClick = () => {
     // 더보기 버튼 클릭 시 새로운 카드를 추가하는 함수
@@ -106,10 +104,10 @@ const Recruit = () => {
             <SearchField title="검색" onChange={handleSearchInputChange} value={searchTerm} />
           </div>
           <div className="form-group">
-            <Select options={jobGroupOptionsData} onChange={handleJobGroupSelect} />
+            <Select options={jobGroupOptionsData} onChange={handleJobGroupSelect} value={selectedJobGroup}/>
           </div>
           <div className="form-group">
-            <Select options={careerOptionsData} onChange={handleCareerSelect} />
+            <Select options={careerOptionsData} onChange={handleCareerSelect} value={selectedCareer}/>
           </div>
         </div>
       </Box>
@@ -136,9 +134,9 @@ const Recruit = () => {
               </ListItem>
             ))}
           </List>
-          <div className="btnWrap">
+          {/* <div className="btnWrap">
             <Button buttonText="더보기" onClick={handleMoreButtonClick} />
-          </div>
+          </div> */}
         </Box>
       ) : (
         // filteredLists가 비어있을 때 보여줄 다른 HTML

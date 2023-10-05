@@ -8,6 +8,7 @@ import Box from '../components/Box';
 import Button from '../components/Button';
 import TitleText from '../components/TitleText'
 import { useNavigate, useLocation } from 'react-router-dom';
+import { searchTerm } from '../components/SearchContext';
 
 
 const RecruitView = () => {
@@ -39,10 +40,10 @@ const RecruitView = () => {
   const updateUrl = 'https://kbank.recruiter.co.kr/app/applicant/modifyResume?jobnoticeSn=157516&systemKindCode=MRS2';
 
   const params = useParams();
-  const jobid = params.jobid;
+  const jobid = params.jobid; //공고 상세 ID
 
   const handleGoBack = () => {
-    navigate(`/Recruit?keyword=${encodeURIComponent(keyword)}`); // Sub1 페이지로 이동하면서 검색어 전달
+    navigate(`/Recruit`); // Sub1 페이지로 이동하면서 검색어 전달
   };
 
   const handleClick = (url) => {
