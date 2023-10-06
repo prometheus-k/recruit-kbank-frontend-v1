@@ -457,7 +457,7 @@ const Main = () => {
                 1000: {
                   slidesPerView: 3,
                   spaceBetween: 25,
-                  slidesPerGroup: 1,
+                  slidesPerGroup: 3,
                 },
               }}
               className="swiper-container swiper-container-horizontal mySwiper main-workbalance"
