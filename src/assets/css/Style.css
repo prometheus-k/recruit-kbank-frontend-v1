@@ -510,8 +510,8 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
     .workbalanceWrap.type2 {margin-top: 8rem;}
     .workbalanceWrap.type2 .title2 {font-size: 2.4rem;}
     /* //2023-09-14 */
-    .main-story .swiper-wrapper .swiper-slide{padding-right: 10px;}
-    .main-workbalance .swiper-wrapper .swiper-slide{padding-right: 10px;}
+    /* .main-story .swiper-wrapper .swiper-slide{padding-right: 10px;}
+    .main-workbalance .swiper-wrapper .swiper-slide{padding-right: 10px;} */
 }
 
 @media screen and (max-width:480px){
