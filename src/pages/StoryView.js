@@ -290,23 +290,28 @@ const StoryView = () => {
                         <h2 className="title2">다른 이야기</h2>
                     </div>
                     <Swiper
+                        preventClicks={true}
+                        preventClicksPropagation={true}
                         lazy="true"
                         parallax={true}
                         speed={800}
+                        modules={swiperModules}
                         pagination={{ clickable: true }}
                         lazyPreloadPrevNext={2}
-                        modules={swiperModules}
+                        slidesPerGroup={1}
+                        spaceBetween={10}
+                        slidesPerView={1}
                         breakpoints={{
                             768: {
-                                slidesPerView: 1,
-                                spaceBetween: 10,
-                                slidesPerGroup: 1,
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                            slidesPerGroup: 1,
                             },
                             801: {
-                                slidesPerView: 2,
-                                spaceBetween: 30,
-                                slidesPerGroup: 2,
-                            }
+                            slidesPerView: 2,
+                            spaceBetween: 30,
+                            slidesPerGroup: 2,
+                            },
                         }}
                         className="swiper-container swiper-container-horizontal mySwiper main-story"
                     >

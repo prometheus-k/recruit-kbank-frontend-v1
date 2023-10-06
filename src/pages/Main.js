@@ -329,8 +329,9 @@ const Main = () => {
               modules={swiperModules}
               pagination={{ clickable: true }}
               lazyPreloadPrevNext={2}
-              spaceBetween={10}
-              slidesPerView={1.15}
+              slidesPerGroup={1}
+              spaceBetween={1.3}
+              slidesPerView={1}
               breakpoints={{
                 768: {
                   slidesPerView: 1,
@@ -381,7 +382,7 @@ const Main = () => {
             onSlideChange={slideCssChange}
             lazyPreloadPrevNext={1}
             slidesPerView={1.3}    
-            spaceBetween={10}        
+            spaceBetween={20}        
             breakpoints={{
               768: {
                 slidesPerView: 1,
@@ -440,7 +441,7 @@ const Main = () => {
               modules={swiperModules}
               lazyPreloadPrevNext={3}
               slidesPerView={1}
-              spaceBetween={10}
+              spaceBetween={1.3}
               slidesPerGroup={1}
               breakpoints={{
                 768: {
@@ -456,7 +457,7 @@ const Main = () => {
                 1000: {
                   slidesPerView: 3,
                   spaceBetween: 25,
-                  slidesPerGroup: 3,
+                  slidesPerGroup: 1,
                 },
               }}
               className="swiper-container swiper-container-horizontal mySwiper main-workbalance"
