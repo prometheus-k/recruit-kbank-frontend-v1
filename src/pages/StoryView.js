@@ -299,7 +299,7 @@ const StoryView = () => {
                         pagination={{ clickable: true }}
                         lazyPreloadPrevNext={2}
                         slidesPerGroup={1}
-                        spaceBetween={10}
+                        spaceBetween={1.3}
                         slidesPerView={1}
                         breakpoints={{
                             768: {
