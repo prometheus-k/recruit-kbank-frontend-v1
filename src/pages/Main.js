@@ -439,15 +439,16 @@ const Main = () => {
               pagination={{ clickable: true}}
               modules={swiperModules}
               lazyPreloadPrevNext={3}
+              slidesPerView={1}
               spaceBetween={10}
-              slidesPerView={1.15}
+              slidesPerGroup={1}
               breakpoints={{
                 768: {
                   slidesPerView: 1,
                   spaceBetween: 10,
                   slidesPerGroup: 1,
                 },
-                800: {
+                801: {
                   slidesPerView: 2,
                   spaceBetween: 30,
                   slidesPerGroup: 2,
