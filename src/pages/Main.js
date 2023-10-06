@@ -330,6 +330,7 @@ const Main = () => {
               pagination={{ clickable: true }}
               lazyPreloadPrevNext={2}
               spaceBetween={10}
+              slidesPerView={1.15}
               breakpoints={{
                 768: {
                   slidesPerView: 1,
@@ -379,7 +380,8 @@ const Main = () => {
             }}
             onSlideChange={slideCssChange}
             lazyPreloadPrevNext={1}
-            slidesPerView={1.3}            
+            slidesPerView={1.3}    
+            spaceBetween={10}        
             breakpoints={{
               768: {
                 slidesPerView: 1,
@@ -437,7 +439,8 @@ const Main = () => {
               pagination={{ clickable: true}}
               modules={swiperModules}
               lazyPreloadPrevNext={3}
-              slidesPerView={1}
+              spaceBetween={10}
+              slidesPerView={1.15}
               breakpoints={{
                 768: {
                   slidesPerView: 1,
