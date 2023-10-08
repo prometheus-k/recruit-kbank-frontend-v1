@@ -201,17 +201,17 @@ const Main = () => {
   }
 
   const slideCssChange = (swiper) => {
-    if(swiper.activeIndex === 0){
+    if (swiper.activeIndex === 0) {
       setColor("page-color1");
-    }else if(swiper.activeIndex === 1){
+    } else if (swiper.activeIndex === 1) {
       setColor("page-color2");
-    }else if(swiper.activeIndex === 2){
+    } else if (swiper.activeIndex === 2) {
       setColor("page-color3");
-    }else if(swiper.activeIndex === 3){
+    } else if (swiper.activeIndex === 3) {
       setColor("page-color4");
-    }else if(swiper.activeIndex === 4){
+    } else if (swiper.activeIndex === 4) {
       setColor("page-color5");
-    }    
+    }
   }
 
   useEffect(() => {
@@ -377,12 +377,12 @@ const Main = () => {
             speed={800}
             modules={swiperModules}
             pagination={{
-              clickable: true,              
+              clickable: true,
             }}
             onSlideChange={slideCssChange}
             lazyPreloadPrevNext={1}
-            slidesPerView={1.3}    
-            spaceBetween={20}        
+            slidesPerView={1.3}
+            spaceBetween={10}
             breakpoints={{
               768: {
                 slidesPerView: 1,
@@ -437,7 +437,7 @@ const Main = () => {
               lazy="true"
               parallax={true}
               speed={800}
-              pagination={{ clickable: true}}
+              pagination={{ clickable: true }}
               modules={swiperModules}
               lazyPreloadPrevNext={3}
               slidesPerView={1}
