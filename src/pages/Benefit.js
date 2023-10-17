@@ -192,7 +192,7 @@ const Benefit = () => {
                 <div className="animation-item">
                   <div className="scroll-item">
                     {/* <TextField textClassName="tit" text={cardList.title} /> */}
-                    <TextBox className='tit' text={cardList.title} />
+                    <TextBox boxClassName={'tit'} text={cardList.title} />
                     <Card cardClassName="item-box">
                       <CardMedia imageSrc={cardList.imageSrc} />
                       <CardList features={cardList.list} ></CardList>
