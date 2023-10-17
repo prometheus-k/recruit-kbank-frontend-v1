@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
+import { useStyleContext } from './components/StyleContext';
+
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 import Main from './pages/Main'
@@ -12,9 +14,6 @@ import RecruitView from './pages/RecruitView'
 import StoryView from './pages/StoryView'
 import ErrorPage from './pages/ErrorPage'; // 추가
 import ImageTest from './pages/ImageTest'; // 추가
-
-import { useStyleContext } from './components/StyleContext';
-
 import RouteChangeTracker from "./utils/RouteChangeTracker";
 
 const App = () => {
