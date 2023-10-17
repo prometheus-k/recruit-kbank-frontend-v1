@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 // import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 
-const TextBox = ({ titleClassName, children }) => {
+const TextBox = ({ boxClassName, text }) => {
     useEffect(() => {
         console.log('Component mounted');
 
@@ -12,17 +12,19 @@ const TextBox = ({ titleClassName, children }) => {
     }, []);
 
     return (
-        <span className={titleClassName}>{children}</span>
+        <div className={boxClassName} dangerouslySetInnerHTML={{ __html: text }} />
     );
 };
+
 TextBox.propTypes = {
-    titleClassName: PropTypes.string, // 버튼에 추가될 클래스명
-    children: PropTypes.string, // Card 컴포넌트 내용(children)을 받을 수 있도록 추가]
+    boxClassName: PropTypes.string,
+    text: PropTypes.string,
 };
 
 TextBox.defaultProps = {
-    titleClassName: '', // 기본 클래스명 없음
-    children: '내용없음'
+    boxClassName: '', // 기본 클래스명 없음
+    text: '내용없음'
 };
+
 
 export default TextBox;

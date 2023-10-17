@@ -6,7 +6,7 @@ import TitleText from '../components/TitleText'
 import List from '../components/List';
 import ListItem from '../components/ListItem';
 import ListItemText from '../components/ListItemText';
-import TextBox from '../components/TextBox';
+import TextSpan from '../components/TextSpan';
 import Button from '../components/Button';
 import Box from '../components/Box';
 import Select from '../components/Select'
@@ -104,10 +104,10 @@ const Recruit = () => {
             <SearchField title="검색" onChange={handleSearchInputChange} value={searchTerm} />
           </div>
           <div className="form-group">
-            <Select options={jobGroupOptionsData} onChange={handleJobGroupSelect} value={selectedJobGroup}/>
+            <Select options={jobGroupOptionsData} onChange={handleJobGroupSelect} value={selectedJobGroup} />
           </div>
           <div className="form-group">
-            <Select options={careerOptionsData} onChange={handleCareerSelect} value={selectedCareer}/>
+            <Select options={careerOptionsData} onChange={handleCareerSelect} value={selectedCareer} />
           </div>
         </div>
       </Box>
@@ -120,16 +120,16 @@ const Recruit = () => {
               <ListItem listItemTo={`/Recruit/RecruitView/${list.jobid}`} key={index}>
                 <ListItemText>
                   <Box boxClassName="recruit-tit">
-                    {list.tag ? <TextBox titleClassName="tag">NEW</TextBox> : null}
-                    <TextBox titleClassName="tit">{list.tit}</TextBox>
+                    {list.tag ? <TextSpan titleClassName="tag">NEW</TextSpan> : null}
+                    <TextSpan titleClassName="tit">{list.tit}</TextSpan>
                   </Box>
                   <Box boxClassName="recruit-cate">
-                    <TextBox>{list.sub1}</TextBox>
-                    <TextBox>{list.sub2}</TextBox>
+                    <TextSpan>{list.sub1}</TextSpan>
+                    <TextSpan>{list.sub2}</TextSpan>
                   </Box>
                 </ListItemText>
                 <ListItemText>
-                  <TextBox titleClassName={list.ddayclassName}>{list.dday}</TextBox>
+                  <TextSpan titleClassName={list.ddayclassName}>{list.dday}</TextSpan>
                 </ListItemText>
               </ListItem>
             ))}
