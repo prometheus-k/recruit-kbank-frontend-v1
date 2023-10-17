@@ -264,7 +264,7 @@ const Main = () => {
 
     const handleScroll = _.throttle(() => {
       // 스크롤 이벤트를 처리하는 로직을 여기에 작성
-      console.log(window.scrollY);
+      //console.log(window.scrollY);
       //스크롤 작동시 특정 위치에서 이벤트를 싱행
     }, 300); // 300ms 간격으로 스크롤 이벤트를 처리
 

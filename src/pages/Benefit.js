@@ -9,7 +9,8 @@ import TitleText from '../components/TitleText'
 import Box from '../components/Box';
 import CardMedia from '../components/CardMedia';
 import Card from '../components/Card';
-import CardList from '../components/CardList'; // FeaturesList 컴포넌트의 경로를 맞게 수정해주세요.
+import CardList from '../components/CardList';
+import TextBox from '../components/TextBox';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -191,7 +192,7 @@ const Benefit = () => {
                 <div className="animation-item">
                   <div className="scroll-item">
                     {/* <TextField textClassName="tit" text={cardList.title} /> */}
-                    <div className='tit' dangerouslySetInnerHTML={{ __html: cardList.title }} />
+                    <TextBox className='tit' text={cardList.title} />
                     <Card cardClassName="item-box">
                       <CardMedia imageSrc={cardList.imageSrc} />
                       <CardList features={cardList.list} ></CardList>
