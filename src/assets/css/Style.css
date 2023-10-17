@@ -217,7 +217,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
     /* 케이뱅크 사람들의 이야기 */
 .kbank-manWrap {margin-top: 8rem;} /*2023-09-19*/
 .column-list {column-count: 2; column-gap: 3rem;margin-bottom: -9rem;}
-.column-list .col-box {display: inline-block;break-inside: avoid;margin-bottom:9rem; }
+.column-list .col-box {display: inline-block;break-inside: avoid;margin-bottom:9rem;  min-width: 100%;}
 .column-list .img-item {display: flex;align-items: center;justify-content: center;position: relative;overflow: hidden;width:100%;border-radius: 1.6rem;}
 .column-list .img-item img {position: absolute;left:50%;transform: translateX(-50%);height:100%;width: auto;}
 .column-list .img-item.type1 {height: 42rem;}
@@ -485,7 +485,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
     .column-list {column-count: inherit;column-gap: 0;margin-bottom: -6rem;}
     .column-list .txt-item {padding-top: 2rem;}
     .column-list .txt-item .tit {font-size: 2rem;line-height: 3.2rem;}
-    .column-list .col-box {min-width: 100%; margin-bottom: 6rem;break-inside: auto;}
+    .column-list .col-box {margin-bottom: 6rem;break-inside: auto;}
     .column-list .img-item.type1, 
     .column-list .img-item.type2, 
     .column-list .img-item.type3, 
