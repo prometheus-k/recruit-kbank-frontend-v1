@@ -20,6 +20,7 @@ import Loading from '../components/Loading';
 import ErrorBoundary from './ErrorBoundary';
 import Image from "../components/Image";
 import LazyImage from '../components/LazyImage';
+import TextBox from '../components/TextBox';
 
 
 // Import Swiper styles
@@ -95,70 +96,70 @@ const Main = () => {
     // 초기 카드 목록
     // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
     {
-      idx: 5, title: '5국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      idx: 5, title: '사용자의 마음을 느끼는 방법', sub: 'UX팀 / 김송현님',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_story_05.webp' : 'images/main/pc/pc_main_story_05.webp', type: 'type1'
     },
     {
-      idx: 3, title: '3국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      idx: 3, title: '케이뱅크 고객의 전 여정을 함께합니다', sub: '수신팀 / 김교은님',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_story_03.webp' : 'images/main/pc/pc_main_story_03.webp', type: 'type2'
     },
     {
-      idx: 1, title: '1국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      idx: 1, title: '케이뱅크의 가계부를 작성합니다', sub: '회계팀 / 윤소정님',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_story_01.webp' : 'images/main/pc/pc_main_story_01.webp', type: 'type1'
     },
     {
-      idx: 7, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      idx: 7, title: '고객과 만나는 접점을 개발합니다', sub: '채널서비스개발팀 / 이지원님',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_story_07.webp' : 'images/main/pc/pc_main_story_07.webp', type: 'type3'
     },
+    // {
+    //   idx: 9, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+    //   imageSrc: Mobile() ? 'images/main/mw/mw_main_story_09.webp' : 'images/main/pc/pc_main_story_09.webp', type: 'type2'
+    // },
     {
-      idx: 9, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-      imageSrc: Mobile() ? 'images/main/mw/mw_main_story_09.webp' : 'images/main/pc/pc_main_story_09.webp', type: 'type2'
-    },
-    {
-      idx: 2, title: '2국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      idx: 2, title: '도전할 수 있는 곳에서 성장 중입니다', sub: '주택금융 Camp / 허동규님',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_story_02.webp' : 'images/main/pc/pc_main_story_02.webp', type: 'type2'
     },
     {
-      idx: 4, title: '4국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      idx: 4, title: '의미 없는 도전은 없다고 믿습니다', sub: '서비스기획팀 / 이현정님',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_story_04.webp' : 'images/main/pc/pc_main_story_04.webp', type: 'type2'
     },
     {
-      idx: 6, title: '6국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      idx: 6, title: '보편적인 시각을 갖추기 위해 노력합니다', sub: 'Brand팀 / 최영락님',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_story_06.webp' : 'images/main/pc/pc_main_story_06.webp', type: 'type2'
     },
     {
-      idx: 8, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+      idx: 8, title: '팔리는 R&D를 지향합니다', sub: '준법데이터서비스팀 / 김홍종님',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_story_08.webp' : 'images/main/pc/pc_main_story_08.webp', type: 'type1'
     },
-    {
-      idx: 10, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
-      imageSrc: Mobile() ? 'images/main/mw/mw_main_story_10.webp' : 'images/main/pc/pc_main_story_10.webp', type: 'type2'
-    },
+    // {
+    //   idx: 10, title: '7국내 첫 인터넷은행에서 금융과 IT의 커리어를 빌드업 할 수 있습니다.', sub: '준법지원팀 / ',
+    //   imageSrc: Mobile() ? 'images/main/mw/mw_main_story_10.webp' : 'images/main/pc/pc_main_story_10.webp', type: 'type2'
+    // },
   ];
 
   const initialBenefitCard = [
     {
       idx: 0,
-      title: '일할 땐, 일하고 쉴 땐 쉬어요.',
-      sub: '개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.',
+      title: '일할 땐 일하고, 쉴 땐 쉬어요.',
+      sub: '나의 라이프스타일에 맞게 유연하게 업무시간을 조절하고</br>충분히 휴식할 수 있도록 지원해요.',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_01.webp' : 'images/main/pc/pc_main_benefit_01.webp'
     },
     {
       idx: 1,
-      title: '나와 소중한 가족까지 생각해요.',
-      sub: '개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.',
+      title: '나의 소중한 가족까지 생각해요.',
+      sub: '구성원의 삶이 더 행복해질 수 있도록</br>소중한 사람까지 생각하고 케어해요.',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_02.webp' : 'images/main/pc/pc_main_benefit_02.webp'
     },
     {
       idx: 2,
-      title: '소통하며 함께해요.',
-      sub: '개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.',
+      title: '함께 하는 시간을 즐기며 소통해요.',
+      sub: '혼자보다 함께를 추구하며,</br>서로의 의견을 수평적으로 나눠요',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_03.webp' : 'images/main/pc/pc_main_benefit_03.webp'
     },
     {
       idx: 3,
       title: '개인의 성장을 지원해요.',
-      sub: '개인의 라이프 스타일에 맞게 유연한 업무시간으로 일과 삶의 밸런스를 조절할 수 있어요.',
+      sub: '회사와 개인의 모두의</br> 성취와 성장을 적극적으로 지원해요.',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_04.webp' : 'images/main/pc/pc_main_benefit_04.webp'
     },
   ]
@@ -263,7 +264,7 @@ const Main = () => {
 
     const handleScroll = _.throttle(() => {
       // 스크롤 이벤트를 처리하는 로직을 여기에 작성
-      console.log(window.scrollY);
+      //console.log(window.scrollY);
       //스크롤 작동시 특정 위치에서 이벤트를 싱행
     }, 300); // 300ms 간격으로 스크롤 이벤트를 처리
 
@@ -369,7 +370,7 @@ const Main = () => {
       <Box boxClassName="inner">
         <div className="kbank-workWrap">
           <div className="inner-titleWrap">
-            <h2 className="title2">케이뱅크는<br />이렇게 일해요</h2>
+            <h2 className="title2">일하는 방식</h2>
           </div>
           <Swiper
             lazy="true"
@@ -382,7 +383,7 @@ const Main = () => {
             onSlideChange={slideCssChange}
             lazyPreloadPrevNext={1}
             slidesPerView={1.3}
-            spaceBetween={10}
+            spaceBetween={20}
             breakpoints={{
               768: {
                 slidesPerView: 1,
@@ -430,7 +431,7 @@ const Main = () => {
         <div className="scroll-item" >
           <div className="workbalanceWrap">
             <div className="inner-titleWrap">
-              <h2 className="title2">일과 삶의<br />효율을 추구해요</h2>
+              <h2 className="title2">복지와 혜택</h2>
               <Link to="/Benefit" className="link">more</Link>
             </div>
             <Swiper
@@ -470,8 +471,8 @@ const Main = () => {
                       <div className="img-item swiper-workbalance-img">
                         <img src={card.imageSrc} alt="" loading="lazy" />
                       </div >
-                      <div className='swiper-workbalance-txt1'>{card.title}</div>
-                      <div className='swiper-workbalance-txt2'>{card.sub}</div>
+                      <TextBox boxClassName={'swiper-workbalance-txt1'} text={card.title} />
+                      <TextBox boxClassName={'swiper-workbalance-txt2'} text={card.sub} />
                     </div>
                   </CardAction>
                 </SwiperSlide>

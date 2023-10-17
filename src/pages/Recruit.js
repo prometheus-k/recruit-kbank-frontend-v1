@@ -1,7 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import RecruitList from './RecruitList'
-
 const initialListdata = [
   // 초기 카드 목록
   // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
@@ -17,7 +16,6 @@ const initialListdata = [
   { jobid: 10, tag: false, tit: '데이터플랫폼 엔지니어', sub1: 'Risk', sub2: '경력', dday: '지원마감', ddayclassName: 'day end' },
   // ... 더 많은 카드들
 ];
-
 async function fetchData() {
   // 실제 API 호출 또는 데이터 요청 로직을 구현
   const response = await fetch('/api/recruit');
@@ -26,25 +24,20 @@ async function fetchData() {
   }
   return response.json();
 }
-
 const Recruit = () => {
   //const { data, error, isLoading } = useQuery('recruitData', fetchData);
-
   // isLoading 상태를 체크하여 로딩 중 상태를 다룰 수 있습니다.
   // if (isLoading) {
   //   return 'Loading...'; // 로딩 중
   // }
-
   // // error 상태를 체크하여 에러를 다룰 수 있습니다.
   // if (error) {
   //   return `Error: ${error.message}`;
   // }
-
   return (
     <>
       <RecruitList listData={initialListdata} />
     </>
   );
 }
-
 export default Recruit;

@@ -9,7 +9,8 @@ import TitleText from '../components/TitleText'
 import Box from '../components/Box';
 import CardMedia from '../components/CardMedia';
 import Card from '../components/Card';
-import CardList from '../components/CardList'; // FeaturesList 컴포넌트의 경로를 맞게 수정해주세요.
+import CardList from '../components/CardList';
+import TextBox from '../components/TextBox';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,7 +62,7 @@ const Benefit = () => {
     },
     {
       title: '경조사 지원',
-      description: '기쁜 일은 축하하고,슬픈 일은 위로가 될 수 있도록<br />경조금과 경조휴가를 제공해요.',
+      description: '기쁜 일은 축하하고, 슬픈 일은 위로가 될 수 있도록<br />경조금과 경조휴가를 제공해요.',
     }
     // 다른 특성들도 추가
   ];
@@ -75,7 +76,7 @@ const Benefit = () => {
       description: '매년 1회 본인과 가족 1명의 종합 건강검진과 <br />검진 휴가를 지원해요.',
     },
     {
-      title: '유아휴직',
+      title: '육아휴직',
       description: '법정 육아휴직에 더해 총 2년의 육아휴직을 제공해요.',
     },
     // 다른 특성들도 추가
@@ -106,7 +107,7 @@ const Benefit = () => {
     },
     {
       title: '성장지원제도',
-      description: '새것을 익히고 성장할 수 있도록 <br />교육 자격증 지원 시스템을 갖추고 있어요',
+      description: '새것을 익히고 성장할 수 있도록 <br />교육 자격증 지원 시스템을 갖추고 있어요.',
     }
 
     // 다른 특성들도 추가
@@ -115,19 +116,19 @@ const Benefit = () => {
   const cardLists = [
     {
       idx: 0,
-      title: '일할 땐,<br>일하고 쉴 땐 쉬어요.',
+      title: '일할 땐 일하고,<br> 쉴 땐 쉬어요.',
       imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_01.webp' : 'images/benefit/pc/pc_benetfit_01.webp',
       list: cardList1,
     },
     {
       idx: 1,
-      title: '나와 소중한 가족까지<br>생각해요.',
+      title: '나의 소중한 가족까지<br>생각해요.',
       imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_02.webp' : 'images/benefit/pc/pc_benetfit_02.webp',
       list: cardList2,
     },
     {
       idx: 2,
-      title: '소통하며<br>함께해요.',
+      title: '함께하는 시간을 즐기며<br>소통해요.',
       imageSrc: Mobile() ? 'images/benefit/mw/mw_benetfit_03.webp' : 'images/benefit/pc/pc_benetfit_03.webp',
       list: cardList3,
     },
@@ -191,7 +192,7 @@ const Benefit = () => {
                 <div className="animation-item">
                   <div className="scroll-item">
                     {/* <TextField textClassName="tit" text={cardList.title} /> */}
-                    <div className='tit' dangerouslySetInnerHTML={{ __html: cardList.title }} />
+                    <TextBox boxClassName={'tit'} text={cardList.title} />
                     <Card cardClassName="item-box">
                       <CardMedia imageSrc={cardList.imageSrc} />
                       <CardList features={cardList.list} ></CardList>
