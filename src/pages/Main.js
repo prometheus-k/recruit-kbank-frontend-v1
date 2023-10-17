@@ -152,14 +152,14 @@ const Main = () => {
     },
     {
       idx: 2,
-      title: '함께 하는 시간을 즐기며 소통해요.',
-      sub: '혼자보다 함께를 추구하며,</br>서로의 의견을 수평적으로 나눠요',
+      title: '함께하는 시간을 즐기며 소통해요.',
+      sub: '혼자보다 함께를 추구하며,</br>서로의 의견을 수평적으로 나눠요.',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_03.webp' : 'images/main/pc/pc_main_benefit_03.webp'
     },
     {
       idx: 3,
       title: '개인의 성장을 지원해요.',
-      sub: '회사와 개인의 모두의</br> 성취와 성장을 적극적으로 지원해요.',
+      sub: '회사와 개인 모두의</br>성취와 성장을 적극적으로 지원해요.',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_benefit_04.webp' : 'images/main/pc/pc_main_benefit_04.webp'
     },
   ]
@@ -355,8 +355,8 @@ const Main = () => {
                       <div className="img-item swiper-story-img">
                         <img src={card.imageSrc} alt="" loading="lazy" />
                       </div >
-                      <div className='swiper-story-txt1'>{card.title}</div>
-                      <div className='swiper-story-txt2'>{card.sub}</div>
+                      <TextBox boxClassName={'swiper-story-txt1'} text={card.title}/>
+                      <TextBox boxClassName={'swiper-story-txt2'} text={card.sub}/>
                     </div>
                   </CardAction>
                 </SwiperSlide>
@@ -412,8 +412,8 @@ const Main = () => {
                       <div className={Mobile() ? "m" : "pc"}>
 
                         <div className='swiper-kbank-work-txt'>
-                          <div className='swiper-kbank-work-txt1'>{card.title}</div>
-                          <div className='swiper-kbank-work-txt2'>{card.sub}</div>
+                          <TextBox boxClassName={'swiper-kbank-work-txt1'} text={card.title} />
+                          <TextBox boxClassName={'swiper-kbank-work-txt2'} text={card.sub} />
                         </div>
                         <img src={card.imageSrc} alt="" loading="lazy" />
                       </div >
