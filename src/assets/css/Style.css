@@ -485,7 +485,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
     .column-list {column-count: inherit;column-gap: 0;margin-bottom: -6rem;}
     .column-list .txt-item {padding-top: 2rem;}
     .column-list .txt-item .tit {font-size: 2rem;line-height: 3.2rem;}
-    .column-list .col-box {margin-bottom: 6rem;break-inside: auto;}
+    .column-list .col-box {min-width: 100%; margin-bottom: 6rem;break-inside: auto;}
     .column-list .img-item.type1, 
     .column-list .img-item.type2, 
     .column-list .img-item.type3, 
