@@ -29,19 +29,19 @@ async function fetchData() {
   return response.json();
 }
 const Recruit = () => {
-  const { data, error, isLoading } = useQuery('recruitData', fetchData);
-  //isLoading 상태를 체크하여 로딩 중 상태를 다룰 수 있습니다.
-  if (isLoading) {
-    return 'Loading...'; // 로딩 중
-  }
-  // error 상태를 체크하여 에러를 다룰 수 있습니다.
-  if (error) {
-    return `Error: ${error.message}`;
-  }
+  // const { data, error, isLoading } = useQuery('recruitData', fetchData);
+  // //isLoading 상태를 체크하여 로딩 중 상태를 다룰 수 있습니다.
+  // if (isLoading) {
+  //   return 'Loading...'; // 로딩 중
+  // }
+  // // error 상태를 체크하여 에러를 다룰 수 있습니다.
+  // if (error) {
+  //   return `Error: ${error.message}`;
+  // }
   return (
     <>
       <ErrorBoundary>
-        <RecruitList listData={data} />
+        <RecruitList listData={initialListdata} />
       </ErrorBoundary>
     </>
   );
