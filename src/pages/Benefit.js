@@ -11,6 +11,8 @@ import CardMedia from '../components/CardMedia';
 import Card from '../components/Card';
 import CardList from '../components/CardList';
 import TextBox from '../components/TextBox';
+import ErrorBoundary from './ErrorBoundary';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -142,7 +144,7 @@ const Benefit = () => {
 
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
-    console.log('Component mounted');
+    // console.log('Component mounted');
     // ScrollTrigger를 사용하여 '.inner' 요소에 'active' 클래스 추가
     gsap.utils.toArray('.scroll-item').forEach((element) => {
       gsap.to(element, {
@@ -175,36 +177,38 @@ const Benefit = () => {
     }
     // 컴포넌트가 언마운트될 때 클린업 함수 설정
     return () => {
-      console.log('Component unmounted');
+      // console.log('Component unmounted');
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
   return (
-    <Box boxClassName="content">
-      <Box boxClassName="inner">
-        <TitleText titleClassName="title1" titleText="케이뱅크의 <br />복지와 혜택" />
-      </Box>
-      <Box boxClassName="inner">
-        <div className="benefitWrap">
-          <ul className="row-list">
-            {cardLists.map((cardList, index) => (
-              <li key={index} ref={(el) => cardListsRef.current[index] = el}>
-                <div className="animation-item">
-                  <div className="scroll-item">
-                    {/* <TextField textClassName="tit" text={cardList.title} /> */}
-                    <TextBox boxClassName={'tit'} text={cardList.title} />
-                    <Card cardClassName="item-box">
-                      <CardMedia imageSrc={cardList.imageSrc} />
-                      <CardList features={cardList.list} ></CardList>
-                    </Card>
+    <ErrorBoundary>
+      <Box boxClassName="content">
+        <Box boxClassName="inner">
+          <TitleText titleClassName="title1" titleText="케이뱅크의 <br />복지와 혜택" />
+        </Box>
+        <Box boxClassName="inner">
+          <div className="benefitWrap">
+            <ul className="row-list">
+              {cardLists.map((cardList, index) => (
+                <li key={index} ref={(el) => cardListsRef.current[index] = el}>
+                  <div className="animation-item">
+                    <div className="scroll-item">
+                      {/* <TextField textClassName="tit" text={cardList.title} /> */}
+                      <TextBox boxClassName={'tit'} text={cardList.title} />
+                      <Card cardClassName="item-box">
+                        <CardMedia imageSrc={cardList.imageSrc} />
+                        <CardList features={cardList.list} ></CardList>
+                      </Card>
+                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Box>
       </Box>
-    </Box>
+    </ErrorBoundary>
   );
 }
 

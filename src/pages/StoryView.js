@@ -1,5 +1,5 @@
-import React, { useEffect, useState, Suspense } from 'react';
-import { Link, useParams, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
 import { gsap } from 'gsap';
@@ -12,7 +12,8 @@ import { Navigation, Pagination, Parallax } from 'swiper/modules';
 
 import Box from '../components/Box';
 import CardAction from '../components/CardAction';
-import TextBox from '../components/TextBox';
+import ErrorBoundary from './ErrorBoundary';
+
 
 // Import Swiper styles
 import 'swiper/css';
@@ -522,14 +523,14 @@ const StoryView = () => {
         //console.log('Anchor element clicked');
 
         // 👇️ refers to the link element
-        console.log(event.currentTarget);
+        // console.log(event.currentTarget);
     };
 
-    console.log("path: " + process.env.PUBLIC_URL);
+    // console.log("path: " + process.env.PUBLIC_URL);
 
     useEffect(() => {
         // 컴포넌트가 처음 렌더링될 때 실행되는 코드
-        console.log('Component mounted');
+        // console.log('Component mounted');
         gsap.utils.toArray('.scroll-item').forEach((element) => {
             gsap.to(element, {
                 scrollTrigger: {
@@ -550,105 +551,107 @@ const StoryView = () => {
         });
         // 컴포넌트가 언마운트될 때 클린업 함수 설정
         return () => {
-            console.log('Component unmounted');
+            // console.log('Component unmounted');
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
     }, []);
     return (
-        <Box boxClassName="content">
-            <Box boxClassName="inner">
-                <div className="kbank-manWrap-view scroll-item">
-                    <LazyLoadImage
-                        alt=''
-                        effect="blur"
-                        src={process.env.PUBLIC_URL + storyDetail.imageMainSrc}
-                        className={"manWrap-view01"} />
-                    <div className="boardWrap">
-                        <div className="recruit-view">
-                            {/* 등록영역*/}
-                            <dl>
-                                {storyDetail.qa.map((qa, qaIndex) => {
-                                    const isImageIndex = storyDetail.imageIndexes.includes(qaIndex);
-                                    console.log(isImageIndex + " isImageIndex");
-                                    return (
-                                        <>
-                                            <dt className="tit">{qa.question}</dt>
-                                            <dd className="txt">{qa.answer}</dd>
-                                            {isImageIndex && (
-                                                <dd className="txt img">
-                                                    <LazyLoadImage
-                                                        alt=''
-                                                        effect="blur"
-                                                        src={process.env.PUBLIC_URL + storyDetail.imageSrc[storyDetail.imageIndexes.indexOf(qaIndex)]} />
-                                                </dd>
-                                            )}
-                                        </>
-                                    );
-                                })}
-                            </dl>
-                            {/* //등록영역*/}
+        <ErrorBoundary>
+            <Box boxClassName="content">
+                <Box boxClassName="inner">
+                    <div className="kbank-manWrap-view scroll-item">
+                        <LazyLoadImage
+                            alt=''
+                            effect="blur"
+                            src={process.env.PUBLIC_URL + storyDetail.imageMainSrc}
+                            className={"manWrap-view01"} />
+                        <div className="boardWrap">
+                            <div className="recruit-view">
+                                {/* 등록영역*/}
+                                <dl>
+                                    {storyDetail.qa.map((qa, qaIndex) => {
+                                        const isImageIndex = storyDetail.imageIndexes.includes(qaIndex);
+                                        console.log(isImageIndex + " isImageIndex");
+                                        return (
+                                            <>
+                                                <dt className="tit">{qa.question}</dt>
+                                                <dd className="txt">{qa.answer}</dd>
+                                                {isImageIndex && (
+                                                    <dd className="txt img">
+                                                        <LazyLoadImage
+                                                            alt=''
+                                                            effect="blur"
+                                                            src={process.env.PUBLIC_URL + storyDetail.imageSrc[storyDetail.imageIndexes.indexOf(qaIndex)]} />
+                                                    </dd>
+                                                )}
+                                            </>
+                                        );
+                                    })}
+                                </dl>
+                                {/* //등록영역*/}
+                            </div>
                         </div>
                     </div>
-                </div>
-            </Box>
-            <Box boxClassName="inner">
-                <div className="recruit-linkWrap type2">
-                    <div className="txtWrap">
-                        <p className="txt">지금 새로운 금융의 여정에<br className="m" /> 합류해 보세요.</p>
-                        <Link to="/Recruit" className="btn">지원하러 가기 →</Link>
+                </Box>
+                <Box boxClassName="inner">
+                    <div className="recruit-linkWrap type2">
+                        <div className="txtWrap">
+                            <p className="txt">지금 새로운 금융의 여정에<br className="m" /> 합류해 보세요.</p>
+                            <Link to="/Recruit" className="btn">지원하러 가기 →</Link>
+                        </div>
                     </div>
-                </div>
-            </Box>
-            <Box boxClassName="inner">
-                <div className="workbalanceWrap type2">
-                    <div className="inner-titleWrap">
-                        <h2 className="title2">다른 이야기</h2>
+                </Box>
+                <Box boxClassName="inner">
+                    <div className="workbalanceWrap type2">
+                        <div className="inner-titleWrap">
+                            <h2 className="title2">다른 이야기</h2>
+                        </div>
+                        <Swiper
+                            preventClicks={true}
+                            preventClicksPropagation={true}
+                            lazy="true"
+                            parallax={true}
+                            speed={800}
+                            modules={swiperModules}
+                            pagination={{ clickable: true }}
+                            lazyPreloadPrevNext={2}
+                            slidesPerGroup={1}
+                            spaceBetween={1.3}
+                            slidesPerView={1}
+                            breakpoints={{
+                                768: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 10,
+                                    slidesPerGroup: 1,
+                                },
+                                801: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 30,
+                                    slidesPerGroup: 2,
+                                },
+                            }}
+                            className="swiper-container swiper-container-horizontal mySwiper main-story"
+                        >
+                            {updatedStoryCards.map((card, index) => (
+                                <SwiperSlide className="swiper-slide" key={index}>
+                                    <CardAction linkUrl={`/Story/StoryView/${card.idx}`} onClick={handleAnchorClick}>
+                                        {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
+                                        <div data-swiper-parallax="-3%">
+                                            <div className="img-item swiper-story-img">
+                                                <img src={process.env.PUBLIC_URL + card.imageSrc} alt="" loading="lazy" />
+                                            </div >
+                                            <div className='swiper-story-txt1'>{card.title}</div>
+                                            <div className='swiper-story-txt2'>{card.sub}</div>
+                                        </div>
+                                    </CardAction>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </div>
-                    <Swiper
-                        preventClicks={true}
-                        preventClicksPropagation={true}
-                        lazy="true"
-                        parallax={true}
-                        speed={800}
-                        modules={swiperModules}
-                        pagination={{ clickable: true }}
-                        lazyPreloadPrevNext={2}
-                        slidesPerGroup={1}
-                        spaceBetween={1.3}
-                        slidesPerView={1}
-                        breakpoints={{
-                            768: {
-                                slidesPerView: 1,
-                                spaceBetween: 10,
-                                slidesPerGroup: 1,
-                            },
-                            801: {
-                                slidesPerView: 2,
-                                spaceBetween: 30,
-                                slidesPerGroup: 2,
-                            },
-                        }}
-                        className="swiper-container swiper-container-horizontal mySwiper main-story"
-                    >
-                        {updatedStoryCards.map((card, index) => (
-                            <SwiperSlide className="swiper-slide" key={index}>
-                                <CardAction linkUrl={`/Story/StoryView/${card.idx}`} onClick={handleAnchorClick}>
-                                    {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
-                                    <div data-swiper-parallax="-3%">
-                                        <div className="img-item swiper-story-img">
-                                            <img src={process.env.PUBLIC_URL + card.imageSrc} alt="" loading="lazy" />
-                                        </div >
-                                        <div className='swiper-story-txt1'>{card.title}</div>
-                                        <div className='swiper-story-txt2'>{card.sub}</div>
-                                    </div>
-                                </CardAction>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
 
+                </Box>
             </Box>
-        </Box>
+        </ErrorBoundary>
     );
 }
 

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-
 const LazyImage = ({ src, className, art }) => {
     // state
     const [isLoading, setIsLoading] = React.useState(false); // 실제 화면에 보여지고 있는지 여부를 확인

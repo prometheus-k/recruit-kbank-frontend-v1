@@ -3,19 +3,14 @@ import { useMediaQuery } from 'react-responsive';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import TitleText from '../components/TitleText'
-// import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
-import Button from '../components/Button'
 import CardAction from '../components/CardAction';
 import CardMedia from '../components/CardMedia';
 import CardContent from '../components/CardContent';
 import Typography from '../components/Typography';
 import Box from '../components/Box';
-
-
-
+import ErrorBoundary from './ErrorBoundary';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -108,35 +103,37 @@ const Story = () => {
     };
   }, []);
   return (
-    <Box boxClassName="content">
-      <Box boxClassName="inner">
-        <TitleText titleClassName="title1" titleText="케이뱅크<br />사람들의 이야기" />
-      </Box>
-      <Box boxClassName="inner">
-        <div className="kbank-manWrap">
-          <ul className="column-list">
-            {cards.map((card, index) => (
-              <li className="col-box" key={index}>
-                <CardAction linkUrl={`/Story/StoryView/${card.idx}`} cardActionClassName={`kbank-man-item ${activeTab === 0 ? 'active' : ''}`}>
-                  <div className="scroll-item">
-                    <CardMedia cardImgClassName={card.type} imageSrc={card.imageSrc}></CardMedia>
-                    <CardContent>
-                      <Typography titleClassName="tit">{card.title}</Typography>
-                      <Typography titleClassName="txt">{card.sub}</Typography>
-                    </CardContent>
-                  </div>
-                </CardAction>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Box>
-      {/* <Box boxClassName="inner">
+    <ErrorBoundary>
+      <Box boxClassName="content">
+        <Box boxClassName="inner">
+          <TitleText titleClassName="title1" titleText="케이뱅크<br />사람들의 이야기" />
+        </Box>
+        <Box boxClassName="inner">
+          <div className="kbank-manWrap">
+            <ul className="column-list">
+              {cards.map((card, index) => (
+                <li className="col-box" key={index}>
+                  <CardAction linkUrl={`/Story/StoryView/${card.idx}`} cardActionClassName={`kbank-man-item ${activeTab === 0 ? 'active' : ''}`}>
+                    <div className="scroll-item">
+                      <CardMedia cardImgClassName={card.type} imageSrc={card.imageSrc}></CardMedia>
+                      <CardContent>
+                        <Typography titleClassName="tit">{card.title}</Typography>
+                        <Typography titleClassName="txt">{card.sub}</Typography>
+                      </CardContent>
+                    </div>
+                  </CardAction>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Box>
+        {/* <Box boxClassName="inner">
         <div className="btnWrap">
           <Button buttonText="더보기" onClick={handleMoreButtonClick} />
         </div>
       </Box> */}
-    </Box>
+      </Box>
+    </ErrorBoundary>
   );
 }
 

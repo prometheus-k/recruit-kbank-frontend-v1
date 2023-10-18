@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'; // Link 컴포넌트를 import
-// import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 
 const CardAction = ({ linkUrl, cardActionClassName, children, onClick }) => {
     useEffect(() => {
-        console.log('Component mounted');
+        // console.log('Component mounted');
 
         return () => {
-            console.log('Component unmounted');
+            // console.log('Component unmounted');
         };
     }, []);
 

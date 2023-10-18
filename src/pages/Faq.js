@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TitleText from '../components/TitleText'
 import FAQList from '../components/FAQList'; // FAQList 컴포넌트의 경로에 따라 수정해주세요.
 import Box from '../components/Box';
+import ErrorBoundary from './ErrorBoundary';
 
 const faqData = [
   {
@@ -96,17 +97,19 @@ const Faq = () => {
   }, []);
 
   return (
-    <Box boxClassName="content">
-      <Box boxClassName="inner">
-        <TitleText titleClassName="title1" titleText="자주 묻는 질문" />
+    <ErrorBoundary>
+      <Box boxClassName="content">
+        <Box boxClassName="inner">
+          <TitleText titleClassName="title1" titleText="자주 묻는 질문" />
+        </Box>
+        <Box boxClassName="inner">
+          <div className="faqWrap">
+            {/* 이 부분을 FAQList 컴포넌트로 대체합니다. */}
+            <FAQList faqData={faqData} activeTab={activeTab} handleTabClick={handleTabClick} />
+          </div>
+        </Box>
       </Box>
-      <Box boxClassName="inner">
-        <div className="faqWrap">
-          {/* 이 부분을 FAQList 컴포넌트로 대체합니다. */}
-          <FAQList faqData={faqData} activeTab={activeTab} handleTabClick={handleTabClick} />
-        </div>
-      </Box>
-    </Box>
+    </ErrorBoundary>
   );
 }
 

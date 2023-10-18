@@ -1,27 +1,26 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import SyncLoader from "react-spinners/SyncLoader";
-// import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 
 const Loading = ({ color, size, loading, override }) => {
     useEffect(() => {
-        console.log('Component mounted');
+        // console.log('Component mounted');
 
         return () => {
-            console.log('Component unmounted');
+            // console.log('Component unmounted');
         };
     }, []);
 
     return (
         <div className="sweet-loading">
             <SyncLoader
-            color={color}
-            loading={loading}
-            cssOverride={override}
-            size={11}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-            speedMultiplier="1"
+                color={color}
+                loading={loading}
+                cssOverride={override}
+                size={11}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+                speedMultiplier="1"
             />
         </div>
     );
@@ -30,7 +29,7 @@ const Loading = ({ color, size, loading, override }) => {
 Loading.propTypes = {
     color: PropTypes.string,
     loading: PropTypes.bool,
-    override : PropTypes.object,
+    override: PropTypes.object,
 };
 
 Loading.defaultProps = {

@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect, Suspense, CSSProperties } from 'react';
-import * as ReactDOMServer from "react-dom/server";
 
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
@@ -12,13 +11,10 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Parallax } from 'swiper/modules';
-import { EffectFade } from 'swiper/modules';
 
 import Box from '../components/Box';
 import CardAction from '../components/CardAction';
-import Loading from '../components/Loading';
 import ErrorBoundary from './ErrorBoundary';
-import Image from "../components/Image";
 import LazyImage from '../components/LazyImage';
 import TextBox from '../components/TextBox';
 
@@ -217,7 +213,7 @@ const Main = () => {
 
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
-    console.log('Component mounted');
+    // console.log('Component mounted');
 
     // ScrollTrigger를 사용하여 '.inner' 요소에 'active' 클래스 추가
     gsap.utils.toArray('.scroll-item').forEach((element) => {
@@ -271,243 +267,243 @@ const Main = () => {
     window.addEventListener('scroll', handleScroll);
     // 컴포넌트가 언마운트될 때 클린업 함수 설정
     return () => {
-      console.log('Component unmounted');
+      // console.log('Component unmounted');
       window.removeEventListener('scroll', handleScroll);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
   return (
-    // <ErrorBoundary>
-    <Box boxClassName="content">
-      <div className="default_ani">
+    <ErrorBoundary>
+      <Box boxClassName="content">
+        <div className="default_ani">
+          <Box boxClassName="inner">
+            <div className="titleWrap">
+              <p className="title1">돈을 모으고, <br className="m" />빌리고,<br className="pc" />불릴 수 있는<br className="m" /> 금융을 만들어요.</p>
+            </div>
+          </Box>
+
+          <Box boxClassName="inner w100">
+            <div className={`imgWRap ${activeClass}`}>
+              <LazyLoadImage
+                onLoad={bigBannerLoad}
+                alt=''
+                effect="blur"
+                src={bigBanner}
+                wrapperClassName='lazyload'
+                className={bigBannerClass} />
+            </div>
+          </Box>
+          <Box boxClassName={Mobile() ? "inner m" : "inner pc"}>
+            <div className="textWrap">
+              <p className="text1">
+                케이뱅크는 구성원들이<br className="m" /> 성장할 다양한 기회와<br />
+                새로운 가능성을 끊임없이 제공합니다. <br />
+                <span className="pc">
+                  이를 통해서 모든 구성원들은 치열하게 고민하고 과감하게 도전하며, <br />
+                  우리가 가진 상상을 현실로 만들어가고 있습니다. <br />
+                </span>
+                케이뱅크는 무한한 가능성의 공간에서<br className="m" /> 모두가 꿈꾸는<br className="pc" />
+                금융권의 미래를<br className="m" /> 함께 만들어갈 여러분의 지원을 기다립니다.
+              </p>
+            </div>
+          </Box>
+        </div>
+
+        {/* 사람들 이야기 */}
         <Box boxClassName="inner">
-          <div className="titleWrap">
-            <p className="title1">돈을 모으고, <br className="m" />빌리고,<br className="pc" />불릴 수 있는<br className="m" /> 금융을 만들어요.</p>
+          <div className='scroll-item'>
+            <div className="storyWrap">
+              <div className="inner-titleWrap">
+                <h2 className="title2">사람들 이야기</h2>
+                <Link to="/Story" className="link">more</Link>
+              </div>
+              <Swiper
+                preventClicks={true}
+                preventClicksPropagation={true}
+                lazy="true"
+                parallax={true}
+                speed={800}
+                modules={swiperModules}
+                pagination={{ clickable: true }}
+                lazyPreloadPrevNext={2}
+                slidesPerGroup={1}
+                spaceBetween={1.3}
+                slidesPerView={1}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    slidesPerGroup: 1,
+                  },
+                  801: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                    slidesPerGroup: 2,
+                  },
+                }}
+                className="swiper-container swiper-container-horizontal mySwiper main-story"
+              >
+                {initialStoryCards.map((card, index) => (
+                  <SwiperSlide className="swiper-slide" key={index}>
+                    <CardAction linkUrl={`/Story/StoryView/${card.idx}`}>
+                      {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
+                      <div data-swiper-parallax="-3%">
+                        <div className="img-item swiper-story-img">
+                          <img src={card.imageSrc} alt="" loading="lazy" />
+                        </div >
+                        <TextBox boxClassName={'swiper-story-txt1'} text={card.title} />
+                        <TextBox boxClassName={'swiper-story-txt2'} text={card.sub} />
+                      </div>
+                    </CardAction>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
           </div>
         </Box>
 
-        <Box boxClassName="inner w100">
-          <div className={`imgWRap ${activeClass}`}>
-            <LazyLoadImage
-              onLoad={bigBannerLoad}
-              alt=''
-              effect="blur"
-              src={bigBanner}
-              wrapperClassName='lazyload'
-              className={bigBannerClass} />
-          </div>
-        </Box>
-        <Box boxClassName={Mobile() ? "inner m" : "inner pc"}>
-          <div className="textWrap">
-            <p className="text1">
-              케이뱅크는 구성원들이<br className="m" /> 성장할 다양한 기회와<br />
-              새로운 가능성을 끊임없이 제공합니다. <br />
-              <span className="pc">
-                이를 통해서 모든 구성원들은 치열하게 고민하고 과감하게 도전하며, <br />
-                우리가 가진 상상을 현실로 만들어가고 있습니다. <br />
-              </span>
-              케이뱅크는 무한한 가능성의 공간에서<br className="m" /> 모두가 꿈꾸는<br className="pc" />
-              금융권의 미래를<br className="m" /> 함께 만들어갈 여러분의 지원을 기다립니다.
-            </p>
-          </div>
-        </Box>
-      </div>
-
-      {/* 사람들 이야기 */}
-      <Box boxClassName="inner">
-        <div className='scroll-item'>
-          <div className="storyWrap">
+        {/* 케미코드  */}
+        <Box boxClassName="inner">
+          <div className="kbank-workWrap">
             <div className="inner-titleWrap">
-              <h2 className="title2">사람들 이야기</h2>
-              <Link to="/Story" className="link">more</Link>
+              <h2 className="title2">일하는 방식</h2>
             </div>
             <Swiper
-              preventClicks={true}
-              preventClicksPropagation={true}
               lazy="true"
               parallax={true}
               speed={800}
               modules={swiperModules}
-              pagination={{ clickable: true }}
-              lazyPreloadPrevNext={2}
-              slidesPerGroup={1}
-              spaceBetween={1.3}
-              slidesPerView={1}
-              breakpoints={{
-                768: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                  slidesPerGroup: 1,
-                },
-                801: {
-                  slidesPerView: 2,
-                  spaceBetween: 30,
-                  slidesPerGroup: 2,
-                },
+              pagination={{
+                clickable: true,
               }}
-              className="swiper-container swiper-container-horizontal mySwiper main-story"
-            >
-              {initialStoryCards.map((card, index) => (
-                <SwiperSlide className="swiper-slide" key={index}>
-                  <CardAction linkUrl={`/Story/StoryView/${card.idx}`}>
-                    {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
-                    <div data-swiper-parallax="-3%">
-                      <div className="img-item swiper-story-img">
-                        <img src={card.imageSrc} alt="" loading="lazy" />
-                      </div >
-                      <TextBox boxClassName={'swiper-story-txt1'} text={card.title}/>
-                      <TextBox boxClassName={'swiper-story-txt2'} text={card.sub}/>
-                    </div>
-                  </CardAction>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
-      </Box>
-
-      {/* 케미코드  */}
-      <Box boxClassName="inner">
-        <div className="kbank-workWrap">
-          <div className="inner-titleWrap">
-            <h2 className="title2">일하는 방식</h2>
-          </div>
-          <Swiper
-            lazy="true"
-            parallax={true}
-            speed={800}
-            modules={swiperModules}
-            pagination={{
-              clickable: true,
-            }}
-            onSlideChange={slideCssChange}
-            lazyPreloadPrevNext={1}
-            slidesPerView={1.3}
-            spaceBetween={20}
-            breakpoints={{
-              768: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                slidesPerGroup: 1,
-              },
-              800: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                slidesPerGroup: 1,
-              },
-              1000: {
-                slidesPerView: 1,
-                spaceBetween: 15,
-                slidesPerGroup: 1,
-              },
-            }}
-            className={`swiper-container swiper-container-horizontal kbank-work ${color}`}
-          >
-            {initialWorkCard.map((card, index) => (
-              <SwiperSlide className="swiper-slide" key={index}>
-                <CardAction>
-                  {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
-                  <div data-swiper-parallax="-3%">
-                    <div className={`swiper-kbank-work ${card.type}`}>
-                      <div className={Mobile() ? "m" : "pc"}>
-
-                        <div className='swiper-kbank-work-txt'>
-                          <TextBox boxClassName={'swiper-kbank-work-txt1'} text={card.title} />
-                          <TextBox boxClassName={'swiper-kbank-work-txt2'} text={card.sub} />
-                        </div>
-                        <img src={card.imageSrc} alt="" loading="lazy" />
-                      </div >
-                    </div>
-                  </div>
-                </CardAction>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </Box>
-
-      {/* 베네핏 */}
-      <Box boxClassName="inner">
-        <div className="scroll-item" >
-          <div className="workbalanceWrap">
-            <div className="inner-titleWrap">
-              <h2 className="title2">복지와 혜택</h2>
-              <Link to="/Benefit" className="link">more</Link>
-            </div>
-            <Swiper
-              lazy="true"
-              parallax={true}
-              speed={800}
-              pagination={{ clickable: true }}
-              modules={swiperModules}
-              lazyPreloadPrevNext={3}
-              slidesPerView={1}
-              spaceBetween={1.3}
-              slidesPerGroup={1}
+              onSlideChange={slideCssChange}
+              lazyPreloadPrevNext={1}
+              slidesPerView={1.3}
+              spaceBetween={20}
               breakpoints={{
                 768: {
                   slidesPerView: 1,
-                  spaceBetween: 10,
+                  spaceBetween: 20,
                   slidesPerGroup: 1,
                 },
-                801: {
-                  slidesPerView: 2,
-                  spaceBetween: 30,
-                  slidesPerGroup: 2,
+                800: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                  slidesPerGroup: 1,
                 },
                 1000: {
-                  slidesPerView: 3,
-                  spaceBetween: 25,
-                  slidesPerGroup: 3,
+                  slidesPerView: 1,
+                  spaceBetween: 15,
+                  slidesPerGroup: 1,
                 },
               }}
-              className="swiper-container swiper-container-horizontal mySwiper main-workbalance"
+              className={`swiper-container swiper-container-horizontal kbank-work ${color}`}
             >
-              {initialBenefitCard.map((card, index) => (
+              {initialWorkCard.map((card, index) => (
                 <SwiperSlide className="swiper-slide" key={index}>
-                  <CardAction linkUrl={`/Benefit?idx=${card.idx}`}>
-                    {/* <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc={card.imageSrc}></CardMedia> */}
+                  <CardAction>
+                    {/* <CardMedia cardImgClassName="swiper-story-img" imageSrc={card.imageSrc}></CardMedia> */}
                     <div data-swiper-parallax="-3%">
-                      <div className="img-item swiper-workbalance-img">
-                        <img src={card.imageSrc} alt="" loading="lazy" />
-                      </div >
-                      <TextBox boxClassName={'swiper-workbalance-txt1'} text={card.title} />
-                      <TextBox boxClassName={'swiper-workbalance-txt2'} text={card.sub} />
+                      <div className={`swiper-kbank-work ${card.type}`}>
+                        <div className={Mobile() ? "m" : "pc"}>
+
+                          <div className='swiper-kbank-work-txt'>
+                            <TextBox boxClassName={'swiper-kbank-work-txt1'} text={card.title} />
+                            <TextBox boxClassName={'swiper-kbank-work-txt2'} text={card.sub} />
+                          </div>
+                          <img src={card.imageSrc} alt="" loading="lazy" />
+                        </div >
+                      </div>
                     </div>
                   </CardAction>
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
-        </div>
-      </Box>
+        </Box>
 
-      {/* 공고바로가기 */}
-      <Box boxClassName="inner">
-        <div className="scroll-item">
-          <div className="recruit-linkWrap">
-            <LazyImage src={footerImg} art="" />
-            <div className="txtWrap">
-              <p className="txt">지금 새로운 금융의 여정에<br className="m" /> 합류해 보세요.</p>
-              <Link to="/Recruit" className="btn">채용공고 바로가기 →</Link>
+        {/* 베네핏 */}
+        <Box boxClassName="inner">
+          <div className="scroll-item" >
+            <div className="workbalanceWrap">
+              <div className="inner-titleWrap">
+                <h2 className="title2">복지와 혜택</h2>
+                <Link to="/Benefit" className="link">more</Link>
+              </div>
+              <Swiper
+                lazy="true"
+                parallax={true}
+                speed={800}
+                pagination={{ clickable: true }}
+                modules={swiperModules}
+                lazyPreloadPrevNext={3}
+                slidesPerView={1}
+                spaceBetween={1.3}
+                slidesPerGroup={1}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    slidesPerGroup: 1,
+                  },
+                  801: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                    slidesPerGroup: 2,
+                  },
+                  1000: {
+                    slidesPerView: 3,
+                    spaceBetween: 25,
+                    slidesPerGroup: 3,
+                  },
+                }}
+                className="swiper-container swiper-container-horizontal mySwiper main-workbalance"
+              >
+                {initialBenefitCard.map((card, index) => (
+                  <SwiperSlide className="swiper-slide" key={index}>
+                    <CardAction linkUrl={`/Benefit?idx=${card.idx}`}>
+                      {/* <CardMedia cardImgClassName="swiper-workbalance-img" imageSrc={card.imageSrc}></CardMedia> */}
+                      <div data-swiper-parallax="-3%">
+                        <div className="img-item swiper-workbalance-img">
+                          <img src={card.imageSrc} alt="" loading="lazy" />
+                        </div >
+                        <TextBox boxClassName={'swiper-workbalance-txt1'} text={card.title} />
+                        <TextBox boxClassName={'swiper-workbalance-txt2'} text={card.sub} />
+                      </div>
+                    </CardAction>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
-        </div>
-      </Box>
+        </Box>
 
-      <Box boxClassName="inner">
-        <div className="snsWrap">
-          <p className="txt">케이뱅크의<br className="m" /> 다양한 소식을 확인해보세요.</p>
-          <ul>
-            <li><Link to="https://www.instagram.com/kbank_official/?hl=ko"><img src={ic_instargram} alt="instargram" /></Link></li>
-            <li><Link to="https://ko-kr.facebook.com/kbanknow"><img src={ic_facebook} alt="facebook" /></Link></li>
-            <li><Link to="https://www.youtube.com/@kbanknow"><img src={ic_youtube} alt="youtube" /></Link></li>
-          </ul>
-        </div>
-      </Box>
+        {/* 공고바로가기 */}
+        <Box boxClassName="inner">
+          <div className="scroll-item">
+            <div className="recruit-linkWrap">
+              <LazyImage src={footerImg} art="" />
+              <div className="txtWrap">
+                <p className="txt">지금 새로운 금융의 여정에<br className="m" /> 합류해 보세요.</p>
+                <Link to="/Recruit" className="btn">채용공고 바로가기 →</Link>
+              </div>
+            </div>
+          </div>
+        </Box>
 
-    </Box>
-    // </ErrorBoundary>
+        <Box boxClassName="inner">
+          <div className="snsWrap">
+            <p className="txt">케이뱅크의<br className="m" /> 다양한 소식을 확인해보세요.</p>
+            <ul>
+              <li><Link to="https://www.instagram.com/kbank_official/?hl=ko"><img src={ic_instargram} alt="instargram" /></Link></li>
+              <li><Link to="https://ko-kr.facebook.com/kbanknow"><img src={ic_facebook} alt="facebook" /></Link></li>
+              <li><Link to="https://www.youtube.com/@kbanknow"><img src={ic_youtube} alt="youtube" /></Link></li>
+            </ul>
+          </div>
+        </Box>
+
+      </Box>
+    </ErrorBoundary>
   );
 }
 

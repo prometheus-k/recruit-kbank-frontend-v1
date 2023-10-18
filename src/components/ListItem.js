@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import './footer.css'; // Footer 컴포넌트의 CSS 파일을 import
 
 const ListItem = ({ listItemTo, children }) => {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
-        console.log('Component mounted');
+        // console.log('Component mounted');
         setShow(true);
         return () => {
             setShow(false);
-            console.log('Component unmounted');
+            // console.log('Component unmounted');
         };
     }, []);
 

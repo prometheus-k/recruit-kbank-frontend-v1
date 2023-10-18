@@ -1,6 +1,8 @@
 import React from 'react';
-import { useQuery } from 'react-query';
 import RecruitList from './RecruitList'
+import ErrorBoundary from './ErrorBoundary';
+
+
 const initialListdata = [
   // 초기 카드 목록
   // 각 카드의 내용과 이미지는 실제 데이터에 맞게 수정해야 합니다.
@@ -36,7 +38,9 @@ const Recruit = () => {
   // }
   return (
     <>
-      <RecruitList listData={initialListdata} />
+      <ErrorBoundary>
+        <RecruitList listData={initialListdata} />
+      </ErrorBoundary>
     </>
   );
 }
