@@ -163,31 +163,31 @@ const Main = () => {
   const initialWorkCard = [
     {
       title: '공감하는 전문가',
-      sub: Mobile() ? '고객이 금융생활에서 어떤 것을 필요로 하는지, 어떤 것을 어려워하는지 들여다봅니다.' : '고객이 금융생활에서 어떤 것을 필요로 하는지, 어떤 것을 어려워하는지 들여다봅니다. 그리고 문제에 대한 공감을 바탕으로 솔루션을 제시합니다.',
+      sub: Mobile() ? '고객이 금융생활에서 어떤 것을</br>필요로 하는지, 어떤 것을</br>어려워하는지 들여다봅니다.' : '고객이 금융생활에서 어떤 것을 필요로 하는지,</br>어떤 것을 어려워하는지 들여다봅니다.</br>그리고 문제에 대한 공감을 바탕으로 솔루션을</br>제시합니다.',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_kemicode_01.webp' : 'images/main/pc/pc_main_kemicode_01.webp',
       type: 'slide1'
     },
     {
       title: '케미 좋은 팀플레이어',
-      sub: Mobile() ? '최선과 최고를 위해 노력하는 한 팀입니다.' : '최선과 최고를 위해 노력하는 한 팀입니다. 그렇기에 동료들과 한마음으로 한 곳을 향해 달려가는 과정을 즐깁니다.',
+      sub: Mobile() ? '최선과 최고를 위해 노력하는</br>한 팀입니다.' : '최선과 최고를 위해 노력하는 한 팀입니다.</br>그렇기에 동료들과 한마음으로 한 곳을 향해</br>달려가는 과정을 즐깁니다.',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_kemicode_02.webp' : 'images/main/pc/pc_main_kemicode_02.webp',
       type: 'slide2'
     },
     {
       title: '끈질긴 문제 해결사',
-      sub: Mobile() ? '낯선 것을 두려워하기 보다는 호기심을 갖고 배우고자 끊임없이 질문합니다.' : '낯선 것을 두려워하기 보다는 호기심을 갖고 배우고자 끊임없이 질문합니다. 그리고 질문에 대한 답을 구하기 위해 주저 없이 나아갑니다.',
+      sub: Mobile() ? '낯선 것을 두려워하기 보다는</br>호기심을 갖고 배우고자</br>끊임없이 질문합니다.' : '낯선 것을 두려워하기 보다는 호기심을 갖고</br>배우고자 끊임없이 질문합니다.</br>그리고 질문에 대한 답을 구하기 위해</br>주저 없이 나아갑니다.',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_kemicode_03.webp' : 'images/main/pc/pc_main_kemicode_03.webp',
       type: 'slide3'
     },
     {
       title: '민첩한 실용주의자',
-      sub: Mobile() ? '실용적인 금융 솔루션을 제안함으로써 더 큰 가능성을 만들고자 합니다.' : '실용적인 금융 솔루션을 제안함으로써 더 큰 가능성을 만들고자 합니다. 그래서 말보다는 행동, 계획보다는 실행에 가치를 두고, 빠르게 실행하고 개선합니다.',
+      sub: Mobile() ? '실용적인 금융 솔루션을</br>제안함으로써 더 큰 가능성을</br>만들고자 합니다.' : '실용적인 금융 솔루션을 제안함으로써</br>더 큰 가능성을 만들고자 합니다.</br>그래서 말보다는 행동, 계획보다는 실행에</br>가치를 두고, 빠르게 실행하고 개선합니다.',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_kemicode_04.webp' : 'images/main/pc/pc_main_kemicode_04.webp',
       type: 'slide4'
     },
     {
       title: '자율의 책임자',
-      sub: Mobile() ? '우리는 자유와 자율의 차이를 알기에 책임있는 자율을 함께 만들어 갑니다.' : '우리는 자유와 자율의 차이를 알기에 책임있는 자율을 함께 만들어 갑니다. 우리 모두의 자율을 위해 꼭 지켜야 할 Ground Rule을 따르며, 고객에게 불편과 불안을 만드는 것과 타협하지 않습니다.',
+      sub: Mobile() ? '우리는 자유와 자율의 차이를 알기에</br>책임있는 자율을 함께</br>만들어 갑니다.' : '우리는 자유와 자율의 차이를 알기에</br>책임있는 자율을 함께 만들어 갑니다.</br>우리 모두의 자율을 위해 꼭 지켜야 할</br>Ground Rule을 따르며, 고객에게 불편과</br>불안을 만드는 것과 타협하지 않습니다.',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_kemicode_05.webp' : 'images/main/pc/pc_main_kemicode_05.webp',
       type: 'slide5'
     },
