@@ -124,7 +124,7 @@ const Main = () => {
       imageSrc: Mobile() ? 'images/main/mw/mw_main_story_06.webp' : 'images/main/pc/pc_main_story_06.webp', type: 'type2'
     },
     {
-      idx: 8, title: '팔리는 R&D를 지향합니다', sub: '준법데이터서비스팀 / 김홍종님',
+      idx: 8, title: '팔리는 R&D를 지향합니다', sub: '데이터서비스팀 / 김홍종님',
       imageSrc: Mobile() ? 'images/main/mw/mw_main_story_08.webp' : 'images/main/pc/pc_main_story_08.webp', type: 'type1'
     },
     // {
