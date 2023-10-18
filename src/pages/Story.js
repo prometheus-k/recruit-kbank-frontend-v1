@@ -71,7 +71,7 @@ const Story = () => {
 
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
-    console.log('Component mounted');
+    //console.log('Component mounted');
     // ScrollTrigger를 사용하여 '.inner' 요소에 'active' 클래스 추가
     gsap.utils.toArray('.scroll-item').forEach((element) => {
       gsap.to(element, {

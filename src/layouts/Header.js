@@ -44,7 +44,7 @@ const Header = () => {
 
   useEffect(() => {
     // 컴포넌트가 처음 렌더링될 때 실행되는 코드
-    console.log('Component mounted');
+    //console.log('Component mounted');
     const handleScroll = () => {
       const bodyOffsetTop = document.body.getBoundingClientRect().top;
       if (window.scrollY > bodyOffsetTop) {
@@ -57,7 +57,7 @@ const Header = () => {
 
     // 컴포넌트가 언마운트될 때 클린업 함수 설정
     return () => {
-      console.log('Component unmounted');
+      //console.log('Component unmounted');
       window.removeEventListener('scroll', handleScroll);
 
     };

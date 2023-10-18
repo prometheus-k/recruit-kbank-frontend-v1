@@ -110,8 +110,9 @@ const RecruitList = ({ listData }) => {
                         <InfiniteScroll
                             dataLength={filteredLists.length}
                             next={fetchMoreData}
-                            hasMore={true}
+                            hasMore={false}
                             loader={<h4>Loading...</h4>}
+                            useWindow={true}
                         >
                             {filteredLists.map((list, index) => (
                                 // <ListItem listItemTo={`/RecruitView?keyword=${encodeURIComponent(searchTerm)}`} key={index}>

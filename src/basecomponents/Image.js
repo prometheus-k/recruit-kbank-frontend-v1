@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 const Image = ({ imgClassName, imageSrc, art }) => {
     useEffect(() => {
-        console.log('Component mounted');
+        //console.log('Component mounted');
 
         return () => {
-            console.log('Component unmounted');
+            //console.log('Component unmounted');
         };
     }, []);
 
