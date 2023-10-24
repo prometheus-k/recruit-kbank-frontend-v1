@@ -107,32 +107,32 @@ const RecruitList = ({ listData }) => {
             {filteredLists.length > 0 ? (
                 <Box boxClassName="inner">
                     <List>
-                        <InfiniteScroll
+                        {/* <InfiniteScroll
                             dataLength={filteredLists.length}
                             next={fetchMoreData}
                             hasMore={false}
                             loader={<h4>Loading...</h4>}
                             useWindow={true}
-                        >
-                            {filteredLists.map((list, index) => (
-                                // <ListItem listItemTo={`/RecruitView?keyword=${encodeURIComponent(searchTerm)}`} key={index}>
-                                <ListItem listItemTo={`/Recruit/RecruitView/${list.jobid}`} key={index}>
-                                    <ListItemText>
-                                        <Box boxClassName="recruit-tit">
-                                            {list.tag ? <TextSpan titleClassName="tag">NEW</TextSpan> : null}
-                                            <TextSpan titleClassName="tit">{list.tit}</TextSpan>
-                                        </Box>
-                                        <Box boxClassName="recruit-cate">
-                                            <TextSpan>{list.sub1}</TextSpan>
-                                            <TextSpan>{list.sub2}</TextSpan>
-                                        </Box>
-                                    </ListItemText>
-                                    <ListItemText>
-                                        <TextSpan titleClassName={list.ddayclassName}>{list.dday}</TextSpan>
-                                    </ListItemText>
-                                </ListItem>
-                            ))}
-                        </InfiniteScroll>
+                        > */}
+                        {filteredLists.map((list, index) => (
+                            // <ListItem listItemTo={`/RecruitView?keyword=${encodeURIComponent(searchTerm)}`} key={index}>
+                            <ListItem listItemTo={`/Recruit/RecruitView/${list.jobid}`} key={index}>
+                                <ListItemText>
+                                    <Box boxClassName="recruit-tit">
+                                        {list.tag ? <TextSpan titleClassName="tag">NEW</TextSpan> : null}
+                                        <TextSpan titleClassName="tit">{list.tit}</TextSpan>
+                                    </Box>
+                                    <Box boxClassName="recruit-cate">
+                                        <TextSpan>{list.sub1}</TextSpan>
+                                        <TextSpan>{list.sub2}</TextSpan>
+                                    </Box>
+                                </ListItemText>
+                                <ListItemText>
+                                    <TextSpan titleClassName={list.ddayclassName}>{list.dday}</TextSpan>
+                                </ListItemText>
+                            </ListItem>
+                        ))}
+                        {/* </InfiniteScroll> */}
                     </List>
                     {/* <div className="btnWrap">
             <Button buttonText="더보기" onClick={handleMoreButtonClick} />
