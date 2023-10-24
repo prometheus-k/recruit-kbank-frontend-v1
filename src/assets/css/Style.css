@@ -111,7 +111,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 .main-story .swiper-wrapper .swiper-slide {width:calc(100%/2 - 1.5rem)}
 
 /* .main-story .swiper-wrapper .swiper-slide + .swiper-slide {margin-left: 3rem;} */
-.main-story .swiper-story-txt1 {padding:3rem 0 2rem; font-size: 2.6rem;line-height: 4rem;letter-spacing: -0.02rem;font-weight: 700;}
+.main-story .swiper-story-txt1 {padding:3rem 0 2rem; font-size: 2.6rem;line-height: 4rem;letter-spacing: -0.02rem;font-weight: 700;padding-bottom: 1rem;}
 .main-story .swiper-story-txt2 {font-size: 1.6rem;line-height: 1.9rem;letter-spacing: -0.07rem;font-weight: 500;}
 .main-story .swiper-story-img {position:relative;padding-top: 75.3%;border-radius: 1.6rem;overflow: hidden;display: flex;align-items: center;justify-content: center;background: #eee;}
 
@@ -120,7 +120,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 .workbalanceWrap .swiper-wrapper {display: flex;align-items: flex-start;justify-content: space-between;flex-wrap: nowrap;}
 .workbalanceWrap .swiper-wrapper .swiper-slide {width:calc(100%/3 - 1.8rem)}
 /* .workbalanceWrap .swiper-slide + .swiper-slide {margin-left: 2.5rem;} */
-.main-workbalance .swiper-workbalance-txt1 {padding:3rem 0 2rem; font-size: 2.6rem;line-height: 3.6rem;letter-spacing: -0.02rem;font-weight: 700;}
+.main-workbalance .swiper-workbalance-txt1 {padding:3rem 0 2rem; font-size: 2.6rem;line-height: 3.6rem;letter-spacing: -0.02rem;font-weight: 700;padding-bottom: 1rem;}
 .main-workbalance .swiper-workbalance-txt2 {font-size: 1.6rem;line-height: 2.8rem;letter-spacing: -0.07rem;font-weight: 500;}
 .main-workbalance .swiper-workbalance-img {position:relative;height: 0;padding-top: 93.07%; border-radius: 1.6rem;overflow: hidden;display: flex;align-items: center;justify-content: center;background: #eee;}
 .main-workbalance .swiper-slide:nth-child(3) {margin-left: -11px;}
@@ -138,12 +138,12 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 .kbank-work .swiper-kbank-work.slide4{color:#1036a0;}
 .kbank-work .swiper-kbank-work.slide5{color:#fff;}
 .kbank-work .swiper-kbank-work-txt {width: 100%;}
-.kbank-work .swiper-kbank-work-txt .swiper-kbank-work-txt1 {font-size: 3.6rem;line-height:3.9rem;font-weight:700;letter-spacing:-0.036rem;}
+.kbank-work .swiper-kbank-work-txt .swiper-kbank-work-txt1 {font-size: 3.6rem;line-height:3.9rem;font-weight:700;letter-spacing:-0.036rem;padding-bottom: 1rem;}
 .kbank-work .swiper-kbank-work-txt .swiper-kbank-work-txt2 {font-size: 2.2rem;line-height:3.8rem;font-weight:400;letter-spacing:-0.036rem;padding-top: 3rem;}
 .kbank-work .pc .swiper-kbank-work-txt {width: 39rem;}
 .kbank-work .pc .swiper-kbank-work-txt {position: absolute;top: 8rem;left:6rem;word-break: keep-all;}
 .kbank-work .m .swiper-kbank-work-txt {position: absolute;bottom: 0rem;left:0rem; padding: 3rem 2rem; word-break: keep-all;}
-.kbank-work .m .swiper-kbank-work-txt .swiper-kbank-work-txt1{font-size: 2rem; line-height: 2.3rem;}
+.kbank-work .m .swiper-kbank-work-txt .swiper-kbank-work-txt1{font-size: 2rem; line-height: 2.3rem;padding-bottom: 1rem;}
 .kbank-work .m .swiper-kbank-work-txt .swiper-kbank-work-txt2{font-size: 1.6rem; line-height: 2.4rem;padding-top: 1.6rem;min-height: 8.8rem;}
 
 
@@ -312,7 +312,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
     .gnbWrap nav {position: fixed;top:100%;left:0;width:100%;height:0;overflow:hidden;background: #fff;}
     .headerWrap nav .gnb {justify-content: flex-start;flex-direction: column;padding-top: 2.2rem;}
     .headerWrap nav .gnb li + li {padding:0;}
-    .headerWrap nav .gnb li a {padding: 1rem 2rem;display: block;font-size: 2.6rem;line-height: 4.2rem;letter-spacing: -0.02rem;color: #141414;}
+    .headerWrap nav .gnb li a {padding: 1.5rem 2rem;display: block;font-size: 2.6rem;line-height: 4.2rem;letter-spacing: -0.02rem;color: #141414;}
    
     .gnbWrap nav.on {top:7rem;height:100%;z-index: 999;}
     .gnbWrap nav.on .gnb {transform:translateY(2rem);opacity: 0;animation:fadu-up3 .4s ease forwards;}
@@ -393,7 +393,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 
 
     .main-story .swiper-story-txt1,
-    .main-workbalance .swiper-workbalance-txt1 {padding: 2rem 0;font-size: 2rem;line-height: 3.2rem;word-break: keep-all;}
+    .main-workbalance .swiper-workbalance-txt1 {padding: 2rem 0;font-size: 2rem;line-height: 3.2rem;word-break: keep-all; padding-bottom: 1rem;}
     .main-story .swiper-story-txt2 {letter-spacing: -0.05rem;}
 
     .main-workbalance .swiper-workbalance-txt2 {letter-spacing: -0.05rem;}
@@ -421,14 +421,15 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
 
     .boardWrap {margin-top: 3rem;}
     .recruit-list > li:last-child > a {padding-bottom: 0;}
-    .recruit-list > li > a {padding: 2rem 0; align-items: center;}
+    .recruit-list > li > a {padding: 2rem 0; align-items: end;}
     .recruit-list .recruit-tit .tag {margin: 0 0 1.2rem; width:4.4rem;padding-top: 2.5rem;background: #e6ebf5 url(../images/img_new_label_mw.webp) center center no-repeat;background-size: contain;border-radius: 0.8rem;} /* FETASK-1078 수정 2023-09-01 */
     .recruit-list .recruit-tit {flex-direction: column;justify-content: flex-start;align-items: flex-start;}
     .recruit-list .recruit-tit .tit {font-size: 2rem;line-height: 2.4rem;}
     .recruit-list .recruit-cate {padding-top: 0.8rem;}
     .recruit-list .recruit-cate span {font-size: 1.4rem;}
     .recruit-list .col-box .day {font-size: 1.6rem;line-height: 1.9rem;}
-
+    .recruit-list .col-box+.col-box{padding-bottom: 2.6rem;}
+    .recruit-list .col-box .day{line-height: 2.4rem;}
     .titleWrap .recruit-cate {padding-top: 0.6rem;}
     .titleWrap .recruit-cate span {font-size: 1.4rem;}
     .recruit-view .tit {font-size: 2rem;line-height: 2.8rem;}
@@ -484,7 +485,7 @@ header {display: flex;justify-content: center;width:100%;margin: 0 auto;position
     .kbank-manWrap {margin-top: 4rem;}/* 2023-09-19*/
     .column-list {column-count: inherit;column-gap: 0;margin-bottom: -6rem;}
     .column-list .txt-item {padding-top: 2rem;}
-    .column-list .txt-item .tit {font-size: 2rem;line-height: 3.2rem;}
+    .column-list .txt-item .tit {font-size: 2rem;line-height: 3.2rem;padding-bottom: 1rem;}
     .column-list .col-box {margin-bottom: 6rem;break-inside: auto;}
     .column-list .img-item.type1, 
     .column-list .img-item.type2, 
